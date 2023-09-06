@@ -1,0 +1,73 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  margin: auto;
+  width: 800px;
+}
+
+/* NAVIGATION MENU */
+
+.menu {
+  /* Background color for entire menu */
+  background: #aba;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.menu li {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.menu li a,
+.has-submenu-label {
+  display: block;
+  padding: 4px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Background color of item on hover */
+.menu li:hover>a {
+  background-color: #aca;
+  transition: background-color 0.25s ease;
+}
+
+/* Submenu position and left properties are now controlled in @media breakpoints */
+.menu .submenu {
+  display: none;
+  top: 100%;
+  /* Color of sub-menu background */
+  background: #eee;
+}
+
+.menu .submenu li {
+  border-right: none;
+  display: block;
+}
+
+.menu .submenu li a {
+  padding: 10px 10px;
+  color: #444;
+  text-decoration: none;
+}
+
+.menu .submenu li:hover>a {
+  background: #ddf;
+}
+
+/* Menu toggles (checkboxes) should never be displayed; they just store menu state */
+.hidden-menu-toggle,
+.hidden-submenu-toggle {
+  display: none;
+}
