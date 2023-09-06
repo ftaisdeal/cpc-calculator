@@ -4,13 +4,30 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 .container {
   margin: auto;
   width: 800px;
 }
 
-/* NAVIGATION MENU */
+.title {
+  font-size: 4em;
+  font-family: 'Risque', cursive;
+}
 
+a {
+  text-decoration: none;
+  color: rgb(140, 140, 186);
+}
+
+a:visited {
+  color: rgb(86, 86, 128);
+}
+
+/* NAVIGATION MENU */
 .menu {
   /* Background color for entire menu */
   background: #aba;

@@ -4,13 +4,29 @@ app.use(express.static('public'));
 const port = 3000;
 
 const Home = require('./pages/Home');
+const About = require('./pages/About');
+const Shows = require('./pages/Shows');
+const Contact = require('./pages/Contact');
 const Error404 = require('./pages/404');
 
-// S T A N D A R D   R O U T E S
 // Home
 app.get('/', (req, res) => {
-  res.setHeader("Cache-Control", "no-cache, must-revalidate");
   Home(res);
+});
+
+// about
+app.get('/about', (req, res) => {
+  About(res);
+});
+
+// shows
+app.get('/shows', (req, res) => {
+  Shows(res);
+});
+
+// contact
+app.get('/contact', (req, res) => {
+  Contact(res);
 });
 
 // 404 handler
