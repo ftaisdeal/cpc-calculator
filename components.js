@@ -22,11 +22,13 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5D9KCKLW5T"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-BZ4Q6SY3KL');
+  gtag('config', 'G-5D9KCKLW5T');
 </script>
 </head>
 <body>
