@@ -11,11 +11,17 @@ h1 {
 .container {
   margin: auto;
   width: 640px;
+  padding-top: 20px;
 }
 
 .title {
   font-size: 4em;
   font-family: 'Nothing You Could Do', cursive;
+  line-height: .1em;
+}
+
+.sub-title {
+  font-size: 1.5em;
 }
 
 a {

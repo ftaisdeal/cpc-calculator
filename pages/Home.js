@@ -8,7 +8,8 @@ const Home = async function (res) {
     audience participation in varied ways.</p>
 
   <p>Adventure and a spirit of courageous exploration are at the heart of Adventure Cabaret: adventure mentally,
-    emotionally, culturally, artistically, but most of all in considering new and better ways of life for us all.</p>`;
+    emotionally, culturally, artistically, but most of all in considering new and better ways of life for us all.</p>
+    <img src="images/bee-in-hula.jpg">`;
 
   res.send(`${header('Adventure Cabaret')}
 ${content}
