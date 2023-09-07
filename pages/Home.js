@@ -3,7 +3,7 @@ const Home = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h1>Home</h1>
-  <p>Adventure Cabaret is a live multitalent, multimedia show that recruits local talent of all different kinds and
+  <p>Adventure Cabaret is a live multitalent, multimedia show that recruits local talent of all kinds and
     weaves different types of live performance together into a compelling set of deep experiences that also include
     audience participation in varied ways.</p>
 

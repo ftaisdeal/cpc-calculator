@@ -25,7 +25,7 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,12 +35,12 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 </head>
 <body>
 <div id="container" class="container">
-<div class="header"></span>
-<a href="/home"><p class="title"><span style="color:#fff;">A</span><span style="color:#fff;">d<span><span style="color:#fff;">v<span><span style="color:#fff;">e<span><span style="color:#fff;">n<span><span style="color:#fff;">t<span><span style="color:#fff;">u<span><span style="color:#fff;">r<span><span style="color:#fff;">e<span> <span style="color:#fff;">C<span>abaret</p></a>
-<div class="nav">
-<a href="/">home</a> : <a href="/about">about</a> : <a href="/shows">upcoming shows</a> : <a href="/contact">contact</a>
+<div class="header">
+<a href="/home"><p class="title"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></p></a>
+Prepare to be transformed.
+<nav>
+<a href="/">home</a> <span class="colon">:</span> <a href="/about">about</a> <span class="colon">:</span> <a href="/shows">upcoming shows</a> <span class="colon">:</span> <a href="/contact">contact</a>
 </nav>
-</div>
 </div>`);
 }
 
