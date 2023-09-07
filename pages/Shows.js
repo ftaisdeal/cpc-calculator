@@ -7,6 +7,7 @@ const Home = async function (res) {
 <p>Freight &amp; Salvage<br>
 2020 Addison Street<br>
 Berkeley, CA 94704</p>
+https://www.eventbrite.com/e/714765271167?aff=oddtdtcreator
 <p>tickets</p>
 <img src="images/bee.jpg" width="640" height="580" alt="bee">`;
 
