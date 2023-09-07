@@ -1,4 +1,4 @@
-const header = function (title = "Adventure Cabaret", short_description = "Adventure Cabaret", og_image = "/img/OG-default.png", google_translate = "") {
+const header = function (title = "Adventure Cabaret", short_description = "Adventure Cabaret", og_image = "/OG-default.png", google_translate = "") {
 
   return (`<!DOCTYPE HTML>
 <html lang="en">
@@ -10,14 +10,14 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <meta property="og:type" content="article">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${short_description}">
-<meta property="og:site_name" content="Sustainable Choices">
+<meta property="og:site_name" content="Adventure Cabaret">
 <meta property="og:image" content="${og_image}">
 <meta property="og:image:type" content="image/jpg">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="600">
 <meta property="og:url" content="">
 <meta property="article:published_time" content="2023-07-01">
-<meta name="author" content="Firinn Taisdeal">
+<meta name="author" content="Miranda Sorventi">
 <meta name="theme-color" content="#444444">
 <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 <link rel="icon" href="/apple-touch-icon.png" type="image/png" sizes="192x192">
