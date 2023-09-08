@@ -11,13 +11,12 @@ h1 {
 .container {
   margin: auto;
   width: 640px;
-  padding-top: 20px;
 }
 
 .title {
   font-size: 4em;
   font-family: 'Nothing You Could Do', cursive;
-  line-height: .1em;
+  padding-bottom: 0px;
 }
 
 .sub-title {
@@ -26,11 +25,11 @@ h1 {
 
 a {
   text-decoration: none;
-  color: rgb(159, 159, 201);
+  color: rgb(174, 174, 208);
 }
 
 a:visited {
-  color: rgb(102, 102, 141);
+  color: rgb(121, 121, 157);
 }
 
 nav {
@@ -42,64 +41,35 @@ nav {
   margin-right: 5px;
 }
 
-/* NAVIGATION MENU */
-.menu {
-  /* Background color for entire menu */
-  background: #aba;
-}
+/* Small devices */
+@media only screen and (max-width: 744px) {
 
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0px;
-}
+  /* Adjust some sizes */
 
-.menu li {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 0px;
-  margin-left: 0px;
-}
+  body {
+    width: 100%;
+    font-size: .95em;
+    background-color: #000;
+  }
 
-.menu li a,
-.has-submenu-label {
-  display: block;
-  padding: 4px;
-  color: #333;
-  text-decoration: none;
-}
+  .container {
+    max-width: 90%;
+    margin: 10px;
+  }
 
-/* Background color of item on hover */
-.menu li:hover>a {
-  background-color: #aca;
-  transition: background-color 0.25s ease;
-}
+  .title {
+    font-size: 3em;
+    font-family: 'Nothing You Could Do', cursive;
+    line-height: 1.2em;
+  }
 
-/* Submenu position and left properties are now controlled in @media breakpoints */
-.menu .submenu {
-  display: none;
-  top: 100%;
-  /* Color of sub-menu background */
-  background: #eee;
-}
+  .sub-title {
+    font-size: 1.2em;
+  }
 
-.menu .submenu li {
-  border-right: none;
-  display: block;
-}
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-.menu .submenu li a {
-  padding: 10px 10px;
-  color: #444;
-  text-decoration: none;
-}
-
-.menu .submenu li:hover>a {
-  background: #ddf;
-}
-
-/* Menu toggles (checkboxes) should never be displayed; they just store menu state */
-.hidden-menu-toggle,
-.hidden-submenu-toggle {
-  display: none;
 }
