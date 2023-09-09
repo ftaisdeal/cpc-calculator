@@ -38,7 +38,7 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <span class="title"><a href="/"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
 <p class="sub-title">Prepare to be transformed.</p>
 <nav>
-<a href="/">home</a> <span class="colon">:</span> <a href="/about">about</a> <span class="colon">:</span> <a href="https://www.eventbrite.com/e/714765271167?aff=oddtdtcreator">tickets</a> <span class="colon">:</span> <a href="/contact">contact</a>
+<a href="/">home</a> <span class="colon">:</span> <a href="/about">about</a> <span class="colon">:</span> <a href="https://www.eventbrite.com/e/714765271167?aff=oddtdtcreator">tickets</a> <span class="colon">:</span> <a href="/shows">shows</a> <span class="colon">:</span> <a href="/contact">contact</a>
 </nav>
 </div>`);
 }
