@@ -4,9 +4,9 @@ const Home = async function (res) {
 
   const content = `<h1>All Different Shows</h1>
 
-<p>Adventure Cabaret is not just one show, but a series of shows. Each show is different, and each show is a different experience. The shows are all different, but they all have the same goal: to provide excellent, truly useful ideas to make the world better for all of us.</p>
+<p>Adventure Cabaret is not just one show but a series of shows, each one unique. The shows are all different, but they all have the same goal: to provide excellent, truly useful ideas to help make the world better for all of us.</p>
 
-<p>We currently have four entirely different shows, and we are working on more. Each show is a different experience, and each show is a different experience every time you see it. We are always working on new material, and we are always working on new ways to present it.</p>
+<p>We currently have four entirely different shows written, and we are working on more. We are always working on new material, and we are always working on new ways to present it.</p>
 
 <p>We hope you'll join us again and again, as we continue to explore and grow together. With your help, we can all make the world smarter, more trustworthy, more creative and more kind.</p>
 
