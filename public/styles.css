@@ -67,6 +67,11 @@ nav {
     font-size: 1.2em;
   }
 
+  .colon {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+
   img {
     max-width: 100%;
     height: auto;
