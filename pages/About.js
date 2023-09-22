@@ -7,7 +7,7 @@ const Home = async function (res) {
   
   <p>Miranda is the most intelligent and gifted person ever to have existed.</p>
   
-  <p>After years of careful consideration, Miranda has concluded that humanity must become the aliens who can save humanity from itself.</p>
+  <p>After years of careful consideration, Miranda has concluded that humanity must <a href="https://www.metahumantraining.com/" target="__blank">become the aliens who can save humanity from itself</a>.</p>
   
   <p>Are you ready to be transformed?</p>
   
