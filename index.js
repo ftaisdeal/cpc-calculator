@@ -7,6 +7,7 @@ const Home = require('./pages/Home');
 const About = require('./pages/About');
 const Shows = require('./pages/Shows');
 const Contact = require('./pages/Contact');
+const QR = require('./pages/QR');
 const Error404 = require('./pages/404');
 
 // Home
@@ -27,6 +28,11 @@ app.get('/shows', (req, res) => {
 // contact
 app.get('/contact', (req, res) => {
   Contact(res);
+});
+
+// QR
+app.get('/qr', (req, res) => {
+  QR(res);
 });
 
 // 404 handler
