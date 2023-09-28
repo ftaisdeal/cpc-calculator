@@ -7,7 +7,7 @@ This is a paid production, and we are specifically looking to cast UCB students 
 
 <p>Pay is $50 per hour, payable at the end of each month.</p>
 
-<p>To apply for either role listed below, send an email message to <a href="mailto:contact@adventurecabaret.com?Subject=Adventure%20Cabaret%20Casting">contact@adventurecabaret.com</a>. Include a headshot, a resumé and if possible a link to a video of you performing.</p>
+<p>To apply for either role listed below, send an email message to <a href="mailto:contact@adventurecabaret.com?Subject=Adventure%20Cabaret%20UCB%20Casting">contact@adventurecabaret.com</a>. Include a headshot, a resumé and if possible a link to a video of you performing.</p>
 
 <p>Auditions are the week of October 9, and are by video. We use Google Meet, and will send you the URL for your audition. We do not need you to prepare a monologue, as we will only be using material from the production for auditions.</p>
 
