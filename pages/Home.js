@@ -5,7 +5,7 @@ const Home = async function (res) {
   const content = `<h1>Home</h1>
   <p>Adventure Cabaret is a unique and unprecedented live theater experience that includes massive use of multimedia to bring you into the Empire of Ideas, and gradually transform you into an alien who can help save humanity from itself.  No, we are not kidding!</p>
   
-  <p>As if that weren't enough, you will also be massively entertained by an astral LED fan artist, a miraculous disabled guitar player, a heavy metal band improvising to the longest list of vices you have ever heard, and great actors performing deep scenes of love and pain and joy and failure and transformation and redemption.</p>
+  <p>As if that weren't enough, you will also be massively entertained by an astral LED fan artist, a miraculous disabled guitar player, a heavy metal band improvising to the longest list of human vices you have ever heard, and great actors performing deep scenes of love and pain and joy and failure and transformation and redemption.</p>
   
   <p>Isn't it about time somebody did this?  We think so, and we're doing it!</p>
   
