@@ -3,8 +3,8 @@ const QR = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h1>Mr. QR sez</h1>
-<p>Hey, thanks for scanning me.</p>
-<p>That felt really good.</p>
+<p>Hey, thanks for scanning me!</p>
+<p>That felt really good!</p>
 <p>Do you want me to scan you back?</p>
 <p>Let's be friends!</p>
 <p><span style="font-size: 4em;">🤠</span></p>
