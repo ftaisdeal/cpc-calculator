@@ -7,7 +7,7 @@ const Home = require('./pages/Home');
 const About = require('./pages/About');
 const Shows = require('./pages/Shows');
 const Contact = require('./pages/Contact');
-const Casting = require('./pages/Casting');
+const Cast = require('./pages/Cast');
 const QR = require('./pages/QR');
 const Error404 = require('./pages/404');
 
@@ -32,8 +32,8 @@ app.get('/contact', (req, res) => {
 });
 
 // casting
-app.get('/casting', (req, res) => {
-  Casting(res);
+app.get('/cast', (req, res) => {
+  Cast(res);
 });
 
 // QR
