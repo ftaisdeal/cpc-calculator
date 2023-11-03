@@ -7,6 +7,7 @@ const Cast = async function (res) {
   <ol>
   <li><a href="schedule.pdf" target="_blank">Rehearsal and Performance Schedule</a></li>
   <li><a href="role_assignments.pdf" target="_blank">Role Assignments</a></li>
+  <li>Complete Script - available December 1</li>
   </ol>`;
 
   res.send(`${header('Documents and Support for Cast')}
