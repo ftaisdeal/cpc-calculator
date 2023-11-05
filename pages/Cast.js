@@ -3,7 +3,7 @@ const Cast = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<br>
-  <h1>Documents and Support for the Cast</h1>
+  <h1>Cast Resources</h1>
   <ol>
   <li><a href="schedule.pdf" target="_blank">Rehearsal and Performance Schedule</a></li>
   <li><a href="cast.pdf" target="_blank">Cast</a></li>
@@ -11,7 +11,7 @@ const Cast = async function (res) {
   <li><a href="script.pdf" target="_blank">Complete Script</a> - available December 1</li>
   </ol>`;
 
-  res.send(`${header('Documents and Support for the Cast')}
+  res.send(`${header('Cast Resources')}
 ${content}
 ${footer}`);
 
