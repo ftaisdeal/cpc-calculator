@@ -10,6 +10,18 @@ const Cast = async function (res) {
   <li><a href="role_assignments.pdf" target="_blank">Role Assignments</a></li>
   <li><a href="script.pdf" target="_blank">Complete Script</a> - available December 1</li>
   <li><a href="rundown.pdf" target="_blank">Rundown</a></li>
+  <li><a href="rundown.pdf" target="_blank">Rehearsals</a>
+    <ul>
+    <li>Rehearsal 1</li>
+    <li>Rehearsal 2</li>
+    <li>Rehearsal 3</li>
+    <li>Rehearsal 4</li>
+  </li>
+  <li>Venues
+    <ul>
+    <li>Freight &amp; Salvage</li>
+    <li>Chevron Auditorium - International House</li>
+  </li>
   </ol>`;
 
   res.send(`${header('Cast Resources')}
