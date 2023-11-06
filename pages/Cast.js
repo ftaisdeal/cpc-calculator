@@ -12,15 +12,22 @@ const Cast = async function (res) {
   <li><a href="rundown.pdf" target="_blank">Rundown</a></li>
   <li><a href="rundown.pdf" target="_blank">Rehearsals</a>
     <ul>
-    <li>Rehearsal 1</li>
-    <li>Rehearsal 2</li>
-    <li>Rehearsal 3</li>
-    <li>Rehearsal 4</li>
+    <li>Rehearsal 1 - Saturday, January 6, 1-5PM</li>
+    <li>Rehearsal 2 - Saturday, January 13, 1-5PM</li>
+    <li>Rehearsal 3 - Saturday, January 20, 1-5PM</li>
+    <li>Rehearsal 4 - Saturday, January 27, 1-5PM</li>
     </ul>
   </li>
   <li>Venues
     <ul>
-    <li>Freight &amp; Salvage</li>
+    <li>Freight &amp; Salvage
+    <br><a href="" target="_blank">street view</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </li>
     <li>Chevron Auditorium - International House</li>
   </li>
   </ol>`;
