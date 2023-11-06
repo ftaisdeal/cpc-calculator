@@ -16,6 +16,7 @@ const Cast = async function (res) {
     <li>Rehearsal 2</li>
     <li>Rehearsal 3</li>
     <li>Rehearsal 4</li>
+    </ul>
   </li>
   <li>Venues
     <ul>
