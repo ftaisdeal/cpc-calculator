@@ -16,6 +16,7 @@ const Cast = async function (res) {
     <li>Rehearsal 2 - Saturday, January 13, 1-5PM</li>
     <li>Rehearsal 3 - Saturday, January 20, 1-5PM</li>
     <li>Rehearsal 4 - Saturday, January 27, 1-5PM</li>
+    <li>Rehearsal 5 - Saturday, February 3, 1-5PM</li>
     </ul>
   </li>
   <li>Venues
