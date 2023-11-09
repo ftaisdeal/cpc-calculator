@@ -31,8 +31,8 @@ app.get('/contact', (req, res) => {
   Contact(res);
 });
 
-// casting
-app.get('/castx', (req, res) => {
+// cast resources
+app.get('/castresources', (req, res) => {
   Cast(res);
 });
 
