@@ -9,7 +9,8 @@ const Cast = async function (res) {
   <li><a href="cast.pdf" target="_blank">Cast</a></li>
   <li><a href="role_assignments.pdf" target="_blank">Role Assignments</a></li>
   <li><a href="rundown.pdf" target="_blank">Rundown</a></li>
-  <li><a href="rundown.pdf" target="_blank">Rehearsals</a>
+  <li>Rehearsals
+  All rehearsals are held at Shotgun Studios, 1201 University Ave., Berkeley
     <ul>
     <li>Rehearsal 1 - Saturday, January 6, 1-5PM</li>
     <li>Rehearsal 2 - Saturday, January 13, 1-5PM</li>
