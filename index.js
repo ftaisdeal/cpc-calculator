@@ -32,7 +32,7 @@ app.get('/contact', (req, res) => {
 });
 
 // casting
-app.get('/cast', (req, res) => {
+app.get('/castx', (req, res) => {
   Cast(res);
 });
 
