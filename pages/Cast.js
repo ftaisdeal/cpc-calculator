@@ -13,7 +13,7 @@ const Cast = async function (res) {
   <br>
   All rehearsals are held at Shotgun Studios, 1201 University Ave., Berkeley
     <ul>
-    <li>Rehearsal 1 - Saturday, January 6, 1-5PM</li>
+    <li><a href="rehearsal-1.pdf" target="_blank">Rehearsal 1 - Saturday, January 6, 1-5PM</a></li>
     <li>Rehearsal 2 - Saturday, January 13, 1-5PM</li>
     <li>Rehearsal 3 - Saturday, January 20, 1-5PM</li>
     <li>Rehearsal 4 - Saturday, January 27, 1-5PM</li>
