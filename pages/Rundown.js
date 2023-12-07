@@ -7,11 +7,16 @@ const Rundown = async function (res) {
 <h4>Pre-Show</h4>
 <ol>
 <li>Cosmos</li>
+<li>Consciousness</li>
 <li>Solar system</li>
+<li>Metaconsciousness</li>
 <li>Earth</li>
 <li>Ocean</li>
+<li>Metanoia</li>
 <li>Insects</li>
+<li>Metamorphosis</li>
 <li>Overture</li>
+<li>Metahuman</li>
 <li>Thought Police Hotline</li>
 </ol>
 <h4>Show</h4>
