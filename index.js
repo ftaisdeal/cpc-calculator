@@ -5,6 +5,7 @@ const port = 3000;
 
 const Home = require('./pages/Home');
 const About = require('./pages/About');
+const Rundown = require('./pages/Rundown');
 const Shows = require('./pages/Shows');
 const Contact = require('./pages/Contact');
 const Cast = require('./pages/Cast');
@@ -19,6 +20,11 @@ app.get('/', (req, res) => {
 // about
 app.get('/about', (req, res) => {
   About(res);
+});
+
+// rundown
+app.get('/rundown', (req, res) => {
+  Rundown(res);
 });
 
 // shows

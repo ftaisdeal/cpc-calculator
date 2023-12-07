@@ -1,4 +1,4 @@
-const Home = async function (res) {
+const About = async function (res) {
 
   const { header, footer } = require('../components');
 
@@ -19,4 +19,4 @@ ${footer}`);
 
 }
 
-module.exports = Home;
+module.exports = About;
