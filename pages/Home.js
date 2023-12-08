@@ -3,16 +3,19 @@ const Home = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h1>Home</h1>
-  <p>Adventure Cabaret is a unique live theater experience that includes massive use of multimedia to bring you into the Empire of Ideas, and gradually transform you into an alien who can help save humanity from itself.</p>
+<p>Adventure Cabaret is a journey through the Empire of the Mind.</p>
+
+<p>Adventure Cabaret is an escape from the prison of nostalgia.</p>
   
-  <p>As if that weren't enough, you will also be entertained by an astral LED fan artist, a miraculous disabled guitar player, a heavy metal band improvising to the longest list of human vices ever compiled, and great actors performing deep scenes of love and pain and joy and failure and transformation and redemption.</p>
+<p>Adventure Cabaret is an exploration of how much better humanity could become, if only it chose to do so.</p>
   
-  <p>Isn't it about time somebody did this?  We think so.</p>
+<p>Adventure Cabaret is a grand tour through all of space, all of time, and all of your personality.</p>
   
-  <p>Take a mere 90 minutes out of your week and go home with a head full of amazing experiences and beautiful ideas.</p>
+<p>Take a mere 90 minutes out of your week and go home with a head full of amazing experiences and beautiful ideas.</p>
   
-  <p>See you at the show!</p>
-    <img src="images/bee-in-hula.jpg">`;
+<p>See you at the show!</p>
+
+<img src="images/bee-in-hula.jpg">`;
 
   res.send(`${header('Adventure Cabaret')}
 ${content}
