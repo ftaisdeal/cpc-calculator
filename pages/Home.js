@@ -10,6 +10,8 @@ const Home = async function (res) {
 <p>Adventure Cabaret is an exploration of how much better humanity could become, if only it chose to do so.</p>
   
 <p>Adventure Cabaret is a grand tour through all of space, all of time, and all of your personality.</p>
+
+<p>Adventure Cabaret is loads of fun, and at least two barrels full of laughs.</p>
   
 <p>Take a mere 90 minutes out of your week and go home with a head full of amazing experiences and beautiful ideas.</p>
   
