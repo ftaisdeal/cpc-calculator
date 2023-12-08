@@ -2,7 +2,7 @@ const Home = async function (res) {
 
   const { header, footer } = require('../components');
 
-  const content = `<h1>Home</h1>
+  const content = `<h1>What the heck is this?</h1>
 <p>Adventure Cabaret is a journey through the Empire of the Mind.</p>
 
 <p>Adventure Cabaret is an escape from the prison of nostalgia.</p>
@@ -17,7 +17,7 @@ const Home = async function (res) {
   
 <p>See you at the show!</p>
 
-<img src="images/bee-in-hula.jpg">`;
+<img src="images/bee-in-hula.jpg" height="497" width="538" alt="bee flying through LED hula hoop">`;
 
   res.send(`${header('Adventure Cabaret')}
 ${content}
