@@ -22,7 +22,7 @@ International House - Chevron Auditorium<br>
 Berkeley, CA
   `;
 
-  res.send(`${header('Adventure Cabaret Tickets')}
+  res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
 ${footer}`);
 

@@ -8,7 +8,7 @@ const Home = async function (res) {
   <p><a href="mailto:contact@adventurecabaret.com?subject=Adventure Cabaret">contact@adventurecabaret.com</a></p>
   <img src="images/galaxy.jpg" width="640" height="635" alt="galaxy">`;
 
-  res.send(`${header('Adventure Cabaret')}
+  res.send(`${header('Contact Adventure Cabaret')}
 ${content}
 ${footer}`);
 

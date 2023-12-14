@@ -13,7 +13,7 @@ const Origins = async function (res) {
   
   <img src="images/earth.jpg" width="640" height="640" alt="earth">`;
 
-  res.send(`${header('Adventure Cabaret')}
+  res.send(`${header('Origins of Adventure Cabaret')}
 ${content}
 ${footer}`);
 

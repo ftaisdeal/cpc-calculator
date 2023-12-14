@@ -12,7 +12,7 @@ const Home = async function (res) {
 
 <img src="images/bee.jpg" width="640" height="580" alt="bee">`;
 
-  res.send(`${header('Adventure Cabaret')}
+  res.send(`${header('Shows of Adventure Cabaret')}
 ${content}
 ${footer}`);
 

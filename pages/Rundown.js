@@ -98,7 +98,7 @@ const Rundown = async function (res) {
 <br>
 <br>`;
 
-  res.send(`${header('Adventure Cabaret')}
+  res.send(`${header('Show Rundown')}
 ${content}
 ${footer}`);
 
