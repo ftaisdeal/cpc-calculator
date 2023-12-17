@@ -40,7 +40,8 @@ const Cast = async function (res) {
 <b>International House - Chevron Auditorium</b>
 <br><a href="IHouse/I-House-1.jpg" target="_blank">from seating</a>
 <br><a href="IHouse/I-House-2.jpg" target="_blank">from stage</a>
-</p>`;
+</p>
+</li>`;
 
   res.send(`${header('Cast Resources')}
 ${content}
