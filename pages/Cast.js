@@ -19,11 +19,7 @@ const Cast = async function (res) {
 </li>
 
 <li>
-<h3><a href="role_assignments.pdf" target="_blank">Role Assignments</a></h3>
-</li>
-
-<li>
-<h3><a href="rundown.pdf" target="_blank">Rundown</a></h3>
+<h3><a href="rundown.pdf" target="_blank">Complete Show Rundown</a></h3>
 </li>
 
 <li>
