@@ -8,14 +8,14 @@ const Cast = async function (res) {
 <li><h3><a href="https://calendar.google.com/calendar/embed?src=8e5c1ec36e594255d6c129babd187c37bd0a2d9b5922675dd51e97d1dea6f8fe%40group.calendar.google.com&ctz=America%2FNew_York" target="_blank">Rehearsal and Performance Schedule</a></h3></li>
  
 <li>
-<h3>Cast & Crew</h3>
+<h3>Cast</h3>
 <b>Cintya Chaves</b> - Mistress of Ceremonies, other roles
 <br><b>Natalia Kataeva</b> - Storyteller, other roles
 <br><b>Sahil Sing</b> - Storyteller, other roles
+<br><b>Skip Howland</b> - Dr. Finlay Clinkscales, other roles
 <br><b>Svetlana Uskokovic</b> - Lola de Campa, other roles
 <br><b>Tracy Fuller</b> - Miranda Sorventi
 <br><b>Ziare Whitelow</b> - Storyteller, other roles
-<p><b>Lauren Chang</b> - Stage Manager</p>
 </li>
 
 <li>
