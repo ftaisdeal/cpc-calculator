@@ -16,6 +16,7 @@ const Cast = async function (res) {
 <br><b><a href="https://www.backstage.com/u/Uscocovic/" target="__blank">Svetlana Uskokovic</a></b> - Lola de Campa, other roles
 <br><b><a href="https://www.entertainersworldwide.com/tracy-fuller-profile-167834" target="__blank">Tracy Fuller</a></b> - Miranda Sorventi
 <br><b><a href="https://www.backstage.com/u/ziare-whitelow/" target="__blank">Ziare Whitelow</a></b> - Storyteller, other roles
+<p><b><a href="https://adventurecabaret.com/cast/William-Rogue-resume.pdf" target="__blank">William Rogue</a></b> - The original Clinkscales, currently recovering from an injury
 </li>
 
 <li>
