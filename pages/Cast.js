@@ -11,7 +11,7 @@ const Cast = async function (res) {
 <h3>Cast</h3>
 <b><a href="https://cintyachaves.com.br/" target="__blank">Cintya Chaves</a></b> - Mistress of Ceremonies, other roles
 <br><b><a href="https://www.backstage.com/u/natalia-kataeva/" target="__blank">Natalia Kataeva</a></b> - Storyteller, other roles
-<br><b><a href="https://adventurecabaret.com/cast/Sahil-Singh-Resume.pdf" target="__blank">Sahil Singh</b> - Storyteller, other roles
+<br><b><a href="https://adventurecabaret.com/cast/Sahil-Singh-Resume.pdf" target="__blank">Sahil Singh</b> - The Sacrificial Victim, Storyteller, other roles
 <br><b><a href="https://www.backstage.com/u/Skip_Howland/" target="__blank">Skip Howland</a></b> - Dr. Finlay Clinkscales, other roles
 <br><b><a href="https://www.backstage.com/u/Uscocovic/" target="__blank">Svetlana Uskokovic</a></b> - Lola de Campa, other roles
 <br><b><a href="https://www.entertainersworldwide.com/tracy-fuller-profile-167834" target="__blank">Tracy Fuller</a></b> - Miranda Sorventi
