@@ -34,7 +34,7 @@ const Rundown = async function (res) {
 <li>Nia's Story</li>
 <li>Autumn Nights</li>
 <li>Dr. Finlay Clinkscales, Professor of Horrific Human Stupidity</li>
-<li>Language Is not Reality</li>
+<li>Language Is Not Reality</li>
 <li>Why a cabaret?</li>
 <li>The Talking Dog #1</li>
 <li>War of the Words</li>
