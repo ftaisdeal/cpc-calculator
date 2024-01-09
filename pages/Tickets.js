@@ -29,7 +29,22 @@ Berkeley, CA
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
-  `;
+
+<p>
+
+<b><a href="https://www.eventbrite.com/e/adventure-cabaret-tickets-778918776027" target="__blank">Saturday, February 10, 2024</a></b><br>
+7:00PM<br>
+International House - Chevron Auditorium<br>
+2299 Piedmont Ave.<br>
+Berkeley, CA
+<p>
+
+<b><a href="https://www.eventbrite.com/e/adventure-cabaret-tickets-778919668697" target="__blank">Saturday, February 24, 2024</a></b><br>
+7:00PM<br>
+International House - Chevron Auditorium<br>
+2299 Piedmont Ave.<br>
+Berkeley, CA
+`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
