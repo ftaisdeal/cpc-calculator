@@ -9,7 +9,7 @@ const Cast = async function (res) {
  
 <li>
 <h3>Cast</h3>
-<br><b><a href="https://www.imdb.com/name/nm14891213/" target="__blank">Amosi Morgan</a></b> - Dr. Finlay Clinkscales, other roles
+<b><a href="https://www.imdb.com/name/nm14891213/" target="__blank">Amosi Morgan</a></b> - Dr. Finlay Clinkscales, other roles
 <br><b><a href="https://www.backstage.com/u/natalia-kataeva/" target="__blank">Natalia Kataeva</a></b> - Storyteller, other roles
 <br><b><a href="https://adventurecabaret.com/cast/Sahil-Singh-Resume.pdf" target="__blank">Sahil Singh</a></b> - The Sacrificial Victim, Storyteller, other roles
 <br><b><a href="https://www.backstage.com/u/Uscocovic/" target="__blank">Svetlana Uskokovic</a></b> - Lola de Campa, other roles
