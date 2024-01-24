@@ -27,8 +27,8 @@ const Cast = async function (res) {
 <p><b><a href="https://www.backstage.com/u/ziare-whitelow/" target="__blank">Ziare Whitelow</a></b> - Storyteller, other roles
 <br>Vallejo - <a href="mailto:crossmella@gmail.com?Subject=Adventure Cabaret">wziare@yahoo.com</a> - (707) 980-4444
 
-<p><b><a href="https://www.backstage.com/u/madina-zhalgas/" target="__blank">Madina Zhalgas</a></b> - MC understudy
-<br>Marin - <a href="mailto:zhalgas.madinallc@gmail.comm?Subject=Adventure Cabaret">zhalgas.madinallc@gmail.com</a>	- (646) 266-7670
+<p><b><a href="https://www.youtube.com/user/LiddyFreeman" target="__blank">Liddy Freeman</a></b> - MC understudy
+<br>Marin - <a href="mailto:liddyfreeman@gmail.com?Subject=Adventure Cabaret">liddyfreeman@gmail.com</a>	- (352) 562-9793
 
 <p><b><a href="https://www.entertainersworldwide.com/tracy-fuller-profile-167834" target="__blank">Tracy Fuller</a></b> - Miranda Sorventi
 <br>San Jose - <a href="mailto:crossmella@gmail.com?Subject=Adventure Cabaret">tracypfuller@gmail.com</a>	- (720) 333-9026
