@@ -12,11 +12,11 @@ Saturday, February 3, 1-5pm - Rehearsal at Shotgun Studios in Studio C
 <br>
 Saturday, February 10, 1-5pm - Rehearsal at Shotgun Studios in Studio B
 <br>
-Saturday, February 10, 5:30-9:30pm - Performance at International House
+Saturday, February 10, 5:30-9:30pm - Performance at I House
 <br>
 Saturday, February 24, 3-5pm - Rehearsal at Shotgun Studios in Studio B
 <br>
-Saturday, February 24, 5:30-9:30pm - Performance at International House
+Saturday, February 24, 5:30-9:30pm - Performance at I House
 </li>
  
 <li>
