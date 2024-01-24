@@ -5,18 +5,18 @@ const Cast = async function (res) {
   const content = `<h1>Cast Resources</h1>
  
 <ol>
-<li><h3>>Rehearsal and Performance Schedule</h3>
-Saturday, January 27, 1-5pm - Rehearsal at Shotgun Studios in Studio C, aka "Green Room"
+<li><h3>Rehearsal and Performance Schedule</h3>
+Saturday, January 27, 1-5pm - Rehearsal at Shotgun Studios in Studio C
 <br>
-Saturday, February 3, 1-5pm - Rehearsal at Shotgun Studios in Studio C, aka "Green Room"
+Saturday, February 3, 1-5pm - Rehearsal at Shotgun Studios in Studio C
 <br>
-Saturday, February 10, 1-5pm - Rehearsal at Shotgun Studios in Studio B, the large rehearsal room
+Saturday, February 10, 1-5pm - Rehearsal at Shotgun Studios in Studio B
 <br>
-Saturday, February 10, 5:30-9:30pm - Performance at Chevron Auditorium, International House
+Saturday, February 10, 5:30-9:30pm - Performance at International House
 <br>
-Saturday, February 24, 3-5pm - Rehearsal at Shotgun Studios in Studio B, the large rehearsal room
+Saturday, February 24, 3-5pm - Rehearsal at Shotgun Studios in Studio B
 <br>
-Saturday, February 24, 5:30-9:30pm - Performance at Chevron Auditorium, International House
+Saturday, February 24, 5:30-9:30pm - Performance at International House
 </li>
  
 <li>
