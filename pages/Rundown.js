@@ -31,8 +31,6 @@ const Rundown = async function (res) {
 <li>Away with words!</li>
 <li>We Are Here Together</li>
 <li>Simon Says Something Sinister / Let's Play Guitar!</li>
-<li>Nia's Story</li>
-<li>Autumn Nights</li>
 <li>Dr. Finlay Clinkscales, Professor of Horrific Human Stupidity</li>
 <li>Language Is Not Reality</li>
 <li>Why a cabaret?</li>
