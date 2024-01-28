@@ -62,7 +62,6 @@ const Rundown = async function (res) {
 <li>Do the Linky Pinky #3</li>
 <li>Messages from the Amphibians</li>
 <li>The Potato Chip & the Battery</li>
-<li>Valaso</li>
 <li>Don't Look Down On Manikins</li>
 <li>The Talking Dog #4</li>
 <li>The Modern Female Leonardo da Vinci</li>
