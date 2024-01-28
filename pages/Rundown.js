@@ -18,6 +18,8 @@ const Rundown = async function (res) {
 <li>Overture</li>
 <li>Metahuman</li>
 <li>Thought Police Hotline</li>
+<li>Krill Lives Matter</li>
+<li>LED Fan Dance</li>
 </ol>
 <h4>Show</h4>
 <ol>
@@ -59,7 +61,6 @@ const Rundown = async function (res) {
 <li>Frozen Figures</li>
 <li>Do the Linky Pinky #3</li>
 <li>Messages from the Amphibians</li>
-<li>LED Fan Dance</li>
 <li>The Potato Chip & the Battery</li>
 <li>Valaso</li>
 <li>Don't Look Down On Manikins</li>
@@ -75,7 +76,7 @@ const Rundown = async function (res) {
 <li>Muslim Pushups</li>
 <li>Do the Linky Pinky #4</li>
 <li>Deeply Committed Agnostic Pushups</li>
-<li>Horrors of Homophily</li>
+<li>The Horrors of Homophily</li>
 <li>Floss News Alert #5</li>
 <li>Do the Linky Pinky #5</li>
 <li>Meet Another Human Being</li>
