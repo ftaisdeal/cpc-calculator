@@ -46,7 +46,7 @@ const Rundown = async function (res) {
 <li>Bulgaria</li>
 <li>MC Introduces the First Message from Our Companions on the Planet</li>
 <li>Messages from the Insects</li>
-<li>The Flaming Uterus</li>
+<li>What is your emergency?</li>
 <li>The Talking Dog #2</li>
 <li>I accidentally peed on my own grave</li>
 <li>Jewish Pushups</li>
@@ -54,20 +54,18 @@ const Rundown = async function (res) {
 <li>Who Is Responsible for Most of the Violence in the World?</li>
 <li>Do the Linky Pinky #2</li>
 <li>Identification, please. #1</li>
-<li>Amber Alert</li>
 <li>Christian Pushups</li>
 <li>The Talking Dog #3</li>
 <li>Floss News Alert #3</li>
 <li>Frozen Figures</li>
 <li>Do the Linky Pinky #3</li>
 <li>Messages from the Amphibians</li>
-<li>The Potato Chip & the Battery</li>
+<li>The Potato Chip &amp; the Battery</li>
 <li>Don't Look Down On Manikins</li>
 <li>The Talking Dog #4</li>
 <li>The Modern Female Leonardo da Vinci</li>
 <li>Identification, please. #2</li>
 <li>Ideas of Heaven</li>
-<li>Invite an Insight</li>
 <li>What is the most important issue in the world?</li>
 <li>No, that's not it.</li>
 <li>The Human Potential Movement</li>
@@ -78,7 +76,6 @@ const Rundown = async function (res) {
 <li>The Horrors of Homophily</li>
 <li>Floss News Alert #5</li>
 <li>Do the Linky Pinky #5</li>
-<li>Meet Another Human Being</li>
 <li>Messages from the Animals</li>
 <li>Pantheist Pushups</li>
 <li>Do The Linky Pinky #6</li>
