@@ -45,9 +45,9 @@ li {
   line-height: 1.5em;
 }
 
-.colon {
-  margin-left: 5px;
-  margin-right: 5px;
+.spacer {
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 /* Small devices */
