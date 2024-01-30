@@ -1,4 +1,4 @@
-const header = function (title = "Adventure Cabaret", short_description = "Adventure Cabaret is a live multitalent, multimedia show that recruits local talent of all kinds and weaves different types of live performance together into a compelling set of deep experiences that also include audience participation in varied ways.", og_image = "/OG-default.png") {
+const header = function (title = "Adventure Cabaret", short_description = "Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia: a journey through the Empire of the Mind, an escape from the prison of nostalgia, an exploration of how much better humanity could become.", og_image = "/OG-default.png") {
 
   return (`<!DOCTYPE HTML>
 <html lang="en">
