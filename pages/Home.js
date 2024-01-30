@@ -3,7 +3,7 @@ const Home = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h1>What the heck is this?</h1>
-Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia.
+Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:
 
 <p>...a journey through the Empire of the Mind.</p>
 
