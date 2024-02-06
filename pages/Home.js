@@ -13,9 +13,9 @@ Adventure Cabaret is a unique theater experience, combining live actors with imm
 
 <p>Quick samples from the show:</p>
 
-<p><a href="https://www.youtube.com/watch?v=NtIzTKCOuIs">Introduction</a></p>
+<p><a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a></p>
 
-<p><a href="https://www.youtube.com/watch?v=zemRmZ2hrps">The Empire of the Mind</a></p>
+<p><a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a></p>
   
 <p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
