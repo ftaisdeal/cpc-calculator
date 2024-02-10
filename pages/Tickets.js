@@ -3,41 +3,9 @@ const Tickets = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h1>Tickets</h1>
-
-<b><a href="https://www.eventbrite.com/e/adventure-cabaret-tickets-778918776027" target="__blank">Saturday, February 10, 2024</a></b><br>
-7:00PM<br>
-International House - Chevron Auditorium<br>
-2299 Piedmont Ave.<br>
-Berkeley, CA
+Currently, no performances are scheduled.
 <p>
-<div id="eventbrite-widget-container-778918776027"></div>
-
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
-<script type="text/javascript">
-    var exampleCallback = function() {
-        console.log('Order complete!');
-    };
-
-    window.EBWidgets.createWidget({
-        // Required
-        widgetType: 'checkout',
-        eventId: '778918776027',
-        iframeContainerId: 'eventbrite-widget-container-778918776027',
-
-        // Optional
-        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
-        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
-    });
-</script>
-
-<p>
-<b><a href="https://www.eventbrite.com/e/adventure-cabaret-tickets-778919668697" target="__blank">Saturday, February 24, 2024</a></b><br>
-7:00PM<br>
-International House - Chevron Auditorium<br>
-2299 Piedmont Ave.<br>
-Berkeley, CA
-</p>`;
+We plan to resume production in a few months.`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
