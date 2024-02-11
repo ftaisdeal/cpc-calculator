@@ -9,7 +9,7 @@ const Rundown = require('./pages/Rundown');
 const Tickets = require('./pages/Tickets');
 const Shows = require('./pages/Shows');
 const Contact = require('./pages/Contact');
-const Cast = require('./pages/Cast');
+const Update = require('./pages/Update');
 const QR = require('./pages/QR');
 const Error404 = require('./pages/404');
 
@@ -44,7 +44,7 @@ app.get('/contact', (req, res) => {
 });
 
 // cast resources
-app.get('/cast', (req, res) => {
+app.get('/update', (req, res) => {
   Cast(res);
 });
 
