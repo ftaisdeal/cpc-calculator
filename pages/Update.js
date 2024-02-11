@@ -12,12 +12,11 @@ const Update = async function (res) {
 <li>These performances will take place in small, intimate venues such as dance and yoga studios.</li>
 <li>Maximum seating will be only about 20.</li>
 <li>The venues will all be in San Francisco.</li>
-<li>These limited previews will only involve four actors.</li>
-<li>I will be one of the actors.</li>
+<li>These limited previews will only involve three actors.</li>
 <li>We will have complete control of theatrical lighting, including color control, dimmability and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
 <li>A major marketing person is being brought on board. He has more than twenty years experience specifically in marketing live events.</li>
 <li>An attorney is being brought on board to advise on contracts and negotiations with potential business partners and investors.</li>
-<li>Cross-promotion is being initiated with a second project for live events, which is a combination of storytelling, socializing and a new media form I invented called a "quote movie."
+<li>Cross-promotion is being initiated with a second project for live events, which is a combination of storytelling, socializing and a new media form called a "quote movie."
 </ol>
 
 <h3>Venues</h3>
