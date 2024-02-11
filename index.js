@@ -45,7 +45,7 @@ app.get('/contact', (req, res) => {
 
 // cast resources
 app.get('/update', (req, res) => {
-  Cast(res);
+  Update(res);
 });
 
 // QR
