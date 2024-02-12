@@ -15,7 +15,7 @@ Adventure Cabaret is a unique theater experience, combining live actors with imm
 
 <p>See you at the show!</p>
 
-<p>Quick samples from the show:</p>
+<p>Quick samples:</p>
 
 <p>1. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a></p>
 
