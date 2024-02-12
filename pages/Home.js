@@ -13,8 +13,6 @@ Adventure Cabaret is a unique theater experience, combining live actors with imm
   
 <p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
-<p>See you at the show!</p>
-
 <p>Samples:</p>
 
 <p>1. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a></p>
