@@ -5,6 +5,7 @@ const Update = async function (res) {
   const content = `<br>
 <h3>Update on the Production</h3>
 <ol>
+<li>We've added an <a href="https://www.instagram.com/adventurecabaret">Instagram account</a>.
 <li>The production is being recast from scratch.</li>
 <li>The show will open in previews of segments from the show, a roughly 50/50 mix of live acting and multimedia.</li>
 <li>These limited previews will be only 30-45 minutes long.</li>
