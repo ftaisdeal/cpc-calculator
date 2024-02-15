@@ -15,8 +15,6 @@ const Update = async function (res) {
 <li>Maximum seating will be only about 20.</li>
 <li>We have purchased a video projector so that we can perform the show in almost any space.</li>
 <li>We will have complete control of theatrical lighting, including dimmability, color control and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
-<li>A major marketing person is being brought on board. He has more than twenty years experience specifically in marketing live events.</li>
-<li>An attorney is being brought on board to advise on contracts and negotiations with potential business partners and investors.</li>
 <li>Cross-promotion is being initiated with <a href="https://storytelling.social" target="__blank">a second project for live events</a>, which is a combination of storytelling, socializing and a new media form called a "quote movie."
 </ol>
 
