@@ -10,12 +10,10 @@ const Update = async function (res) {
 <li>We've added an <a href="https://www.instagram.com/adventurecabaret" target="__blank">Instagram account</a>.
 <li>The production is being recast from scratch.</li>
 <li>The show will open in previews of segments from the show, a roughly 50/50 mix of live acting and multimedia.</li>
-<li>These limited previews will be only 30-45 minutes long.</li>
-<li>We have purchased a video projector so that we can perform the show in almost any space.</li>
-<li>These performances will take place in small, intimate venues such as dance and yoga studios.</li>
-<li>Maximum seating will be only about 20.</li>
 <li>The venues will all be in San Francisco.</li>
-<li>These limited previews will only involve three actors.</li>
+<li>These limited previews will be only 30-45 minutes long, only involve three actors, and will take place in small, intimate venues such as dance and yoga studios.</li>
+<li>Maximum seating will be only about 20.</li>
+<li>We have purchased a video projector so that we can perform the show in almost any space.</li>
 <li>We will have complete control of theatrical lighting, including dimmability, color control and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
 <li>A major marketing person is being brought on board. He has more than twenty years experience specifically in marketing live events.</li>
 <li>An attorney is being brought on board to advise on contracts and negotiations with potential business partners and investors.</li>
