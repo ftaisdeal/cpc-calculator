@@ -23,12 +23,6 @@ Adventure Cabaret is a unique theater experience, combining live actors with imm
 
 <p>Please visit our sister site, <a href="https://storytelling.social" target="__blank">Storytelling Social</a>.</p>
 
-<!--
-<p><a href="https://www.youtube.com/@AdventureCabaret">=YouTube</a>
-<p><a href="https://www.instagram.com/adventurecabaret">Instagram</a>
-<p><a href="https://www.tiktok.com/@adventurecabaret">TikTok</a>
--->
-
 <img src="images/bee-in-hula.jpg" height="497" width="538" alt="bee flying through LED hula hoop">`;
 
   res.send(`${header('Adventure Cabaret')}
