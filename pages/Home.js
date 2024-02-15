@@ -21,6 +21,8 @@ Adventure Cabaret is a unique theater experience, combining live actors with imm
 
 <h3><a href="/update">Update on progress and plans</a></h3>
 
+<p>Please visit our sister site, <a href="https://storytelling.social" target="__blank">Storytelling Social</a>.</p>
+
 <!--
 <p><a href="https://www.youtube.com/@AdventureCabaret">=YouTube</a>
 <p><a href="https://www.instagram.com/adventurecabaret">Instagram</a>
