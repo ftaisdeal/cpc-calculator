@@ -36,10 +36,56 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <div id="container" class="container">
 <div class="header">
 <span class="title"><a href="/"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
-<p class="sub-title">Become the change.</p>
-<nav>
-</span><a href="/rundown">rundown</a><span class="spacer">|</span><a href="/origins">origins</a><span class="spacer">|</span><a href="/shows">shows</a><span class="spacer">|<a href="/tickets"> tickets</a><span class="spacer">|</span><a href="/contact">contact</a>
+<br>
+<span class="sub-title">Become the change.</span>
+
+<p>
+<nav class="navbar">
+<a href="/" class="navbar-brand"><span class="home" style="color:#674ea7;">A</span><span class="home" style="color:#cd4025;">C</span></a>
+<ul class="navbar-nav">
+  <li class="nav-item">
+    <a href="/rundown" class="nav-link">rundown</a>
+  </li>
+  <li class="nav-item">
+    <a href="/origins" class="nav-link">origins</a>
+  </li>
+  <li class="nav-item">
+    <a href="/shows" class="nav-link">shows</a>
+  </li>
+  <li class="nav-item">
+    <a href="/tickets" class="nav-link">tickets</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link">more</a>
+    <ul class="sub-menu">
+      <li class="sub-menu-item"><a href="/update" class="nav-link">Update on progress</a></li>
+      <li class="sub-menu-item"><a href="https://storytelling.social" class="nav-link" target="__blank">Storytelling Social</a></li>
+      <li class="sub-menu-item"><a href="https://www.instagram.com/adventurecabaret" class="nav-link"
+          target="__blank">Instagram</a>
+      </li>
+      <li class="sub-menu-item"><a href="https://www.youtube.com/@AdventureCabaret" class="nav-link"
+          target="__blank">YouTube</a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a href="/contact" class="nav-link">contact</a>
+  </li>
+</ul>
+<div class="hamburger-menu" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
 </nav>
+</p>
+
+<script>
+function toggleMenu() {
+  const navbarNav = document.querySelector('.navbar-nav');
+  navbarNav.classList.toggle('active');
+}
+</script>
 </div>`);
 }
 

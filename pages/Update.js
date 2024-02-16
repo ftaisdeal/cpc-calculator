@@ -2,11 +2,11 @@ const Update = async function (res) {
 
   const { header, footer } = require('../components');
 
-  const content = `<br>
-<h3>Update on the Production</h3>
+  const content = `<h3>Update on the Production</h3>
 <ol>
 <li>We are now developing new material through our sister site, <a href="https://storytelling.social" target="__blank">Storytelling Social</a>.</li>
 <li>The first storytelling event through Storytelling Social is now scheduled for Tuesday, March 5, 7:30-9:00pm.</li>
+<li>We will also use the <a href="https://storytelling.social" target="__blank">Storytelling Social</a> site for cross-promotion.
 <li>We've added an <a href="https://www.instagram.com/adventurecabaret" target="__blank">Instagram account</a>.
 <li>The production is being recast from scratch.</li>
 <li>The show will open in previews of segments from the show, a roughly 50/50 mix of live acting and multimedia.</li>
@@ -15,7 +15,6 @@ const Update = async function (res) {
 <li>Maximum seating will be only about 20.</li>
 <li>We have purchased a video projector so that we can perform the show in almost any space.</li>
 <li>We will have complete control of theatrical lighting, including dimmability, color control and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
-<li>Cross-promotion is being initiated with <a href="https://storytelling.social" target="__blank">a second project for live events</a>, which is a combination of storytelling, socializing and a new media form called a "quote movie."
 </ol>
 
 <h3>Venues</h3>

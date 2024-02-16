@@ -1,47 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #000;
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.75em;
+  margin: 40px;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 h1 {
   font-size: 1.5em;
   margin-top: 1.75em;
+  margin-bottom: .5em;
+}
+
+h3 {
+  margin-top: 1.75em;
+  margin-bottom: .5em;
+}
+
+h4 {
+  margin-top: 1.75em;
+  margin-bottom: .5em;
+}
+
+li {
+  margin-left: 2em;
+  margin-bottom: .5em;
 }
 
 .button {
   font-size: 1em;
   border-radius: 4px;
-  background-color: #6aa84f;
-  padding: .25em;
+  background-color: #8a8;
+  padding: 8px;
 }
 
 .container {
   margin: auto;
-  width: 640px;
+  max-width: 640px;
 }
 
 .title {
   font-size: 4em;
   font-family: 'Nothing You Could Do', cursive;
-  padding-bottom: 0px;
+  line-height: normal;
 }
 
 .sub-title {
   font-size: 1.5em;
 }
 
+.home {
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 1.5em;
+  padding-left: 6px;
+}
+
 a:link {
   text-decoration: none;
-  color: rgb(174, 174, 208);
+  color: #ddd;
 }
 
 a:visited {
-  color: rgb(121, 121, 157);
+  color: #ccc
 }
 
 a:hover {
-  color: rgb(221, 221, 234);
+  color: #fff;
 }
 
 nav {
@@ -57,6 +92,72 @@ li {
   margin-right: 6px;
 }
 
+/* Navbar styles */
+.navbar {
+  background-color: #8a8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 6px;
+}
+
+.navbar-brand {
+  color: #ddd;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-link {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+/* Sub-menu styles */
+.sub-menu {
+  display: none;
+  position: absolute;
+  background-color: #9b9;
+  padding: 8px;
+  border: 1px solid #888;
+}
+
+.nav-item:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu-item {
+  margin: 6px 0;
+  list-style-type: none;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
 /* Small devices */
 @media only screen and (max-width: 744px) {
 
@@ -66,6 +167,7 @@ li {
     width: 100%;
     font-size: .95em;
     background-color: #000;
+    margin: 10px;
   }
 
   .container {
@@ -91,6 +193,29 @@ li {
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    width: 60%;
+    background-color: #8a8;
+  }
+
+  .nav-item {
+    margin: 10px;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    margin-right: 4px;
   }
 
 }

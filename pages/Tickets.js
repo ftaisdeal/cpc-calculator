@@ -28,7 +28,10 @@ const Tickets = async function (res) {
           modalTriggerElementId: 'eventbrite-widget-modal-trigger-839546214327',
           onOrderComplete: exampleCallback
         });
-      </script>`;
+      </script>
+      
+<br>
+<br>`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
