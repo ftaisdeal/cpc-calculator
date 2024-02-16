@@ -4,9 +4,9 @@ const Update = async function (res) {
 
   const content = `<h3>Update on the Production</h3>
 <ol>
-<li>We are now developing new material through our sister site, <a href="https://storytelling.social" target="__blank">Storytelling Social</a>.</li>
+<li>We are now developing new material through our sister site, <a href="https://bit.ly/42PGVWj" target="__blank">Storytelling Social</a>.</li>
 <li>The first storytelling event through Storytelling Social is now scheduled for Tuesday, March 5, 7:30-9:00pm.</li>
-<li>We will also use the <a href="https://storytelling.social" target="__blank">Storytelling Social</a> site for cross-promotion.
+<li>We will also use the <a href="https://bit.ly/42PGVWj" target="__blank">Storytelling Social</a> site for cross-promotion.
 <li>We've added an <a href="https://www.instagram.com/adventurecabaret" target="__blank">Instagram account</a>.
 <li>The production is being recast from scratch.</li>
 <li>The show will open in previews of segments from the show, a roughly 50/50 mix of live acting and multimedia.</li>

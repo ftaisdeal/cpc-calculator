@@ -19,7 +19,7 @@ Samples:
 
 <br>2. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
 
-<p>Please visit our sister site, <a href="https://storytelling.social" target="__blank">Storytelling Social</a>.</p>
+<p>Please visit our sister site, <a href="https://bit.ly/42PGVWj" target="__blank">Storytelling Social</a>.</p>
 
 <img src="images/bee-in-hula.jpg" height="497" width="538" alt="bee flying through LED hula hoop">`;
 
