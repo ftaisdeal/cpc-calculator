@@ -12,7 +12,7 @@ const Tickets = async function (res) {
 
   <noscript><a href="https://www.eventbrite.com/e/storytelling-social-starter-event-tickets-839546214327"
           rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-      <button id="eventbrite-widget-modal-trigger-839546214327" class="button" type="button">Get Tickets</button>
+      <button id="eventbrite-widget-modal-trigger-839546214327" class="button" type="button">get tickets</button>
 
       <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
