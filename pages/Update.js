@@ -4,6 +4,7 @@ const Update = async function (res) {
 
   const content = `<h3>Update on the Production</h3>
 <ol>
+<li>A new media form called a "QuoteMovie" will be included in the production at various points. A QuoteMovie is a movie made only of quotes.  Despite consisting only of white words on a black screen, these movies have powerful psychological and emotional effects.  Here is <a href="https://youtu.be/JOdb-rvFzqI" target="_blank">a quick example</a>.</li>
 <li>We are now developing new material through our sister site, <a href="https://bit.ly/42PGVWj" target="__blank">Storytelling Social</a>.</li>
 <li>The first storytelling event through Storytelling Social is now scheduled for Tuesday, March 5, 7:30-9:00pm.</li>
 <li>We will also use the <a href="https://bit.ly/42PGVWj" target="__blank">Storytelling Social</a> site for cross-promotion.

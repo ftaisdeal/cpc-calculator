@@ -38,6 +38,19 @@ li {
   margin-bottom: .5em;
 }
 
+a:link {
+  text-decoration: none;
+  color: #bbf;
+}
+
+a:visited {
+  color: #ccc
+}
+
+a:hover {
+  color: #ddf;
+}
+
 .button {
   font-size: 1em;
   border-radius: 4px;
@@ -64,19 +77,6 @@ li {
   font-family: 'Nothing You Could Do', cursive;
   font-size: 1.5em;
   padding-left: 6px;
-}
-
-a:link {
-  text-decoration: none;
-  color: #ddd;
-}
-
-a:visited {
-  color: #ccc
-}
-
-a:hover {
-  color: #fff;
 }
 
 nav {
