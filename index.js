@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const Home = require('./pages/Home');
 const Origins = require('./pages/Origins');
+const Actors = require('./pages/Actors');
 const Rundown = require('./pages/Rundown');
 const Tickets = require('./pages/Tickets');
 const Shows = require('./pages/Shows');
@@ -24,6 +25,11 @@ app.get('/', (req, res) => {
 // rundown
 app.get('/rundown', (req, res) => {
   Rundown(res);
+});
+
+// actors
+app.get('/actors', (req, res) => {
+  Actors(res);
 });
 
 // tickets

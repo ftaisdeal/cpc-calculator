@@ -19,6 +19,8 @@ Samples:
 
 <br>2. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
 
+<h3><a href="/actors">Seeking Talented Actors for the Production</a></h3>
+
 <br>
 
 <p><b>Stay in touch about our progress and performances.
