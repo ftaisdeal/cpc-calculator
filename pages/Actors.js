@@ -2,12 +2,12 @@ const Actors = async function (res) {
 
   const { header, footer } = require('../components');
 
-  const content = `<h1>Seeking Actors</h1>
-<p>We have completed a pilot of the project, and are now seeking actors for the production phase.</p>
+  const content = `<h1>Seeking Talented Actors</h1>
+<p>We have completed a pilot of the project, and are now seeking talented actors for the production phase.</p>
 
 <p>This is an entrepreneurial project that we expect will be a major hit for years to come and will make a large profit.</p>
 
-<p>We have a highly innovative, copyrighted script.  We have done a complete set of rehearsals with a pilot cast, and the results of rehearsal showed us that we have a hit on our hands.  In addition, we have a highly talented multimedia production team in place, because the show involves not just live actors, but immersive multimedia.</p>
+<p>We have a highly innovative, copyrighted script.  We have done a complete set of rehearsals with a pilot cast, and the results of rehearsal showed us that we have a hit on our hands.  In addition, we have a deeply talented multimedia production team in place, because the show involves not just live actors, but immersive multimedia.</p>
 
 <p>What we do not yet have is exactly the right actors.</p>
 
@@ -23,7 +23,12 @@ const Actors = async function (res) {
 
 <p>You may also call us directly at (415) 579-2586.</p>
 
-We look forward to hearing from you.`;
+We look forward to hearing from you.
+
+<br>
+<br>
+<br>
+<br>`;
 
   res.send(`${header('Contact Adventure Cabaret')}
 ${content}
