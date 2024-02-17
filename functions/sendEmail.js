@@ -15,7 +15,7 @@ async function sendEmail(email, subject, body, html) {
   });
 
   let info = await transporter.sendMail({
-    from: 'alerts@sustainablechoices.green',
+    from: 'contact@adventurecabaret.com',
     to: email,
     subject: subject,
     text: body,

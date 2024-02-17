@@ -1,9 +1,9 @@
 const Email = function (req, res) {
 
-  const mysql = require('mysql2');
-  const db_config = require('../db_config');
+  const mysql = require('mysql');
+  const db_config = require('../admin/db_config');
   const connection = mysql.createConnection(db_config);
-  const Error = require('../pages/Error');
+  const Error = require('./Error');
   const sendEmail = require('../functions/sendEmail');
 
   if (!req.body.email) {
@@ -11,65 +11,61 @@ const Email = function (req, res) {
     return;
   }
 
-  const update_query = `INSERT IGNORE INTO newsletter SET email = "${req.body.email}";`;
+  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.email}";`;
 
   connection.query(update_query, (error) => {
 
     if (error) {
-      Error(res, error, "An error occurred.");
+      Error(res, error, error);
       return;
     };
 
     const body = `${req.body.email}`;
     const html = `<html>
     <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
     <style>
 body {
-font-family: Verdan, Arial, sans-serif;
-font-size: 1.25em;
+font-family: Verdana, Arial, sans-serif;
+font-size: 1em;
 }
-h1 {
-color: #444;
-font-weight: normal;
-padding: 0;
+.header {
+  background-color: black;
+  padding: 10px;
 }
 .title {
-color: #888;
-margin-top: 0px;
-margin-bottom: 30px;
+  font-size: 3.5em;
+  font-family: 'Nothing You Could Do', cursive;
+  line-height: normal;
 }
-.container {
-display: flex;
-align-items: center;
-}  
-.container img {
-margin-right: 6px;
-}
-.container .text {
-display: inline-block;
-vertical-align: middle;
+
+a {
+  text-decoration: none;
 }
 </style>
 </head>
 <body>
-<div class="container">
-<h1><a href="https://sustainablechoices.green"><img src="https://sustainablechoices.green/img/logo.png" style=></a> <span class="text title">Sustainable Choices</span></h1>
+<div class="header">
+<span class="title"> <a href="https://adventurecabaret.com"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
 </div>
-Thank you for signing up for our occasional newsletter.
+<p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
 <p>You won't hear from us often, but we'll try to make it great every time.</p>
 <p>You can unsubscribe whenever you want.</p>
+<p>We look forward to seeing you at one of our shows!</p>
 </body>
 </html>`;
 
-    sendEmail(req.body.email, 'Sustainable Choices: Email signup', body, html);
+    sendEmail(req.body.email, 'Adventure Cabaret: Thank you for signing up to receive updates', body, html);
 
     const { header, footer } = require('../components');
     const content = `<h1>Thank you</h1>
-<p>Thank you for signing up for our occasional newsletter.</p>
+<p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
 <p>You won't hear from us often, but we'll try to make it great every time.</p>
 <div class="bottom_padding"></div>`;
 
-    res.send(`${header('Sustainable Choices email signup')}
+    res.send(`${header('Adventure Cabaret updates')}
 ${content}
 ${footer}`);
 

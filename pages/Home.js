@@ -19,6 +19,12 @@ Samples:
 
 <br>2. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
 
+<p>
+<form action="email" method="post">
+<input type="email" name="email" style="width: 28ch;" placeholder="enter email to stay in touch"> <button type="submit" class="button">send</button>
+</form>
+</p>
+
 <p>Please visit our sister site, <a href="https://bit.ly/42PGVWj" target="__blank">Storytelling Social</a>.</p>
 
 <img src="images/bee-in-hula.jpg" height="497" width="538" alt="bee flying through LED hula hoop">`;
