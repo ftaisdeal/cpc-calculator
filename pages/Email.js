@@ -65,7 +65,7 @@ a {
 <p>You won't hear from us often, but we'll try to make it great every time.</p>
 <div class="bottom_padding"></div>`;
 
-    res.send(`${header('Adventure Cabaret updates')}
+    res.send(`${header('Email update signup')}
 ${content}
 ${footer}`);
 
