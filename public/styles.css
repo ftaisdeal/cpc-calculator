@@ -176,6 +176,11 @@ li {
     margin: 10px;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .container {
     max-width: 90%;
     margin: 10px;
@@ -196,9 +201,8 @@ li {
     margin-right: 1px;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
+  .hide {
+    display: none;
   }
 
   .navbar-nav {
