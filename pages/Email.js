@@ -22,11 +22,11 @@ const Email = function (req, res) {
 
     const body = `${req.body.email}`;
     const html = `<html>
-    <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-    <style>
+<style>
 body {
 font-family: Verdana, Arial, sans-serif;
 font-size: 1em;
@@ -40,9 +40,12 @@ font-size: 1em;
   font-family: 'Nothing You Could Do', cursive;
   line-height: normal;
 }
-
 a {
   text-decoration: none;
+}
+.footer {
+  background-color: #8a8;
+  padding: 10px;
 }
 </style>
 </head>
@@ -50,10 +53,13 @@ a {
 <div class="header">
 <span class="title"> <a href="https://adventurecabaret.com"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
 </div>
-<p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
-<p>You won't hear from us often, but we'll try to make it great every time.</p>
-<p>You can unsubscribe whenever you want.</p>
-<p>We look forward to seeing you at one of our shows!</p>
+<h2>Thank you</h2>
+<p>Thank you for signing up for updates on performances and further development of Adventure Cabaret.</p>
+<p>Our goal is to create live theater productions that are illuminating and transformative.</p>
+<p>We have big plans for the production, and we look forward to seeing you soon at one of our shows.</p>
+<br>
+<div class="footer">
+</div>
 </body>
 </html>`;
 
