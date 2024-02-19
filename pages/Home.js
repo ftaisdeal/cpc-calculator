@@ -2,12 +2,14 @@ const Home = async function (res) {
 
   const { header, footer } = require('../components');
 
-  const content = `<img src="images/bg1.jpg" width="100" height="67" alt="thumbnail background 1">
-<img src="images/bg2.jpg" width="100" height="67" alt="thumbnail background 2">
-<img src="images/bg3.jpg" width="100" height="67" alt="thumbnail background 3">
-<img src="images/bg4.jpg" width="100" height="67" alt="thumbnail background 4">
-<img src="images/bg5.jpg" width="100" class="hide" height="67" alt="thumbnail background 5">
-<img src="images/bg6.jpg" width="100" class="hide" height="67" alt="thumbnail background 6">
+  const content = `<div class="images">
+<div class="image"><a href="images/bg1-large.jpg" target="__blank"><img src="images/bg1.jpg" width="100" height="67" alt="thumbnail background 1"></a></div>
+<div class="image"><a href="images/bg2-large.jpg" target="__blank"><img src="images/bg2.jpg" width="100" height="67" alt="thumbnail background 2"></a></div>
+<div class="image"><a href="images/bg3-large.jpg" target="__blank"><img src="images/bg3.jpg" width="100" height="67" alt="thumbnail background 3"></a></div>
+<div class="image"><a href="images/bg4-large.jpg" target="__blank"><img src="images/bg4.jpg" width="100" class="hide" height="67" alt="thumbnail background 4"></a></div>
+<div class="image"><a href="images/bg5-large.jpg" target="__blank"><img src="images/bg5.jpg" width="100" class="hide" height="67" alt="thumbnail background 5"></a></div>
+<div class="image"><a href="images/bg6-large.jpg" target="__blank"><img src="images/bg6.jpg" width="100" class="hide" height="67" alt="thumbnail background 6"></a></div>
+</div>
 
 <p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
 
@@ -24,6 +26,8 @@ Samples:
 <br>1. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a>
 
 <br>2. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
+
+<br>3. <a href="https://youtu.be/qIbaMLyi0b8" target="__blank">QuoteMovie 1</a>
 
 <h3><a href="/actors">Seeking Talented Actors for the Production</a></h3>
 

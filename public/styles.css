@@ -40,7 +40,7 @@ li {
 
 a:link {
   text-decoration: none;
-  color: #bbf;
+  color: #ddf;
 }
 
 a:visited {
@@ -48,7 +48,7 @@ a:visited {
 }
 
 a:hover {
-  color: #ddf;
+  color: #eef;
 }
 
 input {
@@ -98,6 +98,19 @@ li {
   margin-right: 6px;
 }
 
+.images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image {
+  flex: 0 0 auto;
+}
+
+.image:last-child {
+  margin-right: 0;
+}
+
 /* Navbar styles */
 .navbar {
   background-color: #8a8;
@@ -108,7 +121,7 @@ li {
 }
 
 .navbar-brand {
-  color: #ddd;
+  color: #eee;
   font-weight: 400;
   text-decoration: none;
 }
@@ -123,7 +136,7 @@ li {
 }
 
 .nav-link {
-  color: #ddd;
+  color: #eee;
   text-decoration: none;
   transition: color 0.2s ease;
 }
