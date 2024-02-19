@@ -8,6 +8,7 @@ const Update = async function (res) {
 <p>
 
 <ol>
+<li>We've added email signup to the website, so if you want to be kept informed proactively, please visit <a href="/">the home page</a> and enter your email address.</li>
 <li>The production is being recast from scratch, which means that it will be a few months before we can open the show.</li>
 <li>The show will open in previews of segments from the production, a roughly 50/50 mix of live acting and multimedia.</li>
 <li>These previews will be used to further develop and refine the production, and you can be part of this process.</li>
