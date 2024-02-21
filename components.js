@@ -55,7 +55,7 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
     <a href="/tickets" class="nav-link">tickets</a>
   </li>
   <li class="nav-item">
-    <a href="https://www.meetup.com/adventure-cabaret-theater-production/" class="nav-link" target="__blank">meetup</a>
+    <a href="https://www.meetup.com/adventure-cabaret" class="nav-link" target="__blank">meetup</a>
   </li>
   <li class="nav-item">
     <a href="#" class="nav-link">more</a>
