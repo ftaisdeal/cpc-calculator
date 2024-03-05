@@ -62,11 +62,6 @@ app.post('/email', (req, res) => {
   Email(req, res);
 });
 
-// QR
-app.get('/qr', (req, res) => {
-  QR(res);
-});
-
 // 404 handler
 app.use(function (req, res, next) {
   Error404(res);
