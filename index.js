@@ -57,6 +57,17 @@ app.get('/update', (req, res) => {
   Update(res);
 });
 
+// blank 1x1 PNG
+app.get('/blank', (req, res) => {
+  const fs = require('fs');
+  const file = '/home/taisbwvb/public_html/adventurecabaret/public/images/blank.png';
+  const stream = fs.createReadStream(file);
+  stream.on('open', function () {
+    res.setHeader('Content-Type', 'image/png');
+    stream.pipe(res);
+  });
+});
+
 // email insert for updates
 app.post('/email', (req, res) => {
   Email(req, res);
