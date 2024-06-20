@@ -14,15 +14,19 @@ async function sendEmail(email, subject, body, html) {
     },
   });
 
-  let info = await transporter.sendMail({
-    from: 'contact@adventurecabaret.com',
-    to: email,
-    subject: subject,
-    text: body,
-    html: html,
-  });
+  try {
+    let info = await transporter.sendMail({
+      from: 'contact@adventurecabaret.com',
+      to: email,
+      subject: subject,
+      text: body,
+      html: html,
+    });
 
-  console.log("Message sent: %s", info.messageId);
+    console.log("Message sent: %s", info.messageId);
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
 
   return;
 

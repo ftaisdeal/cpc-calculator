@@ -11,6 +11,17 @@ const Email = function (req, res) {
     return;
   }
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  function isValidEmail(email) {
+    return emailRegex.test(email);
+  }
+
+  if (!isValidEmail(req.body.email)) {
+    Error(res, "Not a valid email address", "You didn't enter a valid email address.");
+    return;
+  }
+
   const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.email}";`;
 
   connection.query(update_query, (error) => {
@@ -63,7 +74,11 @@ a {
 </body>
 </html>`;
 
-    sendEmail(req.body.email, 'Adventure Cabaret: Thank you for signing up to receive updates', body, html);
+    try {
+      sendEmail(req.body.email, 'Adventure Cabaret: Thank you for signing up to receive updates', body, html);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
 
     const { header, footer } = require('../components');
     const content = `<h1>Thank you</h1>
