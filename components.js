@@ -55,9 +55,6 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
     <a href="/tickets" class="nav-link">tickets</a>
   </li>
   <li class="nav-item">
-    <a href="https://www.meetup.com/adventure-cabaret" class="nav-link" target="__blank">meetup</a>
-  </li>
-  <li class="nav-item">
     <a href="#" class="nav-link">more</a>
     <ul class="sub-menu">
       <li class="sub-menu-item"><a href="/update" class="nav-link">Update on progress</a></li>

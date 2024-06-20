@@ -8,7 +8,6 @@ const Update = async function (res) {
 <p>
 
 <ol>
-<li>We've created a <a href="https://meetup.com/adventure-cabaret" target="__blank">Meetup group</a> to help coordinate development of the production.</li>
 <li>We've added email signup to the website, so if you want to be kept informed proactively, please visit <a href="/">the home page</a> and enter your email address.</li>
 <li>The production is being recast from scratch, which means that it will be a few months before we can open the show.</li>
 <li>The show will open in previews of segments from the production, a roughly 50/50 mix of live acting and multimedia.</li>
@@ -23,16 +22,6 @@ const Update = async function (res) {
 <li>We have purchased a video projector so that we can perform the show in almost any space.</li>
 <li>We will have complete control of theatrical lighting, including dimmability, color control and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
 <li>A new media form called a "QuoteMovie" will be included in the production at various points. A QuoteMovie is a movie made only of quotes.  Despite consisting only of white words on a black screen, these movies have powerful psychological and emotional effects.  Here is <a href="https://youtu.be/qIbaMLyi0b8" target="_blank">a quick example</a>.</li>
-</ol>
-
-</p>
-
-<h3>Venues</h3>
-<ol>
-<li><a href="https://local.yahoo.com/info-234557018-dance-studio-danzarte-by-dance-match-san-francisco" target="__blank">Space DanzArte</a>
-</li>
-
-<li><a href="https://giggster.com/listing/2-000-sq-ft-studio-with-pyramid-skylight" target="__blank">Fisher Studio</a></li>
 </ol>`;
 
   res.send(`${header('Update on the Production')}
