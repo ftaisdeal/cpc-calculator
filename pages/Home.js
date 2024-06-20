@@ -27,7 +27,7 @@ Samples:
 
 <br>2. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
 
-<br>3. <a href="https://youtu.be/qIbaMLyi0b8" target="__blank">QuoteMovie 1</a>
+<br>3. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
 <br>4. <a href="https://youtu.be/BtYu_1KSXBk" target="__blank">Messages from the Insects</a>
 
