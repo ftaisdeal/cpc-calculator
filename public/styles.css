@@ -115,7 +115,7 @@ li {
 .navbar {
   background-color: #8a8;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 6px 6px;
 }
