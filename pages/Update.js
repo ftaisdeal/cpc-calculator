@@ -17,7 +17,7 @@ const Update = async function (res) {
 <li>Maximum seating will be only about 20.</li>
 <li>We have purchased a video projector so that we can perform the show in almost any space.</li>
 <li>We will have complete control of theatrical lighting, including dimmability, color control and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
-<li>A new media form called a "QuoteMovie" will be included in the production at various points. A QuoteMovie is a movie made only of quotes.  Despite consisting only of white words on a black screen, these movies have powerful psychological and emotional effects.  Here is <a href="https://youtu.be/qIbaMLyi0b8" target="_blank">a quick example</a>.</li>
+<li>A new media form called a "QuoteMovie" will be included in the production at various points. A QuoteMovie is a movie made only of quotes.  Despite consisting only of white words on a black screen, these movies have powerful psychological and emotional effects.  Here is <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="_blank">a quick example</a>.</li>
 </ol>`;
 
   res.send(`${header('Update on the Production')}
