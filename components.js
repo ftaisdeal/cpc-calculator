@@ -59,12 +59,7 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
     <ul class="sub-menu">
       <li class="sub-menu-item"><a href="/update" class="nav-link">Update on progress</a></li>
       <li class="sub-menu-item"><a href="/actors" class="nav-link">Seeking actors</a></li>
-      <li class="sub-menu-item"><a href="https://bit.ly/42PGVWj" class="nav-link" target="__blank">Storytelling Social</a></li>
-      <li class="sub-menu-item"><a href="https://www.instagram.com/adventurecabaret" class="nav-link"
-          target="__blank">Instagram</a>
-      </li>
-      <li class="sub-menu-item"><a href="https://www.youtube.com/@AdventureCabaret" class="nav-link"
-          target="__blank">YouTube</a>
+      <li class="sub-menu-item"><a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">YouTube</a>
       </li>
     </ul>
   </li>
