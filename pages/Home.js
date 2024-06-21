@@ -3,12 +3,12 @@ const Home = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<div class="images">
-<div class="image"><a href="images/bg1-large.jpg" target="__blank"><img src="images/bg1.jpg" width="100" height="67" alt="thumbnail background 1"></a></div>
-<div class="image"><a href="images/bg2-large.jpg" target="__blank"><img src="images/bg2.jpg" width="100" height="67" alt="thumbnail background 2"></a></div>
-<div class="image"><a href="images/bg3-large.jpg" target="__blank"><img src="images/bg3.jpg" width="100" height="67" alt="thumbnail background 3"></a></div>
-<div class="image"><a href="images/bg4-large.jpg" target="__blank"><img src="images/bg4.jpg" width="100" class="hide" height="67" alt="thumbnail background 4"></a></div>
-<div class="image"><a href="images/bg5-large.jpg" target="__blank"><img src="images/bg5.jpg" width="100" class="hide" height="67" alt="thumbnail background 5"></a></div>
-<div class="image"><a href="images/bg6-large.jpg" target="__blank"><img src="images/bg6.jpg" width="100" class="hide" height="67" alt="thumbnail background 6"></a></div>
+<div class="image"><img src="images/bg1.jpg" width="100" height="67" alt="thumbnail background 1"></div>
+<div class="image"><img src="images/bg2.jpg" width="100" height="67" alt="thumbnail background 2"></div>
+<div class="image"><img src="images/bg3.jpg" width="100" height="67" alt="thumbnail background 3"></div>
+<div class="image"><img src="images/bg4.jpg" width="100" class="hide" height="67" alt="thumbnail background 4"></div>
+<div class="image"><img src="images/bg5.jpg" width="100" class="hide" height="67" alt="thumbnail background 5"></div>
+<div class="image"><img src="images/bg6.jpg" width="100" class="hide" height="67" alt="thumbnail background 6"></div>
 </div>
 
 <p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
