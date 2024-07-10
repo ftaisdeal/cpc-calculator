@@ -67,7 +67,7 @@ app.use(function (req, res, next) {
   Error404(res);
 });
 
-// Start the server
+// start the server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
