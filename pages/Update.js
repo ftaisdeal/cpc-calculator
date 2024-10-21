@@ -3,28 +3,16 @@ const Update = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h3>Update on the Production</h3>
-<i>Updated: Thursday, June 20, 2024</i>
+<i>Update: Monday, October 31,2024</i>
 <p>
 <ol>
-<li>We've added email signup to the website, so if you want to be kept informed proactively, please visit <a href="/">the home page</a> and enter your email address.</li>
-
-<li>The production is being recast from scratch, which means that it will be a few months before we can open the show.</li>
-
-<li>The show will open in previews of segments from the production, a roughly 50/50 mix of live acting and multimedia.</li>
-
-<li>These previews will be used to further develop and refine the production, and you can be part of this process.</li>
-
-<li>The venues will all be in San Francisco.</li>
-
-<li>These limited previews will be only 30-45 minutes long, only involve three actors, and will take place in small, intimate venues such as dance and yoga studios.</li>
-
-<li>Maximum seating will be only about 20.</li>
-
-<li>We have purchased a video projector so that we can perform the show in almost any space.</li>
-
-<li>We will have complete control of theatrical lighting, including dimmability, color control and special effects such as strobe and "police lights" in nearly any space we choose through a lighting kit that is controllable from a laptotp or phone over WiFi or Bluetooth.</li>
-
-<li>A new media form called a "QuoteMovie" will be included in the production at various points. A QuoteMovie is a movie made only of quotes.  Despite consisting only of white words on a black screen, these movies have powerful psychological and emotional effects.  Here is <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="_blank">a quick example</a>.</li>
+<li>The show has been strongly revised based on our experience with the pilot production last year.</li>
+<li>Many new elements have been added to the show.</li>
+<li>We are almost done with casting the full production version of the show. Only one role remains to be cast.</li>
+<li>The new actors are absolutely great and we are very thrilled to be working with them.</li>
+<li>In person rehearsals begin in November.</li>
+<li>We have contracted with Phoenix Theater in San Francisco for both rehearsals and performances. We are excited about working with Phoenix because we will be able to rehearse in the same space in which we will perform, which is a huge advantage.</li>
+<li>Early preview performances are planned for mid-January.</li>
 </ol>`;
 
   res.send(`${header('Update on the Production')}
