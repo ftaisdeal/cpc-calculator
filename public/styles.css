@@ -129,6 +129,7 @@ li {
 .navbar-nav {
   list-style-type: none;
   display: flex;
+  padding-left: 6px;
 }
 
 .nav-item {
