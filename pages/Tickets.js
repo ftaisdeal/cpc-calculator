@@ -4,7 +4,9 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 
-<p>No full performances of Adventure Cabaret are currently scheduled, but we will be resuming production soon.</p>`;
+<p>Adventure Cabaret goes into full production in mid-January 2025.</p>
+
+<p>Please check back about tickets in early January.  Thank you.</p>`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
