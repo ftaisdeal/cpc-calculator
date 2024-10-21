@@ -129,7 +129,6 @@ li {
 .navbar-nav {
   list-style-type: none;
   display: flex;
-  padding-left: 6px;
 }
 
 .nav-item {
@@ -230,6 +229,10 @@ li {
     background-color: #8a8;
   }
 
+  .navbar-brand {
+    display: none;
+  }
+    
   .nav-item {
     margin: 10px;
   }
