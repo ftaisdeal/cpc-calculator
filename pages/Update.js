@@ -8,11 +8,11 @@ const Update = async function (res) {
 <ol>
 <li>The show has been strongly revised based on our experience with the pilot production last year.</li>
 <li>Many new elements have been added to the show.</li>
-<li>We are almost done with casting the full production version of the show. Only one role remains to be cast.</li>
+<li>We are done with casting the full production version of the show, and now also have backup casting in place.</li>
 <li>The new actors are absolutely great and we are very thrilled to be working with them.</li>
-<li>In person rehearsals begin in November.</li>
-<li>We have contracted with Phoenix Theater in San Francisco for both rehearsals and performances. We are excited about working with Phoenix because we will be able to rehearse in the same space in which we will perform, which is a huge advantage.</li>
-<li>Early preview performances are planned for mid-January.</li>
+<li>We are in preliminary rehearsals at Phoenix Theater in San Francisco's theater district.</li>
+<li>We are planning to open at Theater 33, 533 Sutter St., a great 100-seat theater, in early March.</li>
+<li>We will be holding a number of public rehearsals at Phoenix Theater.</li>
 </ol>`;
 
   res.send(`${header('Update on the Production')}
