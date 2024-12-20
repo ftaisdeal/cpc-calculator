@@ -4,11 +4,28 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 
-<p>Adventure Cabaret goes into full production rehearsals in January 2025.</p>
+<p>Adventure Cabaret opening night is Saturday, March 1, 2025.  Buy tickets below!</p>
 
-<p>Please check back about tickets in early January for an opening probably in the first weeks of March.</p>
+<div id="eventbrite-widget-container-1119346739229"></div>
 
-<p>In the mean time, we are holding a small number of public rehearsals at Phoenix Theater in San Francisco's theater district, the first of which is on Sunday, December 8, 10am-2pm. <a href="https://www.eventbrite.com/e/adventure-cabaret-public-rehearsal-tickets-1097685259159">Free tickets are available here</a>.</p>`;
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+    var exampleCallback = function() {
+        console.log('Order complete!');
+    };
+
+    window.EBWidgets.createWidget({
+        // Required
+        widgetType: 'checkout',
+        eventId: '1119346739229',
+        iframeContainerId: 'eventbrite-widget-container-1119346739229',
+
+        // Optional
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+    });
+</script>`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
