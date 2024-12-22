@@ -31,6 +31,8 @@ Samples:
 
 <br>4. <a href="https://youtu.be/BtYu_1KSXBk" target="__blank">Messages from the Insects</a>
 
+<br>
+
 <div id="eventbrite-widget-container-1119346739229"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
