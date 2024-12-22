@@ -31,7 +31,7 @@ Samples:
 
 <br>4. <a href="https://youtu.be/BtYu_1KSXBk" target="__blank">Messages from the Insects</a>
 
-<br>
+<p>
 
 <div id="eventbrite-widget-container-1119346739229"></div>
 
@@ -53,6 +53,8 @@ Samples:
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
+
+</p>
 
 <p><b>Stay in touch about our progress and performances.
 <form action="email" method="post">
