@@ -13,6 +13,7 @@ const Tickets = require('./pages/Tickets');
 const Shows = require('./pages/Shows');
 const Contact = require('./pages/Contact');
 const Update = require('./pages/Update');
+const Media = require('./pages/Media');
 const Email = require('./pages/Email');
 const Error404 = require('./pages/404');
 
@@ -54,6 +55,11 @@ app.get('/contact', (req, res) => {
 // update
 app.get('/update', (req, res) => {
   Update(res);
+});
+
+// media
+app.get('/media', (req, res) => {
+  Media(res);
 });
 
 // email insert for updates by email
