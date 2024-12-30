@@ -63,7 +63,7 @@ Samples:
 <input type="email" name="email" style="width: 28ch;" placeholder="enter email to stay in touch"> <button type="submit" class="button">send</button>
 </form></p>
 
-<img src="images/brain-in-hula.jpg" height="497" width="538" alt="brain inside LED hula hoop">`;
+<img src="images/brain-in-hula.png" height="497" width="538" alt="brain inside LED hula hoop">`;
 
   res.send(`${header('Adventure Cabaret')}
 ${content}
