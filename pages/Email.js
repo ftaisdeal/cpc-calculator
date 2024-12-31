@@ -76,6 +76,7 @@ a {
 <p>Thank you for signing up for updates on performances and further development of Adventure Cabaret.</p>
 <p>Our goal is to create live theater productions that are illuminating and transformative.</p>
 <p>We have big plans for the production, and we look forward to seeing you soon at one of our shows.</p>
+<p><a href="https://adventurecabaret.com">https://adventurecabaret.com</a></p>
 <br>
 <div class="footer">
 </div>
