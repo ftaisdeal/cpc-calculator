@@ -6,7 +6,15 @@ const Email = function (req, res) {
   const Error = require('./Error');
   const sendEmail = require('../functions/sendEmail');
 
-  if (!req.body.email) {
+  // body.email is for spam block, body.liame is the actual email field
+
+  // Spam block test
+  if (req.body.email) {
+    Error(res, "Thank you.", "Thanks for joining our email list.");
+    return;  
+  }
+
+  if (!req.body.liame) {
     Error(res, "No email entered.", "You didn't enter an email address.");
     return;
   }
@@ -17,12 +25,12 @@ const Email = function (req, res) {
     return emailRegex.test(email);
   }
 
-  if (!isValidEmail(req.body.email)) {
+  if (!isValidEmail(req.body.liame)) {
     Error(res, "Not a valid email address", "You didn't enter a valid email address.");
     return;
   }
 
-  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.email}";`;
+  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.liame}";`;
 
   connection.query(update_query, (error) => {
 
@@ -31,7 +39,7 @@ const Email = function (req, res) {
       return;
     };
 
-    const body = `${req.body.email}`;
+    const body = `${req.body.liame}`;
     const html = `<html>
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +83,7 @@ a {
 </html>`;
 
     try {
-      sendEmail(req.body.email, 'Adventure Cabaret: Thank you for signing up to receive updates', body, html);
+      sendEmail(req.body.liame, 'Adventure Cabaret: Thank you for signing up to receive updates', body, html);
     } catch (error) {
       console.error('Error sending email:', error);
     }
