@@ -4,10 +4,10 @@ const Origins = async function (res) {
 
   const content = `<h1>Media Kit</h1>
   <ol>
-  <li>About info</li>
+  <li>Description</li>
   <li>Press releases</li>
   <li>Marketing graphics</li>
-  <li>Rehearsal pictures and video</li>
+  <li>Rehearsal and performance pictures and video</li>
   <li>Miranda Sorventi bio</li>
  </ol>`;
 

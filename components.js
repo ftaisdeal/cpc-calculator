@@ -71,7 +71,6 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 </div>
 </nav>
 </p>
-
 <script>
 function toggleMenu() {
   const navbarNav = document.querySelector('.navbar-nav');
