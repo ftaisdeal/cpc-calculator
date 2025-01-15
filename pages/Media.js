@@ -7,6 +7,7 @@ const Origins = async function (res) {
   <li>Description</li>
   <li>Miranda Sorventi bio</li>
   <li>Press release</li>
+  <li>Excerpts</li>
   <li>Marketing graphics</li>
   <li>Rehearsal &amp; performance pictures &amp; video</li>
  </ol>`;
