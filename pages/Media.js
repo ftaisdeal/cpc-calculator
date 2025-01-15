@@ -5,10 +5,10 @@ const Origins = async function (res) {
   const content = `<h1>Media Kit</h1>
   <ol>
   <li>Description</li>
-  <li>Press releases</li>
-  <li>Marketing graphics</li>
-  <li>Rehearsal and performance pictures and video</li>
   <li>Miranda Sorventi bio</li>
+  <li>Press release</li>
+  <li>Marketing graphics</li>
+  <li>Rehearsal &amp; performance pictures &amp; video</li>
  </ol>`;
 
   res.send(`${header('Media Kit for Adventure Cabaret')}
