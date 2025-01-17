@@ -15,60 +15,61 @@ const Contact = require('./pages/Contact');
 const Update = require('./pages/Update');
 const Media = require('./pages/Media');
 const Miranda = require('./pages/Miranda');
+const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Error404 = require('./pages/404');
 
-// home
+// Home
 app.get('/', (req, res) => {
   Home(res);
 });
 
-// rundown
+// Rundown
 app.get('/rundown', (req, res) => {
   Rundown(res);
 });
 
-// actors
-app.get('/actors', (req, res) => {
-  Actors(res);
-});
-
-// tickets
+// Tickets
 app.get('/tickets', (req, res) => {
   Tickets(res);
 });
 
-// shows
+// Shows
 app.get('/shows', (req, res) => {
   Shows(res);
 });
 
-// origins
+// Origins
 app.get('/origins', (req, res) => {
   Origins(res);
 });
 
-// contact
+// Contact
 app.get('/contact', (req, res) => {
   Contact(res);
 });
 
-// update
+// Update
 app.get('/update', (req, res) => {
   Update(res);
 });
 
-// media
+// Media
 app.get('/media', (req, res) => {
   Media(res);
 });
 
-// media
+// Miranda
 app.get('/miranda', (req, res) => {
   Miranda(res);
 });
 
-// email insert for updates by email
+// QR codes
+app.get('/qr', (req, res) => {
+  QR(req, res);
+});
+
+// Email insert for updates by email
 app.post('/email', (req, res) => {
   Email(req, res);
 });
