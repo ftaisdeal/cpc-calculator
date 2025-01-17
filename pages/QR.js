@@ -2,7 +2,7 @@ const Origins = async function (req, res) {
 
   const { header, footer } = require('../components');
 
-  const content = `<h1>QR</h1>`;
+  const content = `<h1>QR Codes</h1>`;
 
   res.send(`${header('QR Codes')}
 ${content}
