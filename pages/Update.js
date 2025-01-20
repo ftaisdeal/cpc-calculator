@@ -7,7 +7,6 @@ const Update = async function (res) {
 <p>
 <ol>
 <li>Tickets are now on sale for <a href="/tickets">opening night on March 1, 2025</a>.</li>
-<li>We are holding a number of public rehearsals at Phoenix Theater, the next of which is on Sunday, January 12, 12-4pm. <a href="https://www.eventbrite.com/e/adventure-cabaret-public-rehearsal-tickets-1114216524619">Free tickets are available here</a>.</li>
 <li>The show has been strongly revised based on our experience with the pilot production last year.</li>
 <li>Many new elements have been added to the show.</li>
 <li>We are almost done with casting the full production version of the show, and will soon also have backup casting in place.</li>
