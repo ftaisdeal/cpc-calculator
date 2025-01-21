@@ -4,7 +4,7 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 
-<p>Adventure Cabaret opening night is Saturday, March 1, 2025.  Buy tickets below!</p>
+<p>Adventure Cabaret begins previews on March 1, 2025.</p>
 
 <div id="eventbrite-widget-container-1119346739229"></div>
 
