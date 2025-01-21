@@ -34,31 +34,6 @@ Samples:
 <br>
 
 <p>
-
-<div id="eventbrite-widget-container-1119346739229"></div>
-
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
-<script type="text/javascript">
-    var exampleCallback = function() {
-        console.log('Order complete!');
-    };
-
-    window.EBWidgets.createWidget({
-        // Required
-        widgetType: 'checkout',
-        eventId: '1119346739229',
-        iframeContainerId: 'eventbrite-widget-container-1119346739229',
-
-        // Optional
-        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
-        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
-    });
-</script>
-
-</p>
-
-<p>
 <b>Stay in touch about our progress and performances.</b>
 <form action="email" method="post">
 <input type="email" name="email" style="display: none;" placeholder="enter email to stay in touch">
