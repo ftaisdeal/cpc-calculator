@@ -6,7 +6,7 @@ const QR = async function (req, res) {
     case 1:
       title = "QR Code 1";
       text = `Text for QR Code 1
-<p>A teaspoon of healthy soil can contain thousands of different species of microorganisms, and a total of A single teaspoon approximately 1 billion to 10 billion organisms. These include bacteria, fungi, protozoa, nematodes, and microarthropods. Contact with organisms typically found in soil is crucial for the development of a healthy immune system in childhood.</p>`;
+<p>A teaspoon of healthy soil can contain thousands of different species of microorganisms, and a total of A single teaspoon approximately 1 billion to 10 billion organisms. These include bacteria, fungi, protozoa, nematodes, and microarthropods. During human childhood, ontact with organisms typically found in soil is crucial for the development of a healthy immune system.</p>`;
       break;
     case 2:
       title = "QR Code 2";
