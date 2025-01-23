@@ -17,7 +17,8 @@ const QR = async function (req, res) {
       title = "Please Turn Off the Audio on Your Phone";
       text = `<p>You are absolutely welcome to take pictures and record video during the performance, but please make sure that the audio on your phone is turned all the way down.</p>
       <p>Thank you.</p>
-      <p style="font-size: 72px;">🤠</p>`;
+      <br>
+      <span style="font-size: 72px;">🤠</span>`;
       break;
     default:
       title = "No QR Code Specified";
