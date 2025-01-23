@@ -1,5 +1,7 @@
 const QR = async function (req, res) {
+
   const { header, footer } = require('../components');
+
   const page = parseInt(req.query.page, 10);
 
   switch (page) {
@@ -9,11 +11,12 @@ const QR = async function (req, res) {
       break;
     case 2:
       title = "Bryophytes Are Important";
-      text = `<p>Bryophytes are a ubiquitous group of non-vascular plants that include mosses, liverworts, and hornworts. Brophytes do not have a vascular system, and this lack of a vascular system strictly limits the size to which they can grow.`;
+      text = `<p>Bryophytes are a ubiquitous group of non-vascular plants that include mosses, liverworts, and hornworts. Brophytes do not have a vascular system, and this lack of a vascular system strictly limits the size to which they can grow.</p>`;
       break;
     case 3:
       title = "Please Turn Off the Audio on Your Phone";
-      text = `<p>You are absolutely welcome to take pictures and record video during the performance, but please make sure that the audio on your phone is turned all the way down.  Thank you.`;
+      text = `<p>You are absolutely welcome to take pictures and record video during the performance, but please make sure that the audio on your phone is turned all the way down.</p>
+      <p>Thank you.</p>`;
       break;
     default:
       title = "No QR Code Specified";
