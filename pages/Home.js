@@ -33,7 +33,7 @@ Samples:
 
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
-<br>
+<p>
 
 <div id="eventbrite-widget-container-1119346739229"></div>
 
@@ -55,6 +55,8 @@ Samples:
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
+
+</p>
 
 <p>
 <b>Stay in touch about our progress and performances.</b>
