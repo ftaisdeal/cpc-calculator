@@ -23,7 +23,7 @@ const Home = async function (res) {
 
 Samples:
 
-<br>1. <a href="https://youtu.be/0RN5fGF61G4" target="__blank">Content Warning Notice</a>
+<br>1. <a href="https://youtu.be/0RN5fGF61G4" target="__blank">Thought Police Hotline</a>
 
 <br>2. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a>
 
