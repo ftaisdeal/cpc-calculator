@@ -55,6 +55,8 @@ res.send(`${header('Email update signup')}
 ${content}
 ${footer}`);
 
+}
+
 module.exports = Email;
 
 /*
@@ -174,4 +176,3 @@ ${footer}`);
 module.exports = Email;
 
 */
-}
