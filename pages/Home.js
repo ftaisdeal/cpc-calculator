@@ -66,6 +66,8 @@ Samples:
 </form>
 </p>
 
+<br>
+
 <img src="images/brain.png" width="640" height="460" alt="abstract brain">`;
 
   res.send(`${header('Adventure Cabaret')}
