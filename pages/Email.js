@@ -1,6 +1,7 @@
 const Email = function (req, res) {
 
   const mysql = require('mysql');
+  const crypto = require('crypto');
   const db_config = require('../admin/db_config');
   const connection = mysql.createConnection(db_config);
   const Error = require('./Error');
@@ -30,7 +31,13 @@ const Email = function (req, res) {
     return;
   }
 
-  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.liame}";`;
+  function generateUrlSafeToken() {
+    return crypto.randomBytes(32).toString('base64url'); // URL-safe Base64 encoding
+  }
+  
+  const urlSafeToken = generateUrlSafeToken();
+
+  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.liame}", token = "${urlSafeToken}";`;
 
   connection.query(update_query, (error) => {
 
