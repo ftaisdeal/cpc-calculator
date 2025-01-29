@@ -13,7 +13,7 @@ const Update = async function (res) {
 <li>Many new elements have been added to the show.</li>
 <li>The multimedia assets are almost done, and they are amazing.</li>
 <li>We have added some choreography with flashlights to the open of the show.</li>
-<li>We are beginning special training for the actors in order to become a "power team" of actors.</li>
+<li>We have begun special training for the actors in order to become a "power team" of actors.</li>
 </ol>
 <br>
 <img src="images/hand-print.png" width="400" height="488" alt="purple hand print">`;
