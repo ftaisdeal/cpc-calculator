@@ -77,7 +77,7 @@ app.post('/email', (req, res) => {
 
 // Admin
 app.get('/admin', (req, res) => {
-  Admin(req, res);
+  Admin(res);
 });
 
 // 404 handler
