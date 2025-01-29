@@ -17,6 +17,7 @@ const Media = require('./pages/Media');
 const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
+const Admin = require('./admin/Admin');
 const Error404 = require('./pages/404');
 
 // Home
@@ -72,6 +73,11 @@ app.get('/qr', (req, res) => {
 // Email insert for updates by email
 app.post('/email', (req, res) => {
   Email(req, res);
+});
+
+// Admin
+app.get('/admin', (req, res) => {
+  Admin(req, res);
 });
 
 // 404 handler
