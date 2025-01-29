@@ -55,6 +55,8 @@ res.send(`${header('Email update signup')}
 ${content}
 ${footer}`);
 
+module.exports = Email;
+
 /*
 
   const mysql = require('mysql');
@@ -169,6 +171,7 @@ ${footer}`);
 
 }
 
-*/
-
 module.exports = Email;
+
+*/
+}
