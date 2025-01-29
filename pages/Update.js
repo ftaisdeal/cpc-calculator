@@ -11,8 +11,10 @@ const Update = async function (res) {
 <li>Many new elements have been added to the show.</li>
 <li>We are almost done with casting the full production version of the show, and will soon also have backup casting in place.</li>
 <li>The new actors are absolutely great and we are very thrilled to be working with them.</li>
-<li>We are in rehearsals at Phoenix Theater in San Francisco's theater district.</li>
-</ol>`;
+<li>We are in rehearsals at <a href="https://www.phoenixtheatresf.org/" target="__blank">Phoenix Theater</a> in San Francisco's theater district.</li>
+</ol>
+<br>
+<img src="images/hand-print.png" width="400" height="488" alt="purple hand print">`;
 
   res.send(`${header('Update on the Production')}
 ${content}
