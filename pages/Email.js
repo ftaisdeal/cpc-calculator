@@ -14,7 +14,7 @@ async function updateTokens() {
     
     try {
         // Fetch all records where token is NULL or empty
-        const [rows] = await connection.execute("SELECT id FROM your_table WHERE token IS NULL OR token = ''");
+        const [rows] = await connection.execute("SELECT id FROM email_update WHERE token IS NULL OR token = ''");
 
         for (const row of rows) {
             let token;
