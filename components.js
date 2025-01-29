@@ -80,7 +80,22 @@ function toggleMenu() {
 </div>`);
 }
 
-const footer = `</div>
+const footer = `<div class="motto">
+  <div class="item"><img class="brain" src="images/brain-monochrome.png" width="100" height="72" alt="small brain in black and white">
+    <br>
+    use your mind
+  </div>
+  <div class="item arrow">⇢</div>
+  <div class="item"><img class="brain" src="images/brain-color.png" width="100" height="72" alt="small brain in color">
+    <br>
+    to improve your mind
+  </div>
+  <div class="item arrow">⇢</div>
+  <div class="item"><img src="images/earth-motto.png" width="85" height="85" alt="small image of earth">
+    <br>
+    to improve the world
+  </div>
+</div>
 </body>
 </html>`;
 

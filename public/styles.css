@@ -178,6 +178,43 @@ li {
   margin: 3px 0;
 }
 
+.motto {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item {
+  padding: 0px;
+  text-align: center;
+  font-size: .5em;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.item:first-child {
+  margin-left: 0;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.brain {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.arrow {
+  color: rgb(168, 73, 200);
+  font-size: 28px;
+  margin-top: 26px;
+  margin-bottom: 12px;
+}
+
 /* Small devices */
 @media only screen and (max-width: 744px) {
 
