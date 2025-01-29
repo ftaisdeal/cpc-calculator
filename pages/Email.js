@@ -1,5 +1,62 @@
 const Email = function (req, res) {
 
+const mysql = require('mysql2/promise');
+const crypto = require('crypto');
+
+const dbConfig = require('../admin/db_config');
+
+async function generateToken() {
+    return crypto.randomBytes(16).toString('hex'); // 16 bytes = 32 hex characters
+}
+
+async function updateTokens() {
+    const connection = await mysql.createConnection(dbConfig);
+    
+    try {
+        // Fetch all records where token is NULL or empty
+        const [rows] = await connection.execute("SELECT id FROM your_table WHERE token IS NULL OR token = ''");
+
+        for (const row of rows) {
+            let token;
+            let isUnique = false;
+
+            // Ensure uniqueness by checking the database before inserting
+            while (!isUnique) {
+                token = await generateToken();
+                const [existing] = await connection.execute("SELECT id FROM email_update WHERE token = ?", [token]);
+                if (existing.length === 0) {
+                    isUnique = true;
+                }
+            }
+
+            // Update the record with the generated token
+            await connection.execute("UPDATE email_update SET token = ? WHERE id = ?", [token, row.id]);
+            console.log(`Updated ID ${row.id} with token ${token}`);
+        }
+        
+        console.log('All records updated successfully.');
+    } catch (error) {
+        console.error('Error updating tokens:', error);
+    } finally {
+        await connection.end();
+    }
+}
+
+// Run the script
+updateTokens();
+
+const { header, footer } = require('../components');
+const content = `<h1>Thank you</h1>
+<p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
+<p>You won't hear from us often, but we'll try to make it great every time.</p>
+<div class="bottom_padding"></div>`;
+
+res.send(`${header('Email update signup')}
+${content}
+${footer}`);
+
+/*
+
   const mysql = require('mysql');
   const crypto = require('crypto');
   const db_config = require('../admin/db_config');
@@ -111,5 +168,7 @@ ${footer}`);
   connection.end();
 
 }
+
+*/
 
 module.exports = Email;
