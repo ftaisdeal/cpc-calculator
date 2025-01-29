@@ -1,66 +1,6 @@
-  const mysql = require('mysql2/promise');
-  const crypto = require('crypto');
-  const dbConfig = require('../admin/db_config');
-  const { header, footer } = require('../components');
-  
-  async function generateToken() {
-      return crypto.randomBytes(16).toString('hex');
-  }
-  
-  async function updateTokens() {
-      const connection = await mysql.createConnection(dbConfig);
-      try {
-          const [rows] = await connection.execute("SELECT id FROM email_update WHERE token IS NULL OR token = ''");
-  
-          if (rows.length === 0) return;
-  
-          for (const row of rows) {
-              let token;
-              let isUnique = false;
-  
-              while (!isUnique) {
-                  token = await generateToken();
-                  const [existing] = await connection.execute("SELECT id FROM email_update WHERE token = ?", [token]);
-                  if (existing.length === 0) {
-                      isUnique = true;
-                  }
-              }
-  
-              await connection.execute("UPDATE email_update SET token = ? WHERE id = ?", [token, row.id]);
-              console.log(`Updated ID ${row.id} with token ${token}`);
-          }
-  
-          console.log('All records updated successfully.');
-      } catch (error) {
-          console.error('Error updating tokens:', error);
-          throw error;
-      } finally {
-          await connection.end();
-      }
-  }
-  
-  const Email = async function (req, res) {
-      try {
-          await updateTokens();
-          const content = `<h1>Thank you</h1>
-          <p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
-          <p>You won't hear from us often, but we'll try to make it great every time.</p>
-          <div class="bottom_padding"></div>`;
-  
-          res.send(`${header('Email update signup')}
-          ${content}
-          ${footer}`);
-      } catch (error) {
-          res.status(500).send('Internal Server Error');
-      }
-  };
-  
-  module.exports = Email;
-
-/*
+const Email = function (req, res) {
 
   const mysql = require('mysql');
-  const crypto = require('crypto');
   const db_config = require('../admin/db_config');
   const connection = mysql.createConnection(db_config);
   const Error = require('./Error');
@@ -172,5 +112,3 @@ ${footer}`);
 }
 
 module.exports = Email;
-
-*/
