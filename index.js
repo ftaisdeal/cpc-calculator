@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const basicAuth = require('express-basic-auth');
 app.use(express.static('public'));
 const port = 3000;
 
@@ -76,9 +77,16 @@ app.post('/email', (req, res) => {
 });
 
 // Admin
-app.get('/admin', (req, res) => {
-  Admin(res);
-});
+app.get('/admin', 
+  basicAuth({
+      users: { 'admin': 'firinn' }, // Credentials
+      challenge: true, // Prompt the user for credentials
+      unauthorizedResponse: 'Unauthorized' // Response for unauthorized users
+  }),
+  (req, res) => {
+    Admin(res);
+  }
+);
 
 // 404 handler
 app.use(function (req, res, next) {
