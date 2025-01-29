@@ -66,7 +66,7 @@ Samples:
 </form>
 </p>
 
-<img src="images/brain-in-hula.png" height="497" width="538" alt="brain inside LED hula hoop">`;
+<img src="images/brain.png" width="640" height="460" alt="abstract brain">`;
 
   res.send(`${header('Adventure Cabaret')}
 ${content}

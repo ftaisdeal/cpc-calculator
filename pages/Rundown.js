@@ -77,7 +77,6 @@ const Rundown = async function (res) {
 <li>Party</li>
 </ol>
 <h3>END</h3>
-<img src="images/brain.png" width="640" height="460" alt="abstract brain">
 <br>
 <br>`;
 
