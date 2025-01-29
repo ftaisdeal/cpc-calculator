@@ -81,7 +81,7 @@ function toggleMenu() {
 }
 
 const footer = `<div class="motto">
-  <div class="item"><img class="brain" src="images/brain-monochrome.png" width="100" height="72" alt="small brain in black and white">
+  <div class="item"><img class="brain" src="images/brain-black-and-white.png" width="100" height="72" alt="small brain in black and white">
     <br>
     use your mind
   </div>
