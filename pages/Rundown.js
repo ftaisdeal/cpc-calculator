@@ -78,7 +78,7 @@ const Rundown = async function (res) {
 </ol>
 <h3>END</h3>
 <br>
-<br>`;
+<img src="images/linky-pinky-purple.png" width="390" height="600" alt="purple hand with pinky extended">`;
 
   res.send(`${header('Show Rundown')}
 ${content}
