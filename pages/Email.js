@@ -1,6 +1,7 @@
 const Email = function (req, res) {
 
   const mysql = require('mysql');
+  const crypto = require('crypto');
   const db_config = require('../admin/db_config');
   const connection = mysql.createConnection(db_config);
   const Error = require('./Error');
