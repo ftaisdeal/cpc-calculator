@@ -100,7 +100,11 @@ a {
     const content = `<h1>Thank you</h1>
 <p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
 <p>You won't hear from us often, but we'll try to make it great every time.</p>
-<div class="bottom_padding"></div>`;
+<div class="bottom_padding"></div>
+<br>
+<br>
+<br>
+<br>`;
 
     res.send(`${header('Email update signup')}
 ${content}
