@@ -37,7 +37,7 @@ const Email = function (req, res) {
   
   const urlSafeToken = generateUrlSafeToken();
 
-  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.liame}", token = "${urlSafeToken}";`;
+  const update_query = `INSERT IGNORE INTO email_update SET email = "${req.body.liame}", ip_address="${req.ip}", token = "${urlSafeToken}";`;
 
   connection.query(update_query, (error) => {
 
