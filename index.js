@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const basicAuth = require('express-basic-auth');
 app.use(express.static('public'));
+app.set('trust proxy', true);
 const port = 3000;
 
 const bodyParser = require('body-parser');
