@@ -215,6 +215,10 @@ li {
   margin-bottom: 12px;
 }
 
+.email {
+  display: none;
+}
+
 /* Small devices */
 @media only screen and (max-width: 744px) {
 

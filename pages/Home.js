@@ -61,7 +61,7 @@ Samples:
 <p>
 <b>Stay in touch about our progress and performances.</b>
 <form action="email" method="post">
-<input type="email" name="email" style="display: none;" placeholder="enter email to stay in touch">
+<input type="email" name="email" class="email" placeholder="enter email to stay in touch">
 <input type="email" name="liame" style="width: 28ch;" placeholder="enter email to stay in touch"> <button type="submit" class="button">send</button>
 </form>
 </p>
