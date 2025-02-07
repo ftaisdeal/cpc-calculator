@@ -9,7 +9,8 @@ const Admin = async function (res) {
 
   res.send(`${header('Admin')}
 ${content}
-${footer}`);
+</body>
+</html>`);
 
 }
 
