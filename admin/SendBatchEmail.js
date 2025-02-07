@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 const nodemailer = require('nodemailer');
 
 // Create a MySQL connection
-const db_config = require('../admin/db_config');
+const db_config = require('./db_config');
 const connection = mysql.createConnection(db_config);
 
 // Create a nodemailer transporter
