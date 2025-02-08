@@ -5,7 +5,6 @@ const Admin = async function (res) {
   const content = `<h1>Send Email Update</h1>
 <button id="sendEmails" style="padding: 8px; border-radius: 4px; background-color: #aaa;">start sending update</button>
 <p id="status"></p>
-<h2>Sent Emails</h2>
 <ul id="emailList"></ul>
 
 <script>
