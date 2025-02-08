@@ -1,16 +1,17 @@
+let isProcessing = false;
+
 const SendUpdate = (req, res) => {
 
   const EmailTemplate = require('./EmailTemplate');
   const sendEmail = require('../functions/sendEmail');
   const mysql = require('mysql2/promise'); // Use promise-based MySQL
   const db_config = require('../admin/db_config');
-  
   const connection = mysql.createPool(db_config); // Use a connection pool
   
   async function fetchUnsentEmails() {
       try {
           const [rows] = await connection.execute(
-              "SELECT id, email FROM email_update_test WHERE sent = 0 ORDER BY id ASC LIMIT 1"
+              "SELECT id, email FROM email_update_test WHERE sent = 0 ORDER BY id ASC"
           );
           return rows;
       } catch (error) {
@@ -26,36 +27,42 @@ const SendUpdate = (req, res) => {
           console.error("Error marking email as sent:", error);
       }
   }
+
+  let isRunning = false;
   
   async function processEmails() {
-      const emails = await fetchUnsentEmails();
-      if (emails.length === 0) {
-          console.log("No more emails to send.");
-          return;
-      }
+
+    if (isRunning) return; // Prevent overlap
+    isRunning = true;
+
+    const emails = await fetchUnsentEmails();
+    if (emails.length === 0) {
+        console.log("No more emails to send.");
+        return;
+    }
   
-      for (const email of emails) {
-          try {
-              const html = EmailTemplate(email.first_name);
-              const body = "Your update message"; // Define the body content
-  
-              console.log(`Sending email to: ${email.email}`);
-              await sendEmail(email.email, 'Adventure Cabaret: Update', body, html);
-              await markAsSent(email.id);
-              console.log(`Email sent to: ${email.email}`);
-          } catch (error) {
-              console.error(`Failed to send email to ${email.email}:`, error);
-          }
-  
-          await new Promise(resolve => setTimeout(resolve, 1000)); // 1-second delay
-      }
+    for (const email of emails) {
+        try {
+            const html = EmailTemplate(email.first_name);
+            const body = "Your update message"; // Define the body content
+
+            console.log(`Sending email to: ${email.email}`);
+            await sendEmail(email.email, 'Adventure Cabaret: Update', body, html);
+            await markAsSent(email.id);
+            console.log(`Email sent to: ${email.email}`);
+        } catch (error) {
+            console.error(`Failed to send email to ${email.email}:`, error);
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 1000)); // 1-second delay
+    }
   }
   
-    // Schedule execution instead of running in an API request
+  if (!isProcessing) {
+    isProcessing = true;
     setInterval(processEmails, 5000);
-  
-    res.json({ message: "Email processing scheduled." });
+  }
 
-  };
+};
   
-  module.exports = SendUpdate;
+module.exports = SendUpdate;
