@@ -1,3 +1,5 @@
+const SendBatchEmail = function (req, res) {
+
 const express = require('express');
 const mysql = require('mysql2/promise');
 const dbConfig = require('./db_config');
@@ -99,5 +101,7 @@ app.get('/sent-emails', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+
+}
 
 module.exports = SendBatchEmail;
