@@ -3,6 +3,7 @@ const SendUpdate = function (req, res) {
   const mysql = require('mysql2/promise');
   const dbConfig = require('./db_config');
   const sendEmail = require('../functions/sendEmail');
+  const Error = require('./Error');
   
   let sentEmails = [];  
   
@@ -29,6 +30,9 @@ const SendUpdate = function (req, res) {
     <div class="footer"></div>
   </body>
   </html>`;
+
+  Error(res, "Thank you.", "Thanks for joining our email list.");
+  return;
   
   async function fetchUnsentEmails() {
     let connection;
