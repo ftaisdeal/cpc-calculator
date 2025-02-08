@@ -99,3 +99,5 @@ app.get('/sent-emails', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+
+module.exports = SendBatchEmail;
