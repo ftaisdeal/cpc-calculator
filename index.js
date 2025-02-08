@@ -95,18 +95,6 @@ app.get('/email_update', (req, res) => {
   SendUpdate(req, res);
 });
 
-app.get('/sent-emails', async (req, res) => {
-  try {
-      const connection = await mysql.createConnection(dbConfig);
-      const [rows] = await connection.execute("SELECT email FROM email_update_test WHERE sent = 1 ORDER BY id DESC LIMIT 100");
-      await connection.end();
-      res.json(rows.map(row => row.email));
-  } catch (error) {
-      console.error("Error fetching sent emails:", error);
-      res.status(500).json({ error: "Internal server error" });
-  }
-});
-
 // 404 handler
 app.use(function (req, res, next) {
   Error404(res);
