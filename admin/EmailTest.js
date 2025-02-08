@@ -1,6 +1,7 @@
 const SendUpdate = function (req, res) {
 
     const Error = require('../pages/Error');
+    /*
     const sendEmail = require('../functions/sendEmail');
     const mysql = require('mysql');
     const db_config = require('../admin/db_config');
@@ -74,14 +75,16 @@ const SendUpdate = function (req, res) {
   <br>
   <br>
   <br>`;
+
+  */
   
       res.send(`${header('Email update signup')}
   ${content}
   ${footer}`);
   
-    });
+    //});
   
-    connection.end();
+    //connection.end();
 
 }
 
