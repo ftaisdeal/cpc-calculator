@@ -1,7 +1,6 @@
 const SendUpdate = function (req, res) {
 
     const { header, footer } = require('../components');
-    /*
     const Error = require('../pages/Error');
     const sendEmail = require('../functions/sendEmail');
     const mysql = require('mysql');
@@ -18,6 +17,7 @@ const SendUpdate = function (req, res) {
       };
   
       const body = `${req.body.liame}`;
+
       const html = `<html>
   <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,8 +67,6 @@ const SendUpdate = function (req, res) {
         console.error('Error sending email:', error);
       }
   
-      const { header, footer } = require('../components');
-      */
       const content = `<h1>Thank you</h1>
   <p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
   <p>You won't hear from us often, but we'll try to make it great every time.</p>
