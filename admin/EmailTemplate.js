@@ -1,4 +1,9 @@
-const EmailTemplate = function (first_name) {
+const EmailTemplate = (first_name) => {
+
+  if (first_name !== '') {
+    let salutation = `Dear ${first_name}`;
+  }
+
   const message = `<html>
   <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,14 +36,15 @@ const EmailTemplate = function (first_name) {
   <div class="header">
   <span class="title"> <a href="https://adventurecabaret.com"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
   </div>
-  <h2>Thank you</h2>
-  ${first_name}
+  <p>${salutation}</p>
   <p><a href="https://adventurecabaret.com">https://adventurecabaret.com</a></p>
   <br>
   <div class="footer">
   </div>
   </body>
   </html>`;
+
+  return message;
 
 }
 
