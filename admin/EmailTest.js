@@ -1,10 +1,10 @@
 const SendUpdate = function (req, res) {
 
+    const Error = require('../Error');
+    const sendEmail = require('../functions/sendEmail');
     const mysql = require('mysql');
     const db_config = require('../admin/db_config');
     const connection = mysql.createConnection(db_config);
-    const Error = require('./Error');
-    const sendEmail = require('../functions/sendEmail');
   
     const update_query = `SELECT email FROM email_update LIMIT 1;`;
   
