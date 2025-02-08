@@ -91,7 +91,7 @@ app.get('/admin',
 );
 
 // Send email update
-app.get('/start-email-processing', (req, res) => {
+app.get('/update', (req, res) => {
   SendUpdate(req, res);
 });
 
