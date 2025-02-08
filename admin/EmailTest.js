@@ -79,10 +79,9 @@ const SendUpdate = function (req, res) {
       res.send(`${header('Email update signup')}
   ${content}
   ${footer}`);
+});
   
-    //});
-  
-    //connection.end();
+    connection.end();
 
 }
 
