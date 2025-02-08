@@ -1,3 +1,5 @@
+const SendUpdate = (req, res) => {
+
   const EmailTemplate = require('./EmailTemplate');
   const sendEmail = require('../functions/sendEmail');
   const mysql = require('mysql2/promise'); // Use promise-based MySQL
@@ -49,11 +51,11 @@
       }
   }
   
-  // Schedule execution instead of running in an API request
-  setInterval(processEmails, 5000);
+    // Schedule execution instead of running in an API request
+    setInterval(processEmails, 5000);
   
-  const SendUpdate = (req, res) => {
-      res.json({ message: "Email processing scheduled." });
+    res.json({ message: "Email processing scheduled." });
+
   };
   
   module.exports = SendUpdate;
