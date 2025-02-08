@@ -20,6 +20,7 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
+const SendBatchEmail = require('.admin/SendBatchEmail');
 const Error404 = require('./pages/404');
 
 // Home
@@ -88,6 +89,23 @@ app.get('/admin',
     Admin(res);
   }
 );
+
+app.get('/start-email-processing', async (req, res) => {
+  const response = await SendBatchEmail();
+  res.json(response);
+});
+
+app.get('/sent-emails', async (req, res) => {
+  try {
+      const connection = await mysql.createConnection(dbConfig);
+      const [rows] = await connection.execute("SELECT email FROM email_update_test WHERE sent = 1 ORDER BY id DESC LIMIT 100");
+      await connection.end();
+      res.json(rows.map(row => row.email));
+  } catch (error) {
+      console.error("Error fetching sent emails:", error);
+      res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 // 404 handler
 app.use(function (req, res, next) {
