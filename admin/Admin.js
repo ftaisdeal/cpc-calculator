@@ -2,8 +2,8 @@ const Admin = async function (res) {
 
   const { header } = require('../components');
 
-  const content = `<h1>Send Email Update</h1>
-<button id="sendEmails" style="padding: 8px; border-radius: 4px; background-color: #aaa;">start sending update</button>
+  const content = `<b>Send Email Update</b>
+<p><button id="sendEmails" style="padding: 6px; border-radius: 6px; background-color: #aca;">start sending update</button></p>
 <p id="status"></p>
 <ul id="emailList"></ul>
 
