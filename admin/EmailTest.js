@@ -1,6 +1,6 @@
 const SendUpdate = function (req, res) {
 
-  const mysql = require('mysql2/promise');
+  const mysql = require('mysql');
   const dbConfig = require('./db_config');
   const sendEmail = require('../functions/sendEmail');
   const Error = require('./Error');
