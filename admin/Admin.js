@@ -2,8 +2,8 @@ const Admin = async function (res) {
 
   const { header } = require('../components');
 
-  const content = `<h1>Email Sending Control</h1>
-<button id="sendEmails">Start Sending Emails</button>
+  const content = `<h1>Send Email Update</h1>
+<button id="sendEmails" style="padding: 8px; cornder-radius: 4px;" background-color: #888;">start</button>
 <p id="status"></p>
 <script>
     document.getElementById('sendEmails').addEventListener('click', function() {
