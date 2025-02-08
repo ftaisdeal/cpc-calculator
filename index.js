@@ -20,7 +20,7 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
-const SendBatchEmail = require('./admin/SendBatchEmail');
+const SendUpdate = require('./admin/EmailTest');
 const Error404 = require('./pages/404');
 
 // Home
@@ -91,7 +91,7 @@ app.get('/admin',
 );
 
 app.get('/start-email-processing', async (req, res) => {
-  const response = await SendBatchEmail();
+  const response = await SendUpdate();
   res.json(response);
 });
 

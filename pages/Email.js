@@ -1,4 +1,4 @@
-const Email = function (req, res) {
+const SendUpdate = function (req, res) {
 
   const mysql = require('mysql');
   const crypto = require('crypto');
@@ -116,4 +116,4 @@ ${footer}`);
 
 }
 
-module.exports = Email;
+module.exports = SendUpdate;

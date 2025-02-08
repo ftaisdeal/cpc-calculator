@@ -1,3 +1,4 @@
+const SendUpdate = function (req, res) {
 
   const mysql = require('mysql2/promise');
   const dbConfig = require('./db_config');
@@ -71,3 +72,7 @@ async function processEmails() {
 }
 
 processEmails().catch(console.error);
+
+}
+
+module.exports = SendUpdate;
