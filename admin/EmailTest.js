@@ -7,6 +7,15 @@ const SendUpdate = (req, res) => {
   const mysql = require('mysql2/promise'); // Use promise-based MySQL
   const db_config = require('../admin/db_config');
   const connection = mysql.createPool(db_config); // Use a connection pool
+
+  async function resetFailedEmails() { // Reset for sending new batch of messages 
+    try {
+        await connection.execute("UPDATE email_update_test SET sent = 0 WHERE sent = 1 AND NOT EXISTS (SELECT 1 FROM email_logs WHERE email_logs.email = email_update_test.email AND email_logs.status = 'sent')");
+        console.log("Reset failed email statuses.");
+    } catch (error) {
+        console.error("Error resetting failed emails:", error);
+    }
+  }
   
   async function fetchUnsentEmails() {
       try {
@@ -58,7 +67,7 @@ const SendUpdate = (req, res) => {
     }
   }
   
-  if (!isProcessing) {
+  if (!isProcessing) { // Prevent overlap of processes
     isProcessing = true;
     setInterval(processEmails, 5000);
   }
