@@ -90,6 +90,7 @@ app.get('/admin',
   }
 );
 
+// Send email update
 app.get('/start-email-processing', async (req, res) => {
   const response = await SendUpdate();
   res.json(response);
