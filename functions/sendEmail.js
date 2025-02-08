@@ -9,14 +9,14 @@ async function sendEmail(email, subject, body, html) {
     port: 465,
     secure: true,
     auth: {
-      user: 'noreply@sustainablechoices.green',
-      pass: 'alerts_are_important'
+      user: 'update@adventurecabaret.com',
+      pass: 'Edelheit!2025'
     },
   });
 
   try {
     let info = await transporter.sendMail({
-      from: 'contact@adventurecabaret.com',
+      from: 'update@adventurecabaret.com',
       to: email,
       subject: subject,
       text: body,
