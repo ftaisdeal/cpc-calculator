@@ -3,13 +3,24 @@ const Admin = async function (res) {
   const { header } = require('../components');
 
   const content = `<b>Send Email Update</b>
-<p><button id="sendEmails" style="padding: 6px; border-radius: 6px; background-color: #8a8;">start sending update</button></p>
+<p>
+<form action="email_update" method="POST">
+<input type="hidden" name="user" value="admin">
+<input type="hidden" name="password" value="email_update_password">
+<select name="list">
+<option value="cast" selected>cast</option>
+<option value="subscribers">subscribers</option>
+</select>
+<p><input type="submit" value="send message" id="sendEmails" style="padding: 4px; border-radius: 6px; background-color: #aba;"></p>
+</form>
+</p>
+
 <p id="status"></p>
 <ul id="emailList"></ul>
 
 <script>
 document.getElementById('sendEmails').addEventListener('click', function() {
-    fetch('/start-email-processing')
+    fetch('/email_update')
     .then(response => response.json())
     .then(data => {
         document.getElementById('status').innerText = data.status;

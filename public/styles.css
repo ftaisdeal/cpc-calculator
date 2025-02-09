@@ -53,8 +53,6 @@ a:hover {
 
 input {
   font-size: 1em;
-  height: 1.5em;
-  padding: 2px;
 }
 
 .button {
@@ -91,6 +89,13 @@ nav {
 
 li {
   line-height: 1.5em;
+}
+
+select {
+  font-size: 1em;
+  height: 1.5em;
+  padding: 2px;
+  background-color: #eee;
 }
 
 .spacer {

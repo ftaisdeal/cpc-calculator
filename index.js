@@ -91,9 +91,10 @@ app.get('/admin',
 );
 
 // Send email update
-// Set this to post, with logic to display an Error page if the post variables are not correct
-app.get('/email_update', (req, res) => {
-  res.send("Email being sent");
+app.post('/email_update', (req, res) => {
+  if (req.body.user !== 'admin' || req.body.password !== 'email_update_password') {
+    Error('Unauthorized', 'Unauthorized');
+  }
   SendUpdate(req, res);
 });
 
