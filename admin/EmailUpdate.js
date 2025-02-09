@@ -1,4 +1,4 @@
-let isProcessing = false;
+let isProcessing = false; // Set processing flag to false to avoid multiple processes
 
 const SendUpdate = (req, res) => {
 
@@ -8,10 +8,17 @@ const SendUpdate = (req, res) => {
   const db_config = require('./db_config');
   const connection = mysql.createPool(db_config); // Use a connection pool
 
+  let table = '';
+  if (req.body.list == 'cast') {
+    table = 'cast';
+  } else {
+    table = 'email_update';
+  }
+
   async function resetFailedEmails() { // Reset for sending new batch of messages 
     try {
-        await connection.execute("UPDATE email_update SET sent = 0 WHERE sent = 1");
-        console.log("All emails set to sendable.");
+        await connection.execute(`UPDATE ${table} SET sent = 0 WHERE sent = 1`);
+        console.log("All records set to sendable.");
     } catch (error) {
         console.error("Error resetting failed emails:", error);
     }
@@ -22,7 +29,7 @@ const SendUpdate = (req, res) => {
   async function fetchUnsentEmails() {
       try {
           const [rows] = await connection.execute(
-              "SELECT id, email FROM email_update WHERE sent = 0 ORDER BY id ASC"
+              `SELECT id, email FROM ${table} WHERE sent = 0 ORDER BY id ASC`
           );
           return rows;
       } catch (error) {
@@ -33,7 +40,7 @@ const SendUpdate = (req, res) => {
   
   async function markAsSent(id) {
       try {
-          await connection.execute("UPDATE email_update SET sent = 1 WHERE id = ?", [id]);
+          await connection.execute(`UPDATE ${table} SET sent = 1 WHERE id = ?`, [id]);
       } catch (error) {
           console.error("Error marking email as sent:", error);
       }
