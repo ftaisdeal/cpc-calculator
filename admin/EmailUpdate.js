@@ -2,7 +2,6 @@ let isProcessing = false;
 
 const SendUpdate = (req, res) => {
 
-  require('dotenv').config();
   const EmailTemplate = require('./EmailTemplate');
   const sendEmail = require('../functions/sendEmail');
   const mysql = require('mysql2/promise'); // Use promise-based MySQL
@@ -11,17 +10,19 @@ const SendUpdate = (req, res) => {
 
   async function resetFailedEmails() { // Reset for sending new batch of messages 
     try {
-        await connection.execute("UPDATE email_update_test SET sent = 0 WHERE sent = 1 AND NOT EXISTS (SELECT 1 FROM email_logs WHERE email_logs.email = email_update_test.email AND email_logs.status = 'sent')");
-        console.log("Reset failed email statuses.");
+        await connection.execute("UPDATE email_update SET sent = 0 WHERE sent = 1");
+        console.log("All emails set to sendable.");
     } catch (error) {
         console.error("Error resetting failed emails:", error);
     }
   }
+
+  resetFailedEmails();
   
   async function fetchUnsentEmails() {
       try {
           const [rows] = await connection.execute(
-              "SELECT id, email FROM email_update_test WHERE sent = 0 ORDER BY id ASC"
+              "SELECT id, email FROM email_update WHERE sent = 0 ORDER BY id ASC"
           );
           return rows;
       } catch (error) {
@@ -32,7 +33,7 @@ const SendUpdate = (req, res) => {
   
   async function markAsSent(id) {
       try {
-          await connection.execute("UPDATE email_update_test SET sent = 1 WHERE id = ?", [id]);
+          await connection.execute("UPDATE email_update SET sent = 1 WHERE id = ?", [id]);
       } catch (error) {
           console.error("Error marking email as sent:", error);
       }

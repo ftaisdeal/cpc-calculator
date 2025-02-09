@@ -91,7 +91,9 @@ app.get('/admin',
 );
 
 // Send email update
+// Set this to post, with logic to display an Error page if the post variables are not correct
 app.get('/email_update', (req, res) => {
+  res.send("Email being sent");
   SendUpdate(req, res);
 });
 
@@ -100,7 +102,7 @@ app.use(function (req, res, next) {
   Error404(res);
 });
 
-// start the server
+// Start the server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

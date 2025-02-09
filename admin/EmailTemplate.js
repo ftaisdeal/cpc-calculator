@@ -1,7 +1,10 @@
 const EmailTemplate = (first_name) => {
 
-  if (first_name !== '') {
-    let salutation = `Dear ${first_name}`;
+  body = 'This is the message body.';
+
+  let salutation = '';
+  if (first_name) {
+    salutation = `<p>Dear ${first_name}</p>`;
   }
 
   const message = `<html>
@@ -36,7 +39,8 @@ const EmailTemplate = (first_name) => {
   <div class="header">
   <span class="title"> <a href="https://adventurecabaret.com"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
   </div>
-  <p>${salutation}</p>
+  ${salutation}
+  ${body}
   <p><a href="https://adventurecabaret.com">https://adventurecabaret.com</a></p>
   <br>
   <div class="footer">
@@ -44,7 +48,7 @@ const EmailTemplate = (first_name) => {
   </body>
   </html>`;
 
-  return message;
+  return (`${message}`);
 
 }
 
