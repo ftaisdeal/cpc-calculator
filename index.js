@@ -20,7 +20,7 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
-const SendUpdate = require('./admin/EmailTest');
+const SendUpdate = require('./admin/EmailUpdate');
 const Error404 = require('./pages/404');
 
 // Home

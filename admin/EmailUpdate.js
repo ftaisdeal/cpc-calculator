@@ -2,10 +2,11 @@ let isProcessing = false;
 
 const SendUpdate = (req, res) => {
 
+  require('dotenv').config();
   const EmailTemplate = require('./EmailTemplate');
   const sendEmail = require('../functions/sendEmail');
   const mysql = require('mysql2/promise'); // Use promise-based MySQL
-  const db_config = require('../admin/db_config');
+  const db_config = require('./db_config');
   const connection = mysql.createPool(db_config); // Use a connection pool
 
   async function resetFailedEmails() { // Reset for sending new batch of messages 
