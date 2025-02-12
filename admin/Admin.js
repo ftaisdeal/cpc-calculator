@@ -4,7 +4,7 @@ const Admin = async function (res) {
 
   const content = `<b>Send Email Update</b>
 
-<form id="emailForm">
+<form action="email_update" id="emailForm" method="post">
     <select name="list">
         <option value="subscribers">subscribers</option>
         <option value="cast">cast</option>
@@ -16,7 +16,7 @@ const Admin = async function (res) {
 
 <ul id="emailList"></ul>
 
-<script>
+<!--<script>
 document.getElementById('emailForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -60,7 +60,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         document.getElementById('status').innerText = "Error starting email process.";
     }
 });
-</script>`;
+</script>-->`;
 
   res.send(`${header('Admin')}
 ${content}
