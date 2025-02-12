@@ -1,6 +1,8 @@
 const Test = (req, res) => {
   return res.json(
-    { status: "JSON response" }
+    { status: "JSON response",
+      message: "message"
+     }
   );
 }
 
