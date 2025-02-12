@@ -28,8 +28,8 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
     });
 
     try {
-        const response = await fetch('./email_update', {
-            method: 'POST',
+        const response = await fetch('email_update', {
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(jsonData)
         });

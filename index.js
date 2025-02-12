@@ -1,12 +1,11 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-const basicAuth = require('express-basic-auth');
 app.use(express.static('public'));
 app.set('trust proxy', true);
-const port = 3000;
-
-const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
+const basicAuth = require('express-basic-auth');
+const port = 3000;
 
 const Home = require('./pages/Home');
 const Origins = require('./pages/Origins');
@@ -21,7 +20,6 @@ const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
 const Error404 = require('./pages/404');
-const Test = require('./admin/Test');
 const SendUpdate = require('./admin/EmailUpdate');
 
 // Home
@@ -94,10 +92,6 @@ app.get('/admin',
 // Send email update
 app.get('/admin/email_update', (req, res) => {
   SendUpdate(req, res);
-});
-
-app.get('/admin/test', (req, res) => {
-  Test(req, res);
 });
 
 // 404 handler
