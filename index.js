@@ -20,8 +20,8 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
-const SendUpdate = require('./admin/EmailUpdate');
 const Error404 = require('./pages/404');
+const Test = require('./admin/Test');
 
 // Home
 app.get('/', (req, res) => {
@@ -91,8 +91,12 @@ app.get('/admin',
 );
 
 // Send email update
-app.get('/email_update', (req, res) => {
+app.get('/admin/email_update', (req, res) => {
   SendUpdate(req, res);
+});
+
+app.get('/admin/test', (req, res) => {
+  Test(req, res);
 });
 
 // 404 handler

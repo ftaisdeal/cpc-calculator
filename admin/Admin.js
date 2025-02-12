@@ -28,7 +28,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
     });
 
     try {
-        const response = await fetch('email_update', {
+        const response = await fetch('./email_update', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(jsonData)
@@ -39,7 +39,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
 
         // Display sent and failed emails
         const emailList = document.getElementById('emailList');
-        emailList.innerHTML = "emails sent";
+        emailList.innerHTML = "sent emails";
 
         data.sentEmails.forEach(email => {
             let li = document.createElement('li');
@@ -48,7 +48,7 @@ document.getElementById('emailForm').addEventListener('submit', async function(e
         });
 
         if (data.failedEmails.length > 0) {
-            emailList.innerHTML += "<br><b>Failed Emails:</b>";
+            emailList.innerHTML += "<br><b>failed emails</b>";
             data.failedEmails.forEach(email => {
                 let li = document.createElement('li');
                 li.textContent = email;
