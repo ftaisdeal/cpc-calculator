@@ -1,5 +1,5 @@
 const Test = (req, res) => {
-  return res.json(
+  return res.json([
     {
       "id": 1,
       "body": "some comment",
@@ -10,6 +10,7 @@ const Test = (req, res) => {
       "body": "some comment",
       "postId": 1
     }
+  ]
   );
 }
 
