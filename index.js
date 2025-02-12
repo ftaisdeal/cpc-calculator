@@ -22,6 +22,7 @@ const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
 const Error404 = require('./pages/404');
 const Test = require('./admin/Test');
+const SendUpdate = require('./admin/EmailUpdate');
 
 // Home
 app.get('/', (req, res) => {
