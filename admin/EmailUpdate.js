@@ -3,9 +3,18 @@ let isProcessing = false; // Set processing flag to false to avoid multiple proc
 const SendUpdate = (req, res) => {
 
     return res.json(
-        { status: "JSON response",
-          message: "This is a message"
-         }
+        [
+            {
+              "id": 1,
+              "body": "some comment",
+              "postId": 1
+            },
+            {
+              "id": 2,
+              "body": "some comment",
+              "postId": 1
+            }
+          ]
       );
 
       /*
