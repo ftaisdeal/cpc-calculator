@@ -3,9 +3,7 @@ let isProcessing = false; // Set processing flag to false to avoid multiple proc
 const SendUpdate = (req, res) => {
 
     const { header, footer } = require('../components');
-
     const content = `<h1>Email Update</h1>`;
-  
     res.send(`${header('Error 404')}
   ${content}
   </body>
