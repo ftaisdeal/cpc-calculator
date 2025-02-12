@@ -1,17 +1,5 @@
 const Test = (req, res) => {
-  return res.json([
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    },
-    {
-      "id": 2,
-      "body": "some comment",
-      "postId": 1
-    }
-  ]
-  );
+  return res.json({ status: "JSON response" });
 }
 
 module.exports = Test;
