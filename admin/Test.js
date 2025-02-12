@@ -1,8 +1,15 @@
 const Test = (req, res) => {
   return res.json(
-    { status: "JSON response",
-      message: "message"
-     }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
   );
 }
 
