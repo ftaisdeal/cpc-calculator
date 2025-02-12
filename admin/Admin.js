@@ -3,52 +3,63 @@ const Admin = async function (res) {
   const { header } = require('../components');
 
   const content = `<b>Send Email Update</b>
-<p>
-<form action="email_update" method="POST">
-<input type="hidden" name="user" value="admin">
-<input type="hidden" name="password" value="email_update_password">
-<select name="list">
-<option value="cast" selected>cast</option>
-<option value="subscribers">subscribers</option>
-</select>
-<p><input type="submit" value="send message" id="sendEmails" style="padding: 4px; border-radius: 6px; background-color: #aba;"></p>
+
+<form id="emailForm">
+    <select name="list">
+        <option value="subscribers">subscribers</option>
+        <option value="cast">cast</option>
+    </select>
+    <input type="submit" value="send message" id="sendEmails" style="padding: 4px; border-radius: 6px; background-color: #aba;">
 </form>
-</p>
 
 <p id="status"></p>
+
 <ul id="emailList"></ul>
 
 <script>
-document.getElementById('sendEmails').addEventListener('click', function() {
-    fetch('/email_update')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('status').innerText = data.status;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('status').innerText = "Error starting email process.";
-    });
-});
+document.getElementById('emailForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-// Function to fetch sent emails every 5 seconds
-function updateEmailList() {
-    fetch('/sent-emails')
-    .then(response => response.json())
-    .then(data => {
+    const formData = new FormData(this);
+    const jsonData = {};
+    formData.forEach((value, key) => {
+        jsonData[key] = value;
+    });
+
+    try {
+        const response = await fetch('email_update', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData)
+        });
+
+        const data = await response.json();
+        document.getElementById('status').innerText = data.status;
+
+        // Display sent and failed emails
         const emailList = document.getElementById('emailList');
-        emailList.innerHTML = ""; // Clear previous list
-        data.forEach(email => {
+        emailList.innerHTML = "emails sent";
+
+        data.sentEmails.forEach(email => {
             let li = document.createElement('li');
             li.textContent = email;
             emailList.appendChild(li);
         });
-    })
-    .catch(error => console.error('Error fetching sent emails:', error));
-}
 
-// Refresh the email list every 5 seconds
-setInterval(updateEmailList, 5000);
+        if (data.failedEmails.length > 0) {
+            emailList.innerHTML += "<br><b>Failed Emails:</b>";
+            data.failedEmails.forEach(email => {
+                let li = document.createElement('li');
+                li.textContent = email;
+                li.style.color = 'red';
+                emailList.appendChild(li);
+            });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('status').innerText = "Error starting email process.";
+    }
+});
 </script>`;
 
   res.send(`${header('Admin')}

@@ -23,9 +23,9 @@ const SendUpdate = (req, res) => {
         console.error("Error resetting failed emails:", error);
     }
   }
-
-  resetFailedEmails();
   
+  resetFailedEmails();
+
   async function fetchUnsentEmails() {
       try {
           const [rows] = await connection.execute(
@@ -48,37 +48,51 @@ const SendUpdate = (req, res) => {
 
   let isRunning = false;
   
-  async function processEmails() {
+  async function processEmails(res) {
 
-    if (isRunning) return; // Prevent overlap
+    if (isRunning) {
+        return res.json({ status: "Already running" });
+    }
     isRunning = true;
 
     const emails = await fetchUnsentEmails();
     if (emails.length === 0) {
-        console.log("No more emails to send.");
-        return;
+        isRunning = false;
+        return res.json({ status: "No more emails to send." });
     }
-  
+
+    let sentEmails = [];
+    let failedEmails = [];
+
     for (const email of emails) {
         try {
             const html = EmailTemplate(email.first_name);
-            const body = "Your update message"; // Define the body content
+            const body = "Your update message";
 
             console.log(`Sending email to: ${email.email}`);
-            await sendEmail(email.email, 'Adventure Cabaret: Update', body, html);
+            //await sendEmail(email.email, 'Adventure Cabaret: Update', body, html);
             await markAsSent(email.id);
             console.log(`Email sent to: ${email.email}`);
+            sentEmails.push(email.email);
         } catch (error) {
             console.error(`Failed to send email to ${email.email}:`, error);
+            failedEmails.push(email.email);
         }
 
         await new Promise(resolve => setTimeout(resolve, 1000)); // 1-second delay
     }
-  }
-  
+
+    isRunning = false;
+
+    return res.json({
+        status: "Emails processed",
+        sentEmails,
+        failedEmails
+    });
+}  
   if (!isProcessing) { // Prevent overlap of processes
     isProcessing = true;
-    setInterval(processEmails, 5000);
+    processEmails();
   }
 
 };

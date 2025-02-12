@@ -20,7 +20,7 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
-const SendUpdate = require('./admin/EmailUpdate');
+const SendUpdate = require('./admin/Test');
 const Error404 = require('./pages/404');
 
 // Home
@@ -91,11 +91,9 @@ app.get('/admin',
 );
 
 // Send email update
-app.post('/email_update', (req, res) => {
-  if (req.body.user !== 'admin' || req.body.password !== 'email_update_password') {
-    Error('Unauthorized', 'Unauthorized');
-  }
-  SendUpdate(req, res);
+app.get('/email_update', (req, res) => {
+  const data = { status: 'Hello, World!' };
+  res.json(data);
 });
 
 // 404 handler
