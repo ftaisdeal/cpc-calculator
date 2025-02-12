@@ -2,6 +2,10 @@ let isProcessing = false; // Set processing flag to false to avoid multiple proc
 
 const SendUpdate = (req, res) => {
 
+    res.json({status: "status"});
+
+    /*
+
   const EmailTemplate = require('./EmailTemplate');
   const sendEmail = require('../functions/sendEmail');
   const mysql = require('mysql2/promise'); // Use promise-based MySQL
@@ -94,6 +98,8 @@ const SendUpdate = (req, res) => {
     isProcessing = true;
     processEmails();
   }
+
+  */
 
 };
   
