@@ -9,6 +9,7 @@ const Admin = async function (res) {
         <option value="subscribers">subscribers</option>
         <option value="cast">cast</option>
     </select>
+    <input type="hidden" name="format" value="json"/>
     <input type="submit" value="send message" id="sendEmails" style="padding: 4px; border-radius: 6px; background-color: #aba;">
 </form>
 
