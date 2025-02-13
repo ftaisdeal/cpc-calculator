@@ -19,8 +19,10 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
-const Error404 = require('./pages/404');
+const EmailPreview = require('./admin/EmailPreview');
 const SendUpdate = require('./admin/EmailUpdate');
+const Unsubscribe = require('./admin/Unsubscribe');
+const Error404 = require('./pages/404');
 
 // Home
 app.get('/', (req, res) => {
@@ -89,17 +91,30 @@ app.get('/admin',
   }
 );
 
+app.get('/email_preview', (req, res) => {
+  EmailPreview(res);
+});
+
 // Send email update
-app.get('/admin/email_update', (req, res) => {
+app.post('/email_update', (req, res) => {
   SendUpdate(req, res);
 });
 
+// Unsubscribe
+app.get('/unsubscribe', (req, res) => {
+  Unsubscribe(req, res);
+});
+
 // 404 handler
-app.use(function (req, res, next) {
+app.use((req, res) => {
   Error404(res);
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.listen(port, (err) => {
+  if (err) {
+    console.error('Failed to start server:', err);
+  } else {
+    console.log(`Server listening on port ${port}`);
+  }
 });

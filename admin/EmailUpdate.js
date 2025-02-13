@@ -1,23 +1,6 @@
 let isProcessing = false; // Set processing flag to false to avoid multiple processes
 
-const SendUpdate = (req, res) => {
-
-    return res.json(
-        [
-            {
-              "id": 1,
-              "body": "some comment",
-              "postId": 1
-            },
-            {
-              "id": 2,
-              "body": "some comment",
-              "postId": 1
-            }
-          ]
-      );
-
-      /*
+const SendUpdate = async (req, res) => {
 
   const EmailTemplate = require('./EmailTemplate');
   const sendEmail = require('../functions/sendEmail');
@@ -41,12 +24,12 @@ const SendUpdate = (req, res) => {
     }
   }
   
-  resetFailedEmails();
+  await resetFailedEmails();
 
   async function fetchUnsentEmails() {
       try {
           const [rows] = await connection.execute(
-              `SELECT id, email FROM ${table} WHERE sent = 0 ORDER BY id ASC`
+              `SELECT id, first_name, email, token FROM ${table} WHERE sent = 0 ORDER BY id ASC`
           );
           return rows;
       } catch (error) {
@@ -83,13 +66,12 @@ const SendUpdate = (req, res) => {
 
     for (const email of emails) {
         try {
-            const html = EmailTemplate(email.first_name);
+            const html = EmailTemplate(email.first_name, email.token);
             const body = "Your update message";
 
             console.log(`Sending email to: ${email.email}`);
-            //await sendEmail(email.email, 'Adventure Cabaret: Update', body, html);
+            await sendEmail(email.email, 'Adventure Cabaret: Update on the Production', body, html);
             await markAsSent(email.id);
-            console.log(`Email sent to: ${email.email}`);
             sentEmails.push(email.email);
         } catch (error) {
             console.error(`Failed to send email to ${email.email}:`, error);
@@ -100,6 +82,7 @@ const SendUpdate = (req, res) => {
     }
 
     isRunning = false;
+    isProcessing = false; // Reset the processing flag
 
     return res.json({
         status: "Emails processed",
@@ -109,9 +92,10 @@ const SendUpdate = (req, res) => {
 }  
   if (!isProcessing) { // Prevent overlap of processes
     isProcessing = true;
-    processEmails();
+    processEmails(res); // Pass the res parameter to processEmails
+  } else {
+    return res.json({ status: "Process already running" });
   }
-    */
 
 };
   

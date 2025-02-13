@@ -2,7 +2,7 @@
 
 const { header } = require('../components');
 
-const Error = function (res, error, message) {
+const Error = (res, message) => {
 
   const content = `<h1>Error</h1>
 <p>${message}</p>`;
@@ -10,6 +10,10 @@ const Error = function (res, error, message) {
   res.send(`${header(`'Error: ${message}'`)}
 ${content}
 </div>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>`);
 

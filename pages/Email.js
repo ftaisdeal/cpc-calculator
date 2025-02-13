@@ -1,4 +1,4 @@
-const SendUpdate = function (req, res) {
+const SendUpdate = (req, res) => {
   
   const { header, footer } = require('../components');
   const crypto = require('crypto');
@@ -100,6 +100,10 @@ a {
     const content = `<h1>Thank you</h1>
 <p>Thank you for signing up for updates on performances of Adventure Cabaret.</p>
 <p>You won't hear from us often, but we'll try to make it great every time.</p>
+<p>Keep your mind strong!</p>
+<p><img src="https://adventurecabaret.com/images/brain-flex.png" alt="Adventure Cabaret brain" width="400" height="181"></p>
+<p>And never stop dancing the Linky Pinky!</p>
+<p><img src="https://adventurecabaret.com/images/hand-colored.png" alt="Adventure Cabaret colored hand" width="200" height="313"></p>
 <div class="bottom_padding"></div>
 <br>
 <br>
