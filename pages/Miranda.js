@@ -15,7 +15,7 @@ const Home = async function (res) {
 <p>There is much more to Miranda's story, but we will leave it at this for now. Suffice it to say that Miranda Sorventi is the creator of Adventure Cabaret.</p>
 <br><br><br><br>`;
 
-  res.send(`${header('Adventure Cabaret')}
+  res.send(`${header('Miranda Sorventi')}
 ${content}
 ${footer}`);
 
