@@ -1,6 +1,7 @@
 *.DS_Store
 node_modules
 .env
-admin/Adventure_Cabaret.sql
+admin/Cast.sql
+admin/EmailUpdate.sql
 admin/notes.txt
 admin/to_do.txt
