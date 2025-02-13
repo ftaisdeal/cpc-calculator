@@ -1,6 +1,10 @@
 const EmailTemplate = (first_name, token) => {
 
-body = `<p>Thank you for signing up earlier to receive our newsletter.</p>
+  const subject = `Adventure Cabaret Newsletter`;
+
+  const text = `Thank you for signing up earlier to receive our newsletter.`;
+
+  const body = `<p>Thank you for signing up earlier to receive our newsletter.</p>
 
 <p>Adventure Cabaret has made tremendous progress in the past few months, and we are thrilled to announce that our first performance is only two weeks away.</p>
 
@@ -21,7 +25,7 @@ San Francisco, CA 94102<br>
     salutation = `<p>Dear ${first_name}:</p>`;
   }
 
-  const message = `<html>
+  const html = `<html>
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +71,7 @@ ${body}
 </body>
 </html>`;
 
-  return (`${message}`);
+  return { subject, text, html };
 
 }
 

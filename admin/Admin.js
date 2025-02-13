@@ -6,8 +6,8 @@ const Admin = async function (res) {
 <p><a href="/email_preview" target="__blank">preview email</a></p>
 <form id="emailForm">
       <select name="list">
-          <option value="subscribers">subscribers</option>
-          <option value="cast">cast</option>
+        <option value="cast">cast</option>
+        <option value="subscribers">subscribers</option>
       </select>
       <input type="hidden" name="format" value="json"/>
       <input type="submit" value="send message" id="sendEmails" style="padding: 4px; border-radius: 6px; background-color: #aba;">
@@ -40,7 +40,7 @@ const Admin = async function (res) {
           const response = await fetch('/email_update', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(jsonData)
+              body: JSON.stringify(jsonData) // Add the body parameter
           });
   
           if (!response.ok) {

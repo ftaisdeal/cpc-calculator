@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 app.set('trust proxy', true);
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const basicAuth = require('express-basic-auth');
 const port = 3000;
@@ -91,7 +92,7 @@ app.get('/admin',
   }
 );
 
-app.get('/email_preview', (req, res) => {
+app.get('/email_preview', (res) => {
   EmailPreview(res);
 });
 
