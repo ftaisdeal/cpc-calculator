@@ -1,12 +1,17 @@
 let isProcessing = false; // Set processing flag to false to avoid multiple processes
 
 const SendUpdate = async (req, res) => {
+    const Error = require('../pages/Error');
     const EmailTemplate = require('./EmailTemplate');
     const EmailTemplateCast = require('./EmailTemplateCast');
     const sendEmail = require('../functions/sendEmail');
     const mysql = require('mysql2/promise'); // Use promise-based MySQL
     const db_config = require('./db_config');
     const connection = mysql.createPool(db_config); // Use a connection pool
+
+    if (!req.body.admin || req.body.admin !== 'firinn') {
+        return Error(res, 'Unauthorized', 'You are not authorized to access this page.');
+    }
 
     let table = '';
     let query = '';

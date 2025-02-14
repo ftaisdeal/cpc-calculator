@@ -10,6 +10,7 @@ const Admin = async function (res) {
         <option value="subscribers">subscribers</option>
     </select>
     <input type="hidden" name="format" value="json"/>
+    <input type="hidden" name="admin" value="firinn"/>
     <input type="submit" value="send message" id="sendEmails" style="padding: 4px; border-radius: 6px; background-color: #aba;">
     <label>
         <input type="checkbox" id="confirmCheckbox"> confirm
