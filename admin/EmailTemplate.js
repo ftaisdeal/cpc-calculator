@@ -53,6 +53,7 @@ ${body}
 <p>Visit <a href="https://adventurecabaret.com">https://adventurecabaret.com</a> for more information.</p>
 <p>You are always free to <a href="https://adventurecabaret.com/unsubscribe?token=${token}">unsubscribe</a> from our mailing list.</p>
 </div>
+<img src="https://adventurecabaret.com/email_read?token=${token}" alt="pixel" width="1" height="1">
 <div class="footer"></div>
 </body>
 </html>`;

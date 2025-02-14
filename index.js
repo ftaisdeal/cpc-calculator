@@ -22,6 +22,7 @@ const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
 const EmailPreview = require('./admin/EmailPreview');
 const SendUpdate = require('./admin/EmailUpdate');
+const EmailTracking = require('./admin/EmailTracking');
 const Unsubscribe = require('./admin/Unsubscribe');
 const Error404 = require('./pages/404');
 
@@ -104,6 +105,11 @@ app.post('/email_update', (req, res) => {
 // Unsubscribe
 app.get('/unsubscribe', (req, res) => {
   Unsubscribe(req, res);
+});
+
+// Email tracking
+app.get('/email_tracking', (req, res) => {
+  EmailTracking(req, res);
 });
 
 // 404 handler
