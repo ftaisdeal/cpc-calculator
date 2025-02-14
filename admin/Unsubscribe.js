@@ -7,7 +7,7 @@ const Unsubscribe = async (req, res) => {
   const connection = mysql.createConnection(db_config);
   const token = req.query.token;
 
-  const update_query = `UPDATE email_update SET first_name = "unsubcribed" WHERE token = "${token}";`;
+  const update_query = `DELETE FROM email_update WHERE token = "${token}";`;
 
   connection.query(update_query, (error) => {
 
