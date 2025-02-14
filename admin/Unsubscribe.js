@@ -1,7 +1,7 @@
 const Unsubscribe = async (req, res) => {
 
   const { header, footer } = require('../components');
-  const Error = require('./Error');
+  const Error = require('./pages/Error');
   const mysql = require('mysql');
   const db_config = require('../admin/db_config');
   const connection = mysql.createConnection(db_config);
