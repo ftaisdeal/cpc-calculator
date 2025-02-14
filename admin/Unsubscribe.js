@@ -12,7 +12,8 @@ const Unsubscribe = async (req, res) => {
   connection.query(update_query, (error, results) => {
 
     if (error) {
-      Error(res, error, error);
+      console.error('Database error:', error);
+      Error(res, 'Error', 'An error occurred while processing your request.');
       return;
     };
 
