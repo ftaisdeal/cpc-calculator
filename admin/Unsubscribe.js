@@ -9,16 +9,19 @@ const Unsubscribe = async (req, res) => {
 
   const update_query = `DELETE FROM email_update WHERE token = "${token}";`;
 
-  connection.query(update_query, (error) => {
+  connection.query(update_query, (error, results) => {
 
     if (error) {
       Error(res, error, error);
       return;
     };
 
-  });
+    if (results.affectedRows === 0) {
+      Error(res, 'No record found', 'No record found');
+      return;
+    }
 
-  const content = `<h4>You have unsubscribed from our email list</h4>
+    const content = `<h4>You have unsubscribed from our email list</h4>
 If you would like to resubscribe at any time, please visit our website:</p>
 <p><a href="https://adventurecabaret.com">https://adventurecabaret.com</a></p>
 <p>Thank you.</p>
@@ -27,9 +30,11 @@ If you would like to resubscribe at any time, please visit our website:</p>
 <br>
 <br>`;
 
-res.send(`${header('Email unsubscribed')}
+    res.send(`${header('Email unsubscribed')}
 ${content}
 ${footer}`);
+
+  });
 
 }
 
