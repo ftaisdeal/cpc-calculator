@@ -2,23 +2,9 @@ const EmailTemplate = (first_name, token) => {
 
   const subject = `Adventure Cabaret Newsletter`;
 
-  const text = `Thank you for signing up earlier to receive our newsletter.`;
+  const text = ``;
 
-  const body = `<p>Thank you for signing up earlier to receive our newsletter.</p>
-
-<p>Adventure Cabaret has made tremendous progress in the past few months, and we are thrilled to announce that our first performance is only two weeks away.</p>
-
-<p><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1119346739229"><b>Buy tickets now</b></a>, because this show is definitely going to sell out!</p>
-
-<p><b>Saturday, March 1, 2025 - 7:30 PM</b></p>
-<b>Phoenix Theater</b><br>
-414 Mason St., Sixth Floor, Suite 604<br>
-San Francisco, CA 94102<br>
-
-<p>We have been flexing our minds like crazy to bring you the best show possible!</p>
-<p><img src="https://adventurecabaret.com/images/brain-flex.png" alt="Adventure Cabaret brain" width="400" height="181"></p>
-<p>We look forward to seeing you at the show, and dancing the Linky Pinky with you!</p>
-<p><img src="https://adventurecabaret.com/images/hand-colored.png" alt="Adventure Cabaret colored hand" width="200" height="313"></p>`;
+  const body = ``;
 
   let salutation = '';
   if (first_name) {
