@@ -7,10 +7,20 @@ const EmailTracking = async (req, res) => {
     const db_config = require('./db_config');
     const connection = await mysql.createPool(db_config);
 
-    const update_query = `UPDATE email_update SET last_opened = CURRENT_TIMESTAMP WHERE token="${token}";`;
-
     try {
+      // Read the current open_count value
+      const [rows] = await connection.query(`SELECT open_count FROM email_update WHERE token="${token}";`);
+      if (rows.length === 0) {
+        res.status(404).send('Token not found.');
+        return;
+      }
+
+      const open_count = rows[0].open_count;
+
+      // Update the open_count value and last_opened timestamp
+      const update_query = `UPDATE email_update SET open_count = ${open_count + 1}, last_opened = CURRENT_TIMESTAMP WHERE token="${token}";`;
       await connection.query(update_query);
+
     } catch (error) {
       console.error('Database error:', error);
       res.status(500).send('An error occurred while processing your request.');

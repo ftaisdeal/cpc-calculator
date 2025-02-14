@@ -1,8 +1,21 @@
 const EmailTemplateCast = (first_name) => {
 
-  const subject = `Adventure Cabaret: Message to the Cast`;
+  const subject = `Adventure Cabaret: Message to the Cast - February 14, 2025`;
 
-  const text = ``;
+  const text = `First of all, happy Valentine's Day!
+
+Administrative Announcements
+1. The t-shirts for performances have been ordered, and will be here in about ten days.
+
+2. Ticket sales have picked up, and we are only twenty tickets away from selling out the show, with two weeks to go. This first show will definitely sell out, and will probably have a waiting list.
+
+3. Depending on apparent demand for tickets based on the size of the waiing list, let's leave open the possibility of a second performance two weeks after the first, which means on Saturday, March 15.
+
+4. We are in the process of producing the ad campaign on Instagram, which means that the ads will have run for at least three weeks before the second performance, further increasing demand.
+
+5. If demand for tickets is heavy based on the ad campaign, we may plan for a performance every week, on Saturday evenings.
+
+6. I have added a tracking pixel to the subscriber emails, which will allow us to know how many people are opening the emails.`;
 
   const body = ``;
 
