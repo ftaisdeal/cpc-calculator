@@ -92,8 +92,8 @@ app.get('/admin',
   }
 );
 
-app.get('/email_preview', (res) => {
-  EmailPreview(res);
+app.get('/email_preview', (req, res) => {
+  EmailPreview(req, res);
 });
 
 // Send email update

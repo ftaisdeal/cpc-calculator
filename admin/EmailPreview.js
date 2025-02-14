@@ -1,7 +1,16 @@
-const Email = (res) => {
+const Email = (req, res) => {
     const EmailTemplate = require('./EmailTemplate');
-    const preview = EmailTemplate('First', 'token');
-    res.send(`${preview}`);
+    const EmailTemplateCast = require('./EmailTemplateCast');
+
+    let list = req.query.list;
+
+    if (list === 'cast') {
+        ({ subject, text, html } = EmailTemplateCast('First'));
+    } else {
+        ({ subject, text, html } = EmailTemplate('First', 'token'));
+    }
+
+    res.send(html);
 }
 
 module.exports = Email;

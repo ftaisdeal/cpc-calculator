@@ -3,7 +3,8 @@ const Admin = async function (res) {
     const { header } = require('../components');
   
     const content = `<b>Send Email Update</b>
-<p><a href="/email_preview" target="__blank">preview email</a></p>
+<p>preview <a href="/email_preview" target="__blank">subscriber</a> | <a href="/email_preview?list=cast" target="__blank">cast</a></p>
+
 <form id="emailForm">
       <select name="list">
         <option value="cast">cast</option>
@@ -36,6 +37,8 @@ const Admin = async function (res) {
           jsonData[key] = value;
       });
   
+      console.log('Form Data:', jsonData); // Debugging statement
+  
       try {
           const response = await fetch('/email_update', {
               method: 'POST',
@@ -48,6 +51,7 @@ const Admin = async function (res) {
           }
   
           const data = await response.json();
+          console.log('Response Data:', data); // Debugging statement
           document.getElementById('status').innerText = data.status;
   
           // Display sent and failed emails
