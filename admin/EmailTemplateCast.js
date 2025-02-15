@@ -2,9 +2,7 @@ const EmailTemplateCast = (first_name) => {
 
   const subject = `Adventure Cabaret: Message to the Cast - February 14, 2025`;
 
-  const text = `First of all, happy Valentine's Day!
-
-Administrative Announcements
+  const text = `Administrative Announcements
 1. The t-shirts for performances have been ordered, and will be here in about ten days.
 
 2. Ticket sales have picked up, and we are only twenty tickets away from selling out the show, with two weeks to go. This first show will definitely sell out, and will probably have a waiting list.
