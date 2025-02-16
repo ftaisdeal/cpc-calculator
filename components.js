@@ -75,9 +75,6 @@ src="https://www.facebook.com/tr?id=1935845873572368&ev=PageView&noscript=1"
     <a href="/update" class="nav-link">update</a>
   </li>
   <li class="nav-item">
-    <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">YouTube</a>
-  </li>
-  <li class="nav-item">
     <a href="/contact" class="nav-link">contact</a>
   </li>
 </ul>
