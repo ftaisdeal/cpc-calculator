@@ -33,7 +33,7 @@ Samples:
 
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
-<p>Please check <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">YouTube</a>out YouTube channel</a and <a href="https://www.instagram.com/adventurecabaret/" target="__blank">our Instagram account</a> for other fun stuff.</p>
+<p>Please check out <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">our YouTube channel</a>and <a href="https://www.instagram.com/adventurecabaret/" target="__blank">our Instagram account</a> for other fun stuff.</p>
 
 <p>
 
