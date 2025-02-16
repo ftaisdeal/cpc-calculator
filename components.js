@@ -59,6 +59,9 @@ src="https://www.facebook.com/tr?id=1935845873572368&ev=PageView&noscript=1"
 <nav class="navbar">
 <a href="/" class="navbar-brand"><span class="home" style="color:#674ea7;">A</span><span class="home" style="color:#cd4025;">C</span></a>
 <ul class="navbar-nav">
+<li class="nav-item">
+  <a href="/tickets" class="nav-link">tickets</a>
+</li>
   <li class="nav-item">
     <a href="/origins" class="nav-link">origins</a>
   </li>
@@ -70,9 +73,6 @@ src="https://www.facebook.com/tr?id=1935845873572368&ev=PageView&noscript=1"
   </li>
   <li class="nav-item">
     <a href="/update" class="nav-link">update</a>
-  </li>
-  <li class="nav-item">
-    <a href="/tickets" class="nav-link">tickets</a>
   </li>
   <li class="nav-item">
     <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">YouTube</a>
