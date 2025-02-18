@@ -2,51 +2,49 @@ const EmailTemplateCast = (first_name) => {
 
   const subject = `Adventure Cabaret: Message to the Cast - February 17, 2025`;
 
-  const text = `It's Crunch Time, Folks
-  1. We are now only 12 days away from the first performance. We need to be making substantial progress every day.  That means progress on completely mastering your lines.  If you still do not know all your lines accurately, completely and confidently, the most important thing you can do is to immediately adopt methods that will help you to achieve complete mastery:
-  
-  - ALWAYS look away from the script when you speak your lines.
-  - Lock in the words by linking them to gestures and movements.
-  - Study the exact wording, and take an interest in all the details of the text.
-  - Notice the formatting, such as italics, think about what it means, and match your expression to the meaning.
-  - Think about which words carry the most meaning in a sentence, and emphasize those words.
-  - The more expression you bring to the text, the more natural and easy it will be for you to remember the text accurately and without effort.
+  const text = `Good News!
+1. Ticket sales are up strongly. We are now only 13 tickets away from selling out the first performance, so this first performance is definitely going to be sold out, and probably with a waiting list that can be rolled over into additional performances.
 
-  This coming Sunday is the last time you will be able to call out "line."  After that, you will be expected to know your lines perfectly.
-  
-  2. We are going to have an online rehearsal on Wednesday, 7:00-7:30pm.  This is specifically to completely master the two largest ensembles scenes, "Invite an Insight," and the Finale.  Please be prepared to be on time and to concentrate completely.  We will be meeting at the usual Google Meet URL:
-  
-  https://meet.google.com/cxn-xaxm-mng
-  
-  3. If you want more time with me or with anyone else in the cast, please ask immediately. I am happy to help you in any way I can. I am available to have a video meeting with you, have a phone call, or exchange messages or email. Please do not hesitate to ask for help.  I am here to help you.
-  
-  Talk with you soon.`;
+2. The QR code in the poster outside the building is working, and we are getting significant traffic from that one QR code.  Imagine if we had a few hundred posters all over San Francisco. No problem selling out lots of performances, even at larger theaters, and then you get paid really well.
 
-  const body = `<p><b>It's Crunch Time, Folks</b></p>
-<p>1. We are now only 12 days away from the first performance. We need to be making substantial progress every day.  That means progress on completely mastering your lines.  If you still do not know all your lines accurately, completely and confidently, the most important thing you can do is to immediately adopt methods that will help you to achieve complete mastery:</p>
-  
-- ALWAYS look away from the script when you speak your lines.
-<br>- Lock in the words by linking them to gestures and movements.
-<br>- Study the exact wording, and take an interest in all the details of the text.
-<br>- Notice the formatting, such as italics, think about what it means, and match your expression to the meaning.
-<br>- Think about which words carry the most meaning in a sentence, and emphasize those words.
-<br>- The more expression you bring to the text, the more natural and easy it will be for you to remember the text accurately and without effort.
+2. I've hired Beth Cockrell at Phoenix as lighting designer, and Beth will be working with us this Sunday for the first tech rehearsal. Beth is a very experienced lighting designer, and I'm excited to have her on board.
 
-<p>This coming Sunday is the last time you will be able to call out "line."  After that, you will be expected to know your lines perfectly.</p>
-  
-<p>2. We are going to have an online rehearsal on Wednesday, 7:00-7:30pm.  This is specifically to completely master the two largest ensembles scenes, "Invite an Insight," and the Finale.  Please be prepared to be on time and to concentrate completely. We will be meeting at the usual Google Meet URL:</p>
-  
-<a href="https://meet.google.com/cxn-xaxm-mng">https://meet.google.com/cxn-xaxm-mng</a>
-  
-<p>3. If you want more time with me or with anyone else in the cast, please ask immediately. I am happy to help you in any way I can. I am available to have a video meeting with you, have a phone call, or exchange messages or email. Please do not hesitate to ask for help.  I am here to help you.</p>
+3. We now have a "program" for the show consistently of truly challenging questions. This will set the mood for the show from the very beginning, and also become a valuable souvenir for the audience to take home: https://adventurecabaret.com/files/Program.pdf
 
-<p>Talk with you soon.</p>
+4. Pre-show roles:
+Anhelina - First greeter, just inside the door of the building. Expert in Linky Pinky introductions.
+Luke - Second greeter, just outside the elevator door in the lobby. Expert in the Linky Pinky and soil biology.
+Paula - Third greeter, just outside the 6th floor elevator doors. World expert in Calypso Linky Pinky and bryophytes.
+Cynthia and Jacob - Fourth and fifth greeters, just inside the lobby. Experts in the Linky Pinky, handing out programs and friendly conversation.
+Joshua - Sixth greeter, just inside the theater. Expert in the Linky Pinky, friendly conversation, and helping people choose a seat.
 
-<p>Stay strong!  I love you guys!</p>
+6. The Adventure Cabaret store now has t-shirts and sweatshirts available, printed on both sides, with a big image of the colorful brain on the back: https://adventurecabaret.printful.me/
 
-<img src="https://adventurecabaret.com/images/brain-flex.png" width="400" height="181">
+5. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!`;
 
-`;
+const body = `<p><b>Good News!</b></p>
+<p>1. Ticket sales are up strongly. We are now only 13 tickets away from selling out the first performance, so this first performance is definitely going to be sold out, and probably with a waiting list that can be rolled over into additional performances.</p>
+
+<p>2. The QR code in the poster outside the building is working, and we are getting significant traffic from that one QR code.  Imagine if we had a few hundred posters all over San Francisco. No problem selling out lots of performances, even at larger theaters, and then you get paid really well.</p>
+
+<p>2. I've hired Beth Cockrell at Phoenix as lighting designer, and Beth will be working with us this Sunday for the first tech rehearsal. Beth is a very experienced lighting designer, and I'm excited to have her on board.</p>
+
+<p>3. We now have a "program" for the show consistently of truly challenging moral questions. This will set the mood for the show from the very beginning, and also become a valuable souvenir for the audience to take home: <a href="https://adventurecabaret.com/files/Program.pdf">https://adventurecabaret.com/files/Program.pdf</a></p>
+
+<p>4. Pre-show roles:
+<br><b>Anhelina</b> - First greeter, just inside the door of the building. Expert in Linky Pinky introductions and friendly conversation.
+<br><b>Luke</b> - Second greeter, just outside the elevator door in the lobby. Expert in the Linky Pinky, friendly conversation, and soil biology.
+<br><b>Paula</b> - Third greeter, just outside the 6th floor elevator doors. World expert in Calypso Linky Pinky, friendly conversation, and bryophytes.
+<br><b>Cynthia</b> and <b>Jacob</b> - Fourth and fifth greeters, just inside the lobby. Experts in the Linky Pinky, friendly conversation, and handing out programs.
+<br><b>Joshua</b> - Sixth greeter, just inside the theater. Expert in the Linky Pinky, friendly conversation, and helping people choose a seat.</p>
+
+<p>5. The Adventure Cabaret store now has t-shirts and sweatshirts available, printed on both sides, with a big image of the colorful brain on the back: <a href="https://adventurecabaret.printful.me/">https://adventurecabaret.printful.me/</a></p>
+
+<p>6. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!</p>
+
+<p>Keep flexing!</p>
+
+<img src="https://adventurecabaret.com/images/brain-flex.png" width="400" height="181">`;
 
   const html = `<html>
 <head>
