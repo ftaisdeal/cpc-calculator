@@ -20,7 +20,11 @@ Joshua - Sixth greeter, just inside the theater. Expert in the Linky Pinky, frie
 
 6. The Adventure Cabaret store now has t-shirts and sweatshirts available, printed on both sides, with a big image of the colorful brain on the back: https://adventurecabaret.printful.me/
 
-5. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!`;
+5. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!
+
+Yours in beautiful creativity,
+
+Firinn`;
 
 const body = `<p><b>Good News!</b></p>
 <p>1. Ticket sales are up strongly. We are now only 13 tickets away from selling out the first performance, so this first performance is definitely going to be sold out, and probably with a waiting list that can be rolled over into additional performances.</p>
@@ -41,6 +45,10 @@ const body = `<p><b>Good News!</b></p>
 <p>5. The Adventure Cabaret store now has t-shirts and sweatshirts available, printed on both sides, with a big image of the colorful brain on the back: <a href="https://adventurecabaret.printful.me/">https://adventurecabaret.printful.me/</a></p>
 
 <p>6. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!</p>
+
+<p>Yours in beautiful creativity,</p>
+
+<p><a href="https://taisdeal.com">Firinn</a></p>
 
 <p>Keep flexing!</p>
 
