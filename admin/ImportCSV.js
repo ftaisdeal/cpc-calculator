@@ -36,4 +36,4 @@ const processCSV = async (filePath) => {
     });
 };
 
-processCSV('/Users/firinn/Desktop/AC/website/admin/EmailsAddTemplate.csv');
+processCSV('/Users/firinn/Desktop/AC/website/admin/EmailsAdd.csv');
