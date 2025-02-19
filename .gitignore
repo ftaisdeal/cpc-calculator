@@ -2,7 +2,7 @@
 node_modules
 .env
 admin/EmailUpdate.js
-admin/EmailUpdate.sql
+admin/EmailsAdd.sql
 admin/Cast.sql
 admin/notes.txt
 admin/to_do.txt
