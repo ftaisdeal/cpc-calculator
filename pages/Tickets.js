@@ -4,9 +4,9 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 
-<p>The first performance of Adventure Cabaret is on March 1, 2025.</p>
+<p>The March 1st performance is sold out, but tickets are available for the performance on March 22nd.</p>
 
-<div id="eventbrite-widget-container-1119346739229"></div>
+<div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -18,8 +18,8 @@ const Tickets = async function (res) {
     window.EBWidgets.createWidget({
         // Required
         widgetType: 'checkout',
-        eventId: '1119346739229',
-        iframeContainerId: 'eventbrite-widget-container-1119346739229',
+        eventId: '1255264232109',
+        iframeContainerId: 'eventbrite-widget-container-1255264232109',
 
         // Optional
         iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided

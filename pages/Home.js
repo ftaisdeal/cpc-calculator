@@ -35,9 +35,9 @@ Samples:
 
 <p>Please check out <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">our YouTube channel</a> and <a href="https://www.instagram.com/adventurecabaret/" target="__blank">our Instagram account</a> for other fun stuff.</p>
 
-<p>
+<p>The March 1st show is sold out, but tickets for the performance on March 22nd are available below.</p>
 
-<div id="eventbrite-widget-container-1119346739229"></div>
+<div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -49,16 +49,14 @@ Samples:
     window.EBWidgets.createWidget({
         // Required
         widgetType: 'checkout',
-        eventId: '1119346739229',
-        iframeContainerId: 'eventbrite-widget-container-1119346739229',
+        eventId: '1255264232109',
+        iframeContainerId: 'eventbrite-widget-container-1255264232109',
 
         // Optional
         iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
         onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
-
-</p>
 
 <p>
 <b>Stay in touch about our progress and performances.</b>
