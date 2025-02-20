@@ -35,8 +35,10 @@ Samples:
 
 <p>Please check out <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">our YouTube channel</a> and <a href="https://www.instagram.com/adventurecabaret/" target="__blank">our Instagram account</a> for other fun stuff.</p>
 
-<p>The March 1st show is sold out, but tickets for the performance on March 22nd are available below.</p>
+<h4>March 1st Performance</h4>
+<button style="padding:10px; border-radius: 4px; background-color: #c44;"><b>SOLD OUT</b></button>
 
+<h4>March 22nd Performance</h4>
 <div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>

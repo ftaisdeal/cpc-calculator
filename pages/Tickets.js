@@ -4,8 +4,10 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 
-<p>The March 1st performance is sold out, but tickets are available for the performance on March 22nd.</p>
+<h4>March 1st Performance</h4>
+<button style="padding:10px; border-radius: 4px; background-color: #c44;"><b>SOLD OUT</b></button>
 
+<h4>March 22nd Performance</h4>
 <div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
