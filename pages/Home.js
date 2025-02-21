@@ -36,7 +36,7 @@ Samples:
 <p>Please check out <a href="https://www.youtube.com/@AdventureCabaret" class="nav-link" target="__blank">our YouTube channel</a> and <a href="https://www.instagram.com/adventurecabaret/" target="__blank">our Instagram account</a> for other fun stuff.</p>
 
 <h4>March 1st Performance</h4>
-<button style="padding:10px; border-radius: 4px; background-color: #c44;"><b>SOLD OUT</b></button>
+<button style="padding:10px; border-radius: 4px; background-color: #c44;">SOLD OUT</button>
 
 <h4>March 22nd Performance</h4>
 Phoenix Theater, 414 Mason St, San Francisco, CA 94102
