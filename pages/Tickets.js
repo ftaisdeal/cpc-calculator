@@ -28,7 +28,11 @@ Phoenix Theater, 414 Mason St, San Francisco, CA 94102
         modalTriggerElementId: 'eventbrite-widget-modal-trigger-1255264232109',
         onOrderComplete: exampleCallback
     });
-</script>`;
+</script>
+<br>
+<br>
+<br>
+<br>`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}
