@@ -14,7 +14,7 @@ const generateSQL = (firstName, email, token) => {
 
 // Main function to process the CSV file and generate SQL statements
 const processCSV = async (filePath) => {
-  const writeStream = fs.createWriteStream('AddEmails.sql');
+  const writeStream = fs.createWriteStream('EmailsAdd.sql');
   const emailSet = new Set();
 
   fs.createReadStream(filePath)
