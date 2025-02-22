@@ -23,9 +23,9 @@ const Home = async function (res) {
 
 Samples:
 
-<br>1. <a href="https://youtu.be/0RN5fGF61G4" target="__blank">Thought Police Hotline</a>
+<br>1. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a>
 
-<br>2. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a>
+<br>2. <a href="https://youtu.be/0RN5fGF61G4" target="__blank">Thought Police Hotline</a>
 
 <br>3. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
 
