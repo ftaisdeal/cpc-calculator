@@ -134,6 +134,7 @@ select {
   color: #eee;
   font-weight: 400;
   text-decoration: none;
+  margin-right: 10px;
 }
 
 .navbar-nav {
