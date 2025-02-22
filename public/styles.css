@@ -53,6 +53,11 @@ a:hover {
 
 input {
   font-size: 1em;
+  background: #eef;
+}
+
+input:focus {
+  background: #ffffff;
 }
 
 .button {
