@@ -5,6 +5,6 @@ admin/EmailUpdate.js
 admin/EmailsAdd.js
 admin/EmailsAdd.csv
 admin/EmailsAdd.sql
-admin/Cast.sql
+EmailTemplateCast.js
 admin/notes.txt
 admin/to_do.txt

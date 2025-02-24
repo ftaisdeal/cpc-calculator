@@ -1,56 +1,38 @@
 const EmailTemplateCast = (first_name) => {
 
-  const subject = `Adventure Cabaret: Message to the Cast - February 17, 2025`;
+  const subject = `Adventure Cabaret: Message to the Cast - February 24, 2025`;
 
-  const text = `Good News!
-1. Ticket sales are up strongly. We are now only 13 tickets away from selling out the first performance, so this first performance is definitely going to be sold out, and probably with a waiting list that can be rolled over into additional performances.
+  const text = `1. I know that rehearsal yesterday was full of moments of tension, but that is normal as we approach the first performance. We now have only five days to prepare for doing a great show on Saturday. Let's all focus intensely, work smart and get the job done this week.
 
-2. The QR code in the poster outside the building is working, and we are getting significant traffic from that one QR code.  Imagine if we had a few hundred posters all over San Francisco. No problem selling out lots of performances, even at larger theaters, and then you get paid really well.
+2. Your personalized t-shirts arrive on Wednesday, so I will be handing them out at rehearsal on Friday. The foamcore 11x17 posters also arrive this week, and we will go over the "audience induction" plan for the show during rehearsal on Friday as well.  It's pretty simple. Most of all we have to have the spirit of fun and adventure in our hearts as we greet the audience for the first time.
 
-2. I've hired Beth Cockrell at Phoenix as lighting designer, and Beth will be working with us this Sunday for the first tech rehearsal. Beth is a very experienced lighting designer, and I'm excited to have her on board.
+3. I will be cleaning the entire theater on Friday before rehearsal, part of which means thoroughly vacuuming the backstage area, and cleaning the shelves below the mirrors with a sponge.
 
-3. We now have a "program" for the show consistently of truly challenging questions. This will set the mood for the show from the very beginning, and also become a valuable souvenir for the audience to take home: https://adventurecabaret.com/files/Program.pdf
+4. The new multimedia file for Friday rehearsal will include many more audio cues for the segments, which you will hear over the audio system. This will help to make the entrances more precise.
 
-4. Pre-show roles:
-Anhelina - First greeter, just inside the door of the building. Expert in Linky Pinky introductions.
-Luke - Second greeter, just outside the elevator door in the lobby. Expert in the Linky Pinky and soil biology.
-Paula - Third greeter, just outside the 6th floor elevator doors. World expert in Calypso Linky Pinky and bryophytes.
-Cynthia and Jacob - Fourth and fifth greeters, just inside the lobby. Experts in the Linky Pinky, friendly conversation, and handing out programs.
-Joshua - Sixth greeter, just inside the theater. Expert in the Linky Pinky, friendly conversation, and helping people choose a seat.
+5. This is for the future, but Paula brought up the wonderful idea of taking a four-day weekend trip to LA and doing the show on a Friday and Saturday night in LA. We would rent a big van and all drive down together in the van, and either rent a big house or all stay in the same hotel together. I think this is a great idea, and we might be able to do this as soon as June. Let's plan for it!
 
-6. The Adventure Cabaret store now has t-shirts and sweatshirts available, printed on both sides, with a big image of the colorful brain on the back: https://adventurecabaret.printful.me/
+6. See you tonight at 7:30 for rehearsal by video: https://meet.google.com/cxn-xaxm-mng
 
-5. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!
+Thanks!`;
 
-Yours in beautiful creativity,
+const body = `<p>1. I know that rehearsal yesterday was full of moments of tension, but that is normal as we approach the first performance. We now have only five days to prepare for doing a great show on Saturday. Let's all focus intensely, work smart and get the job done this week.</p>
 
-Firinn`;
+<p>2. Your personalized t-shirts arrive on Wednesday, so I will be handing them out at rehearsal on Friday. The foamcore 11x17 posters also arrive this week, and we will go over the "audience induction" plan for the show during rehearsal on Friday as well.  It's pretty simple. Most of all we have to have the spirit of fun and adventure in our hearts as we greet the audience for the first time.</p>
 
-const body = `<p><b>Good News!</b></p>
-<p>1. Ticket sales are up strongly. We are now only 13 tickets away from selling out the first performance, so this first performance is definitely going to be sold out, and probably with a waiting list that can be rolled over into additional performances.</p>
+<p>3. I will be cleaning the entire theater on Friday before rehearsal, part of which means thoroughly vacuuming the backstage area, and cleaning the shelves below the mirrors with a sponge.</p>
 
-<p>2. The QR code in the poster outside the building is working, and we are getting significant traffic from that one QR code.  Imagine if we had a few hundred posters all over San Francisco. No problem selling out lots of performances, even at larger theaters, and then you get paid really well.</p>
+<p>4. The new multimedia file for Friday rehearsal will include many more audio cues for the segments, which you will hear over the audio system. This will help to make the entrances more precise.</p>
 
-<p>2. I've hired Beth Cockrell at Phoenix as lighting designer, and Beth will be working with us this Sunday for the first tech rehearsal. Beth is a very experienced lighting designer, and I'm excited to have her on board.</p>
+<p>5. This is for the future, but Paula brought up the wonderful idea of taking a four-day weekend trip to LA and doing the show on a Friday and Saturday night in LA. We would rent a big van and all drive down together in the van, and either rent a big house or all stay in the same hotel together. I think this is a great idea, and we might be able to do this as soon as June. Let's plan for it!</p>
 
-<p>3. We now have a "program" for the show consistently of truly challenging moral questions. This will set the mood for the show from the very beginning, and also become a valuable souvenir for the audience to take home: <a href="https://adventurecabaret.com/files/Program.pdf">https://adventurecabaret.com/files/Program.pdf</a></p>
+<p>6. See you tonight at 7:30 for rehearsal by video:</p>
 
-<p>4. Pre-show roles:
-<br><b>Anhelina</b> - First greeter, just inside the door of the building. Expert in Linky Pinky introductions and friendly conversation.
-<br><b>Luke</b> - Second greeter, just outside the elevator door in the lobby. Expert in the Linky Pinky, friendly conversation, and soil biology.
-<br><b>Paula</b> - Third greeter, just outside the 6th floor elevator doors. World expert in Calypso Linky Pinky, friendly conversation, and bryophytes.
-<br><b>Cynthia</b> and <b>Jacob</b> - Fourth and fifth greeters, just inside the lobby. Experts in the Linky Pinky, friendly conversation, and handing out programs.
-<br><b>Joshua</b> - Sixth greeter, just inside the theater. Expert in the Linky Pinky, friendly conversation, and helping people choose a seat.</p>
-
-<p>5. The Adventure Cabaret store now has t-shirts and sweatshirts available, printed on both sides, with a big image of the colorful brain on the back: <a href="https://adventurecabaret.printful.me/">https://adventurecabaret.printful.me/</a></p>
-
-<p>6. We got some hits directly from ChatGPT, definitely because some people were asking ChatGPT "What the hell is this Adventure Cabaret thing?" Ha ha ha! I love it!</p>
-
-<p>Yours in beautiful creativity,</p>
-
-<p><a href="https://taisdeal.com">Firinn</a> (Click the link for a surprise!)</p>
+<p><a href="https://meet.google.com/cxn-xaxm-mng">https://meet.google.com/cxn-xaxm-mng</a></p>
 
 <p>Keep flexing!</p>
+
+<br>
 
 <img src="https://adventurecabaret.com/images/brain-flex.png" width="400" height="181">`;
 
