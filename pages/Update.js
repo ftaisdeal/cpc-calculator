@@ -3,7 +3,7 @@ const Update = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h3>Update on the Production</h3>
-<i>Update: Sunday, January 19, 2025</i>
+<i>Update: Tuesday, March 4, 2025</i>
 <p>
 <ol>
 <li>We had a tremendously successful opening night on March 1, with a sold out show, a great performance and an appreciative and enthusiastic audience.</li>
