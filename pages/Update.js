@@ -7,7 +7,7 @@ const Update = async function (res) {
 <p>
 <ol>
 <li>We had a tremendously successful opening night on March 1, with a sold out show, a great performance and an appreciative and enthusiastic audience.</li>
-<li><a href="/tickets">Tickets are available for a performance on March 22nd</a>.</li>
+<li><a href="/tickets">Tickets are available for a second performance on March 22nd</a>.</li>
 <li>The second performance is at <a href="https://www.phoenixtheatresf.org/" target="__blank">Phoenix Theater</a> in San Francisco's theater district.</li>
 <li>We will be moving over to <a href="https://www.theater33.com/" target="__blank">Theater 33</a>, at 533 Sutter Street, for a performance on April 5th.</li>
 <li>We are now working with a lighting designer, Beth Cockrell, who will be designing the lighting for future performances.</li>
