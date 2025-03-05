@@ -4,8 +4,8 @@ const QR = async function (req, res) {
 
   const page = parseInt(req.query.page, 10);
 
-  let title = "";
-  let text = "";
+  let title = '';
+  let text = '';
 
   switch (page) {
     case 1:
@@ -17,7 +17,7 @@ const QR = async function (req, res) {
       title = '';
       text = ``;
       break;
-      
+
     default:
       title = "No QR Code Specified";
   } 
