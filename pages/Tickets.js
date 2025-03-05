@@ -4,7 +4,6 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 <b>March 22nd Performance</b>
-<br>
 <noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
 <br><button id="eventbrite-widget-modal-trigger-1255264232109" type="button" style="padding:10px; border-radius: 4px; background-color: #4c4;">Buy Tickets</button>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
