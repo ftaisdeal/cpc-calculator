@@ -33,7 +33,7 @@ Samples:
 
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
-<b>March 22nd Performance</b><br>
+<p><b>March 22nd Performance</b></p>
 <button id="eventbrite-widget-modal-trigger-1255264232109" type="button" style="padding:10px; border-radius: 4px; background-color: #4c4;">Buy Tickets</button>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <script type="text/javascript">
