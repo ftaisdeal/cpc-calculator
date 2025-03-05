@@ -34,19 +34,13 @@ Samples:
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
 <h4>March 22nd Performance</h4>
-Phoenix Theater, 414 Mason St, San Francisco, CA 94102
-<!-- Noscript content for added SEO -->
-<noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-<!-- You can customize this button any way you like -->
-<br><button id="eventbrite-widget-modal-trigger-1255264232109" type="button" style="padding:10px; border-radius: 4px; background-color: #4c4;">Buy Tickets</button>
-
+<br>
+<button id="eventbrite-widget-modal-trigger-1255264232109" type="button" style="padding:10px; border-radius: 4px; background-color: #4c4;">Buy Tickets</button>
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
 <script type="text/javascript">
     var exampleCallback = function() {
         console.log('Order complete!');
     };
-
     window.EBWidgets.createWidget({
         widgetType: 'checkout',
         eventId: '1255264232109',
@@ -55,9 +49,10 @@ Phoenix Theater, 414 Mason St, San Francisco, CA 94102
         onOrderComplete: exampleCallback
     });
 </script>
-
+<p><b>Phoenix Theater</b><br>
+414 Mason St.<br>
+San Francisco, CA 94102</p>
 <p>
-<br>
 <b>Stay in touch about our progress and performances.</b>
 <form action="email" method="post">
 <input type="email" name="email" class="email" placeholder="enter email to stay in touch">
