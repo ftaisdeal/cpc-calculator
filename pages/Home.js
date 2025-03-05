@@ -33,9 +33,6 @@ Samples:
 
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
-<h4>March 1st Performance</h4>
-<button style="padding:10px; border-radius: 4px; background-color: #c44;">SOLD OUT</button>
-
 <h4>March 22nd Performance</h4>
 Phoenix Theater, 414 Mason St, San Francisco, CA 94102
 <!-- Noscript content for added SEO -->
