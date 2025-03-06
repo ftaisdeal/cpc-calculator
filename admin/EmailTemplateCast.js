@@ -2,19 +2,9 @@ const EmailTemplateCast = (first_name) => {
 
   const subject = `Adventure Cabaret: Message to the Cast - March 6, 2025`;
 
-  const text = `Part One: https://youtu.be/6XDAF9Hgcv8
-Part Two: https://youtu.be/cdVpAiLQQ4I
+  const text = ``;
 
-You’re fired. Wait! You’re rehired. Email us a list of things you’ve done today. Wait! Forget it. You’re fired again. Come back! Your job was important. You’re fired. Or hired. Come in to the office. Wait! The office has no computers. Go home.
-
-We are the Department of Government Efficiency.`;
-
-const body = `Part One: https://youtu.be/6XDAF9Hgcv8
-Part Two: https://youtu.be/cdVpAiLQQ4I
-
-You’re fired. Wait! You’re rehired. Email us a list of things you’ve done today. Wait! Forget it. You’re fired again. Come back! Your job was important. You’re fired. Or hired. Come in to the office. Wait! The office has no computers. Go home.
-
-We are the Department of Government Efficiency.
+const body = `<p>Keep flexing!</p>
 
 <img src="https://adventurecabaret.com/images/brain-flex.png" width="400" height="181">`;
 
