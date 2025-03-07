@@ -3,10 +3,11 @@ const Admin = async function (res) {
     const { header } = require('../components');
   
     const content = `<b>Send Email Update</b>
-<p>preview <a href="/email_preview?list=cast" target="__blank">cast</a> | <a href="/email_preview" target="__blank">subscriber</a></p>
+<p>preview <a href="/email_preview?list=cast" target="__blank">cast</a> | <a href="/email_preview?list=audience" target="__blank">audience</a> | <a href="/email_preview" target="__blank">subscriber</a></p>
 <form id="emailForm">
     <select name="list">
         <option value="cast">cast</option>
+        <option value="audience">audience</option>
         <option value="subscribers">subscribers</option>
     </select>
     <input type="hidden" name="format" value="json"/>

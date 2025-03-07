@@ -4,6 +4,7 @@ const SendUpdate = async (req, res) => {
     const Error = require('../pages/Error');
     const EmailTemplate = require('./EmailTemplate');
     const EmailTemplateCast = require('./EmailTemplateCast');
+    const EmailTemplateAudience = require('./EmailTemplateAudience');
     const sendEmail = require('../functions/sendEmail');
     const mysql = require('mysql2/promise'); // Use promise-based MySQL
     const db_config = require('./db_config');
@@ -19,6 +20,9 @@ const SendUpdate = async (req, res) => {
     if (req.body.list == 'cast') {
         table = 'cast';
         query = 'SELECT id, first_name, email FROM cast WHERE sent = 0 ORDER BY id ASC';
+    } else if (req.body.list == 'audience') {
+        table = 'audience';
+        query = 'SELECT id, first_name, email FROM audience WHERE sent = 0 ORDER BY id ASC';
     } else {
         table = 'email_update';
         query = 'SELECT id, first_name, email, token FROM email_update WHERE sent = 0 ORDER BY id ASC';
@@ -76,6 +80,8 @@ const SendUpdate = async (req, res) => {
 
                 if (req.body.list === 'cast') {
                     ({ subject, text, html } = EmailTemplateCast(email.first_name));
+                } else if (req.body.list === 'audience') {
+                    ({ subject, text, html } = EmailTemplateAudience(email.first_name));
                 } else {
                     ({ subject, text, html } = EmailTemplate(email.first_name, email.token));
                 }

@@ -2,7 +2,17 @@ const EmailTemplateCast = (first_name) => {
 
   const subject = `Adventure Cabaret: Message to the Cast - March 6, 2025`;
 
-  const text = ``;
+  const text = `1. Vocal and physical warmup before performance.
+  2. Intense focus before the performance, free of all distractions.
+  3. In rehearsal on the 16th we will be working exlusively on enhancing and deepening our acting for the next performance and all future performances.
+  4. We will discuss how long we want to just perform the show without moving on to new material. You will have the choice of either just performing this first show or performing the first show and working on a new show.
+  5. After the March 1st performance, I will resume offering music traning to those who are interested. The plan is to be able to use all of the training in music to add unique music and unique musical performances to future shows.
+  6. All of the props and paraphernalia for the show fit in a single large suitcase. Combine that with a small lighting kit, a projector and a screen on a stand, and we will be able to perform the show in any space.
+  7. New content for future shows:
+  - MadLibs with the audience
+  - Discussion segments, with a large red digital timer counting down
+  - The actors introduce themselves, with images of their choice on the screen behind them
+  8. Green screen shoot for gathering material for marketing. You will also be able to use these recordings for your professional reel.`;
 
 const body = `<p>Keep flexing!</p>
 
