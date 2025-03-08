@@ -20,10 +20,10 @@ const Miranda = require('./pages/Miranda');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
-const EmailPreview = require('./admin/EmailPreview');
-const SendUpdate = require('./admin/EmailUpdate');
-const EmailTracking = require('./admin/EmailTracking');
-const Unsubscribe = require('./admin/Unsubscribe');
+const EmailPreview = require('./admin/email/EmailPreview');
+const SendUpdate = require('./admin/email/EmailUpdate');
+const EmailTracking = require('./admin/email/EmailTracking');
+const Unsubscribe = require('./pages/Unsubscribe');
 const Error404 = require('./pages/404');
 
 // Home
