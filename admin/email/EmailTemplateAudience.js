@@ -1,36 +1,10 @@
 const EmailTemplateCast = (first_name) => {
 
-  const subject = `Adventure Cabaret: Request for Feedback on First Performance`;
+  const subject = `Adventure Cabaret: `;
 
-  const text = `Thank you so much for attending the very first performance of Adventure Cabaret!
-  
-  We're glad you were with us, and we hope you enjoyed the show.
-  
-  Because Adventure Cabaret is a new and evolving show, we would love to hear your thoughts and feedback.
-  
-  We would truly appreciate it if you would take a moment to complete a very short (only three quick questions!) survery about your experience at the show:
-  
-  https://www.proprofs.com/survey/t/?title=anmiw
-  
-  Thank you so much again. We are actively developing additional shows and would love to have you join us for future performances.`;
+  const text = ``;
 
-const body = `<p>Thank you so much for attending the very first performance of Adventure Cabaret!</p>
-
-<p>We're glad you were with us, and we hope you enjoyed the show.</p>
-
-<p>Because Adventure Cabaret is a new and evolving show, we would love to hear your thoughts and feedback.</p>
-
-<p>We would truly appreciate it if you would take a moment to complete a very short (only three quick questions!) survey about your experience at the show:</p>
-
-<p><a href="https://www.proprofs.com/survey/t/?title=anmiw">https://www.proprofs.com/survey/t/?title=anmiw</a></p>
-
-<p>We are actively developing additional shows and would love to have you join us for future performances.</p>
-
-<p>Thank you so much again!</p>
-
-<br>
-
-<p><img src="https://adventurecabaret.com/images/brain-medium.png" width="300" height="216"></p>
+  const body = `<p><img src="https://adventurecabaret.com/images/brain-medium.png" width="300" height="216"></p>
 
 <br>
 
