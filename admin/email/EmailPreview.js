@@ -1,5 +1,5 @@
 const Email = (req, res) => {
-    const EmailTemplate = require('./EmailTemplate');
+    const EmailTemplateSubscribers = require('./EmailTemplateSubscribers');
     const EmailTemplateCast = require('./EmailTemplateCast');
     const EmailTemplateAudience = require('./EmailTemplateAudience');
 
@@ -10,7 +10,7 @@ const Email = (req, res) => {
     } else if (list === 'audience') {
         ({ subject, text, html } = EmailTemplateAudience('First'));
     } else {
-        ({ subject, text, html } = EmailTemplate('First', 'token'));
+        ({ subject, text, html } = EmailTemplateSubscribers('First', 'token'));
     }
 
     res.send(html);
