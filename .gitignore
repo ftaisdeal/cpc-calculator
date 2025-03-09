@@ -1,10 +1,11 @@
 *.DS_Store
 node_modules
 .env
-admin/EmailUpdate.js
-admin/EmailsAdd.js
-admin/EmailsAdd.csv
-admin/EmailsAdd.sql
-EmailTemplateCast.js
+admin/email/EmailUpdate.js
+admin/email/EmailsAdd.js
+admin/email/EmailsAdd.csv
+admin/email/EmailsAdd.sql
+admin/email/EmailTemplateCast.js
+admin/email/EmailUpdate.sql
 admin/notes.txt
 admin/to_do.txt
