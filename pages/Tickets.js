@@ -21,7 +21,11 @@ const Tickets = async function (res) {
 </script>
 <p><b>Phoenix Theater</b><br>
 414 Mason St.<br>
-San Francisco, CA 94102</p>`;
+San Francisco, CA 94102</p>
+<br>
+<br>
+<br>
+<br>`;
 
   res.send(`${header('Tickets for Adventure Cabaret')}
 ${content}

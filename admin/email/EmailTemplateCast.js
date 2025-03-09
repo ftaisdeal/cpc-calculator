@@ -34,6 +34,16 @@ max-width: 800px;
 a {
   text-decoration: none;
 }
+.nav-link {
+  color: #ddd;
+  font-size: .8em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 0 4px;
+}
+.nav-link:hover {
+  color: #fff;
+}
 .footer {
   background-color: #8a8;
   padding: 6px;
@@ -48,7 +58,16 @@ a {
 ${first_name}:
 ${body}
 </div>
-<div class="footer"></div>
+<div class="footer">
+<a href="https://adventurecabaret.com" class="nav-link">home</a> | 
+<a href="https://adventurecabaret.com/tickets" class="nav-link">tickets</a> | 
+<a href="/origins" class="nav-link">origins</a> | 
+<a href="/rundown" class="nav-link">rundown</a> | 
+<a href="https://adventurecabaret.com/shows" class="nav-link">shows</a> | 
+<a href="https://adventurecabaret.com/update" class="nav-link">update</a> | 
+<a href="https://adventurecabaret.printful.me/product/adventure-cabaret-unisex-t-shirt" class="nav-link">store</a> | 
+<a href="https://adventurecabaret.com/contact" class="nav-link">contact</a>
+</div>
 </body>
 </html>`;
 
