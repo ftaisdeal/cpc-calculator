@@ -2,7 +2,7 @@ let isProcessing = false; // Set processing flag to false to avoid multiple proc
 
 const SendUpdate = async (req, res) => {
     const Error = require('../../pages/Error');
-    const EmailTemplate = require('./EmailTemplate');
+    const EmailTemplateSubscribers = require('./EmailTemplateSubscribers');
     const EmailTemplateCast = require('./EmailTemplateCast');
     const EmailTemplateAudience = require('./EmailTemplateAudience');
     const sendEmail = require('../../functions/sendEmail');
@@ -83,7 +83,7 @@ const SendUpdate = async (req, res) => {
                 } else if (req.body.list === 'audience') {
                     ({ subject, text, html } = EmailTemplateAudience(email.first_name));
                 } else {
-                    ({ subject, text, html } = EmailTemplate(email.first_name, email.token));
+                    ({ subject, text, html } = EmailTemplateSubscribers(email.first_name, email.token));
                 }
 
                 console.log(`Sending email to: ${email.email}`);
