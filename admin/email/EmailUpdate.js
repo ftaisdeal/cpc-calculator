@@ -1,7 +1,7 @@
 let isProcessing = false; // Set processing flag to false to avoid multiple processes
 
 const SendUpdate = async (req, res) => {
-    const Error = require('../pages/Error');
+    const Error = require('../../pages/Error');
     const EmailTemplate = require('./EmailTemplate');
     const EmailTemplateCast = require('./EmailTemplateCast');
     const EmailTemplateAudience = require('./EmailTemplateAudience');
