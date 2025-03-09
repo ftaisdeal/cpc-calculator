@@ -4,7 +4,7 @@ const EmailTracking = async (req, res) => {
 
   if (token) {
     const mysql = require('mysql2/promise');
-    const db_config = require('./db_config');
+    const db_config = require('../db_config');
     const connection = await mysql.createPool(db_config);
 
     try {
