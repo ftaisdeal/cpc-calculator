@@ -17,6 +17,7 @@ const Contact = require('./pages/Contact');
 const Update = require('./pages/Update');
 const Media = require('./pages/Media');
 const Miranda = require('./pages/Miranda');
+const Questions = require('./pages/Questions');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
 const Admin = require('./admin/Admin');
@@ -69,6 +70,11 @@ app.get('/media', (req, res) => {
 // Miranda
 app.get('/miranda', (req, res) => {
   Miranda(res);
+});
+
+// Questions
+app.get('/questions', (req, res) => {
+  Questions(res);
 });
 
 // QR codes

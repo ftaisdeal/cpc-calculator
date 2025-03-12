@@ -10,12 +10,12 @@ const QR = async function (req, res) {
   switch (page) {
     case 1:
       title = '';
-      text = ``;
+      text = '';
       break;
 
     case 2:
       title = '';
-      text = ``;
+      text = '';
       break;
 
     default:
