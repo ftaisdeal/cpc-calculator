@@ -34,10 +34,10 @@ Samples:
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
 <p><b>March 22nd Performance</b></p>
-<!-- Noscript content for added SEO -->
-<noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-<!-- You can customize this button any way you like -->
-<button id="eventbrite-widget-modal-trigger-1255264232109" type="button">Buy Tickets</button>
+<p><b>Phoenix Theater</b><br>
+414 Mason St.<br>
+San Francisco, CA 94102</p>
+<div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -47,16 +47,16 @@ Samples:
     };
 
     window.EBWidgets.createWidget({
+        // Required
         widgetType: 'checkout',
         eventId: '1255264232109',
-        modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1255264232109',
-        onOrderComplete: exampleCallback
+        iframeContainerId: 'eventbrite-widget-container-1255264232109',
+
+        // Optional
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
-<p><b>Phoenix Theater</b><br>
-414 Mason St.<br>
-San Francisco, CA 94102</p>
 <p>
 <b>Stay in touch about our progress and performances.</b>
 <form action="email" method="post">

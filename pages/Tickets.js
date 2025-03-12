@@ -4,10 +4,10 @@ const Tickets = async function (res) {
 
   const content = `<h1>Tickets</h1>
 <b>March 22nd Performance</b>
-<!-- Noscript content for added SEO -->
-<noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-<!-- You can customize this button any way you like -->
-<button id="eventbrite-widget-modal-trigger-1255264232109" type="button">Buy Tickets</button>
+<p><b>Phoenix Theater</b><br>
+414 Mason St.<br>
+San Francisco, CA 94102</p>
+<div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -17,16 +17,16 @@ const Tickets = async function (res) {
     };
 
     window.EBWidgets.createWidget({
+        // Required
         widgetType: 'checkout',
         eventId: '1255264232109',
-        modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1255264232109',
-        onOrderComplete: exampleCallback
+        iframeContainerId: 'eventbrite-widget-container-1255264232109',
+
+        // Optional
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
     });
 </script>
-<p><b>Phoenix Theater</b><br>
-414 Mason St.<br>
-San Francisco, CA 94102</p>
 <br>
 <br>
 <br>
