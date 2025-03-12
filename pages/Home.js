@@ -34,12 +34,18 @@ Samples:
 <br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
 
 <p><b>March 22nd Performance</b></p>
-<button id="eventbrite-widget-modal-trigger-1255264232109" type="button" style="padding:10px; border-radius: 4px; background-color: #4c4;">Buy Tickets</button>
+<!-- Noscript content for added SEO -->
+<noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
+<!-- You can customize this button any way you like -->
+<button id="eventbrite-widget-modal-trigger-1255264232109" type="button">Buy Tickets</button>
+
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
 <script type="text/javascript">
     var exampleCallback = function() {
         console.log('Order complete!');
     };
+
     window.EBWidgets.createWidget({
         widgetType: 'checkout',
         eventId: '1255264232109',
