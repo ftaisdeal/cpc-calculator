@@ -2,7 +2,7 @@
 node_modules
 .env
 admin/email/EmailUpdate.js
-admin/email/EmailsAdd.js
+admin/email/EmailsImport.js
 admin/email/EmailsAdd.csv
 admin/email/EmailsAdd.sql
 admin/email/EmailUpdate.sql
