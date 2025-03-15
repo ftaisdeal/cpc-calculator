@@ -80,7 +80,7 @@ const Rundown = async function (res) {
 <br>
 <img src="images/linky-pinky-purple.png" width="390" height="600" alt="purple hand with pinky extended">`;
 
-  res.send(`${header('Adventure Cabaret: Show Rundown')}
+  res.send(`${header('Production Rundown')}
 ${content}
 ${footer}`);
 
