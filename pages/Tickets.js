@@ -3,7 +3,7 @@ const Tickets = async function (res) {
   const { header, footer } = require('../components');
 
   const content = `<h1>Tickets</h1>
-<b>March 22nd Performance</b>
+<b>April 5 Performance</b>
 <p><b>Phoenix Theater</b><br>
 414 Mason St.<br>
 San Francisco, CA 94102</p>
