@@ -15,6 +15,7 @@ const Rundown = require('./pages/Rundown');
 const Tickets = require('./pages/Tickets');
 const Shows = require('./pages/Shows');
 const Contact = require('./pages/Contact');
+const Casting = require('./pages/Casting');
 const Update = require('./pages/Update');
 const Media = require('./pages/Media');
 const Miranda = require('./pages/Miranda');
@@ -56,6 +57,11 @@ app.get('/origins', (req, res) => {
 // Contact
 app.get('/contact', (req, res) => {
   Contact(res);
+});
+
+// Casting
+app.get('/casting', (req, res) => {
+  Casting(res);
 });
 
 // Update
