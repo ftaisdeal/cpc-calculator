@@ -29,6 +29,8 @@ const Home = async function (res) {
 </form>
 </p>
 
+<br>
+
 <p><img src="images/brain.png" width="640" height="460" alt="abstract brain"></p>`;
 
   res.send(`${header('Adventure Cabaret')}
