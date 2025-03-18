@@ -21,42 +21,6 @@ const Home = async function (res) {
   
 <p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
-Samples:
-
-<br>1. <a href="https://www.youtube.com/watch?v=NtIzTKCOuIs" target="__blank">Introduction</a>
-
-<br>2. <a href="https://youtu.be/0RN5fGF61G4" target="__blank">Thought Police Hotline</a>
-
-<br>3. <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a>
-
-<br>4. <a href="https://youtu.be/BtYu_1KSXBk" target="__blank">Messages from the Insects</a>
-
-<br>5. <a href="https://www.youtube.com/watch?v=c3vVPxg896M" target="__blank">QuoteMovie</a>
-
-<p><b>April 5 Performance</b></p>
-<p><b>Phoenix Theater</b><br>
-414 Mason St.<br>
-San Francisco, CA 94102</p>
-<div id="eventbrite-widget-container-1255264232109"></div>
-
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
-<script type="text/javascript">
-    var exampleCallback = function() {
-        console.log('Order complete!');
-    };
-
-    window.EBWidgets.createWidget({
-        // Required
-        widgetType: 'checkout',
-        eventId: '1255264232109',
-        iframeContainerId: 'eventbrite-widget-container-1255264232109',
-
-        // Optional
-        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
-        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
-    });
-</script>
 <p>
 <b>Stay in touch about our progress and performances.</b>
 <form action="email" method="post">
