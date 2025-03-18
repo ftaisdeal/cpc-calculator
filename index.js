@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
+const path = require('path');
 app.use(express.static('public'));
 app.set('trust proxy', true);
 app.use(bodyParser.json());
@@ -70,6 +71,11 @@ app.get('/media', (req, res) => {
 // Miranda
 app.get('/miranda', (req, res) => {
   Miranda(res);
+});
+
+// Store
+app.get('/store', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/store_redirect.html'));
 });
 
 // Questions
