@@ -9,7 +9,7 @@ const Casting = async function (res) {
 
 <p>Casting is sort of like dating; you want to know that we are interested in you, but we want to know that you are interested in us. When you write to us, please let us know what attracts you to Adventure Cabaret, and why you would want to be part of the production.</p>
   
-<p>If you are interested in auditioning, please send us a headshot and resumé at <a href="mailto:casting@adventurecabaret.com?Subject=Casting+Submission">casting@adventurecabaret.com</a>.</p>
+<p>Please send us a headshot and resumé at <a href="mailto:casting@adventurecabaret.com?Subject=Casting+Submission">casting@adventurecabaret.com</a>.</p>
 
 <p>Thank you for your interest in Adventure Cabaret!</p>`;
 
