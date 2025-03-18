@@ -11,7 +11,10 @@ const Casting = async function (res) {
   
 <p>Please send us a headshot and resumé at <a href="mailto:casting@adventurecabaret.com?Subject=Casting+Submission">casting@adventurecabaret.com</a>.</p>
 
-<p>Thank you for your interest in Adventure Cabaret!</p>`;
+<p>Thank you for your interest in Adventure Cabaret!</p>
+
+<br>
+<br>`;
 
   res.send(`${header('Casting for Adventure Cabaret')}
 ${content}
