@@ -6,7 +6,7 @@ const Tickets = async function (res) {
 <b>April 5 Performance</b>
 <p><b>Phoenix Theater</b><br>
 414 Mason St.<br>
-San Francisco, CA 94102</p>
+San Francisco, CA</p>
 <div id="eventbrite-widget-container-1255264232109"></div>
 
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>

@@ -21,8 +21,33 @@ const Home = async function (res) {
   
 <p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
+<p><b>Performance April 5th, 7:30pm</b><br>
+Phoenix Theater<br>
+414 Mason St.<br>
+San Francisco, CA</p>
+
+<noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
+<button id="eventbrite-widget-modal-trigger-1255264232109" type="button" class="button">buy tickets</button>
+
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+    var exampleCallback = function() {
+        console.log('Order complete!');
+    };
+
+    window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '1255264232109',
+        modal: true,
+        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1255264232109',
+        onOrderComplete: exampleCallback
+    });
+</script>
+
 <p>
-<b>Stay in touch about our progress and performances.</b>
+<br>
+Stay in touch about our progress and performances.
 <form action="email" method="post">
 <input type="email" name="email" class="email" placeholder="enter email to stay in touch">
 <input type="email" name="liame" style="width: 28ch; padding: 6px; border-radius:4px;" placeholder="enter email to stay in touch" required> <button type="submit" class="button">send</button>
