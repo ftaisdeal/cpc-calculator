@@ -71,7 +71,7 @@ input:focus {
 }
 
 .title {
-  font-family: Papyrus, fantasy, 'Nothing You Could Do', cursive;
+  font-family: Papyrus, 'Nothing You Could Do', fantasy;
   font-size: 4em;
   line-height: normal;
 }
