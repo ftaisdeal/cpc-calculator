@@ -54,7 +54,7 @@ src="https://www.facebook.com/tr?id=1935845873572368&ev=PageView&noscript=1"
 <div class="header">
 <span class="title"><a href="/"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761d;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
 <br>
-<span class="sub-title">an experience like no other</span>
+<span class="sub-title">Better living through actual thinking.</span>
 <p>
 <nav class="navbar">
 <a href="/" class="navbar-brand"><span class="home" style="color:#674ea7;">A</span><span class="home" style="color:#cd4025;">C</span></a>
