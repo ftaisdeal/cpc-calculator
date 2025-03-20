@@ -17,14 +17,21 @@ font-family: Verdana, Arial, sans-serif;
 font-size: 1em;
 max-width: 800px;
 }
+h4 {
+  margin-bottom: 4px;
+}
 .header {
   background-color: black;
   padding: 10px;
 }
 .title {
   font-size: 3.5em;
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: Papyrus, 'Nothing You Could Do', fantasy;
   line-height: normal;
+}
+.sub-title {
+  color: #fff;
+  font-size: 1em;
 }
 .content {
   padding: 20px;
@@ -44,13 +51,15 @@ a {
 }
 .footer {
   background-color: #8a8;
-  padding: 8px;
+  padding: 6px;
 }
 </style>
 </head>
 <body>
 <div class="header">
 <span class="title"> <a href="https://adventurecabaret.com"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
+<br>
+<span class="sub-title">Better living through actual thinking.</span>
 </div>
 <div class="content">
 Dear ${first_name}:
@@ -64,6 +73,7 @@ ${body}
 <a href="https://adventurecabaret.com/shows" class="nav-link">shows</a> | 
 <a href="https://adventurecabaret.com/update" class="nav-link">update</a> | 
 <a href="https://adventurecabaret.printful.me/product/adventure-cabaret-unisex-t-shirt" class="nav-link">store</a> | 
+<a href="https://adventurecabaret.com/casting" class="nav-link">casting</a> | 
 <a href="https://adventurecabaret.com/contact" class="nav-link">contact</a>
 </div>
 </body>
