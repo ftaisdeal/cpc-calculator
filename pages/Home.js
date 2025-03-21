@@ -45,7 +45,10 @@ San Francisco, CA</p>
     });
 </script>
 
-<p>
+<p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
+
+<p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
+
 <br>
 Stay in touch about our progress and performances.
 <form action="email" method="post">
