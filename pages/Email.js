@@ -57,6 +57,10 @@ const SendUpdate = (req, res) => {
 body {
 font-family: Verdana, Arial, sans-serif;
 font-size: 1em;
+max-width: 800px;
+}
+h4 {
+  margin-bottom: 4px;
 }
 .header {
   background-color: black;
@@ -64,29 +68,60 @@ font-size: 1em;
 }
 .title {
   font-size: 3.5em;
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: Papyrus, 'Nothing You Could Do', fantasy;
   line-height: normal;
+}
+.sub-title {
+  color: #fff;
+  font-size: 1em;
+}
+.content {
+  padding: 20px;
 }
 a {
   text-decoration: none;
 }
+.nav-link {
+  color: #ddd;
+  font-size: .8em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 0 4px;
+}
+.nav-link:hover {
+  color: #fff;
+}
 .footer {
   background-color: #8a8;
-  padding: 10px;
+  padding: 6px;
 }
 </style>
 </head>
 <body>
 <div class="header">
 <span class="title"> <a href="https://adventurecabaret.com"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
+<br>
+<span class="sub-title">Better living through actual thinking.</span>
 </div>
+<div class="content">
 <h2>Thank you</h2>
 <p>Thank you for signing up for updates on performances and further development of Adventure Cabaret.</p>
 <p>Our goal is to create live theater productions that are illuminating and transformative.</p>
 <p>We have big plans for the production, and we look forward to seeing you soon at one of our shows.</p>
 <p><a href="https://adventurecabaret.com">https://adventurecabaret.com</a></p>
 <br>
+</div>
+</div>
 <div class="footer">
+<a href="https://adventurecabaret.com" class="nav-link">home</a> | 
+<a href="https://adventurecabaret.com/tickets" class="nav-link">tickets</a> | 
+<a href="/origins" class="nav-link">origins</a> | 
+<a href="/rundown" class="nav-link">rundown</a> | 
+<a href="https://adventurecabaret.com/shows" class="nav-link">shows</a> | 
+<a href="https://adventurecabaret.com/update" class="nav-link">update</a> | 
+<a href="https://adventurecabaret.printful.me/product/adventure-cabaret-unisex-t-shirt" class="nav-link">store</a> | 
+<a href="https://adventurecabaret.com/casting" class="nav-link">casting</a> | 
+<a href="https://adventurecabaret.com/contact" class="nav-link">contact</a>
 </div>
 </body>
 </html>`;
