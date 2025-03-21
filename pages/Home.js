@@ -49,7 +49,7 @@ San Francisco, CA</p>
   
 <p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
-<br>
+<p>
 Stay in touch about our progress and performances.
 <form action="email" method="post">
 <input type="email" name="email" class="email" placeholder="enter email to stay in touch">
