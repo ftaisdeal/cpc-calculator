@@ -11,9 +11,8 @@ const Update = async function (res) {
 <p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p></li>
 <li>We now have ads running on Facebook and Instagram, and are getting good results. One result is very surprising, but tells us a lot. One ad performs much better than all the others. That ad features a large purple Linky Pinky hand, and also the sentence "Materialism is for morons." We will continue experimenting broadly with different kinds of ads, including those with challenging content.</li>
 <li>We had a tremendously successful opening night on March 1, with a sold out show, a great performance and an appreciative and enthusiastic audience.</li>
-<li><a href="/tickets">Tickets are available for a second performance on March 22nd</a>.</li>
+<li><a href="/tickets">Tickets are available for a second performance on April 5th</a>.</li>
 <li>The second performance is at <a href="https://www.phoenixtheatresf.org/" target="__blank">Phoenix Theater</a> in San Francisco's theater district.</li>
-<li>We will be moving over to <a href="https://www.theater33.com/" target="__blank">Theater 33</a>, at 533 Sutter Street, for a performance on April 5th.</li>
 <li>We are now working with a lighting designer, Beth Cockrell, who will be designing the lighting for future performances.</li>
 <li>Many enhancements are being added to the multimedia assets for the show.</li>
 <li>We have added some choreography with flashlights to the open of the show.</li>
