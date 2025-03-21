@@ -15,16 +15,6 @@ const Home = async function (res) {
 
 <p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
 
-<p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
-
-<p>&#8212; A journey through <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a></p>
-
-<p>&#8212; An escape from the prison of nostalgia</p>
-  
-<p>&#8212; An exploration of how much better humanity could become</p>
-  
-<p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
-
 <p><b>Performance April 5th, 7:30pm</b><br>
 Phoenix Theater<br>
 414 Mason St.<br>
@@ -48,6 +38,16 @@ San Francisco, CA</p>
         onOrderComplete: exampleCallback
     });
 </script>
+
+<p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
+
+<p>&#8212; A journey through <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a></p>
+
+<p>&#8212; An escape from the prison of nostalgia</p>
+  
+<p>&#8212; An exploration of how much better humanity could become</p>
+  
+<p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
 <br>
 Stay in touch about our progress and performances.
