@@ -1,5 +1,6 @@
 const EmailTemplate = (first_name, token) => {
 
+  // Remember to change the date in the subject line
   const subject = `Adventure Cabaret Newsletter: April x, 2025`;
 
   const text = ``;

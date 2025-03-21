@@ -1,5 +1,6 @@
 const EmailTemplateCast = (first_name) => {
 
+  
   const subject = `Adventure Cabaret: `;
 
   const text = ``;
