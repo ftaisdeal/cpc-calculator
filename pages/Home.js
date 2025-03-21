@@ -11,6 +11,10 @@ const Home = async function (res) {
 <div class="image"><img src="images/bg6.jpg" width="100" class="hide" height="67" alt="thumbnail background 6"></div>
 </div>
 
+<p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
+
+<p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
+
 <p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
 
 <p>&#8212; A journey through <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a></p>
@@ -44,10 +48,6 @@ San Francisco, CA</p>
         onOrderComplete: exampleCallback
     });
 </script>
-
-<p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
-
-<p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
 
 <br>
 Stay in touch about our progress and performances.
