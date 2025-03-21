@@ -1,6 +1,6 @@
 const EmailTemplateCast = (first_name) => {
 
-  
+  // Remember to change the date in the subject line  
   const subject = `Adventure Cabaret: `;
 
   const text = ``;
