@@ -53,9 +53,10 @@ Stay in touch about our progress and performances.
 </form>
 </p>
 
-<p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
-
-<p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
+<div class="review">
+"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
+<div style="padding-left: 6ch;">&mdash; Shelly H., from Oakland</div>
+</div>
 
 <br>
 
