@@ -6,6 +6,7 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <meta charset="utf-8">
 <title>${title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
 <link rel="icon" type="image/png" href="/favicon.png" sizes="140x140">
 <meta name="description" content="${short_description}">
 <meta property="og:type" content="article">
@@ -19,7 +20,6 @@ const header = function (title = "Adventure Cabaret", short_description = "Adven
 <meta property="og:url" content="">
 <meta property="article:published_time" content="2023-09-08">
 <meta name="author" content="Miranda Sorventi">
-<link rel="stylesheet" href="/styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
