@@ -21,8 +21,6 @@ const Home = async function (res) {
   
 <p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
-<p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
-
 <p><b>Performance April 5th, 7:30pm</b><br>
 Phoenix Theater<br>
 414 Mason St.<br>
@@ -56,6 +54,8 @@ Stay in touch about our progress and performances.
 </p>
 
 <p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
+
+<p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
 
 <br>
 
