@@ -11,7 +11,15 @@ const Home = async function (res) {
 <div class="image"><img src="images/bg6.jpg" width="100" class="hide" height="67" alt="thumbnail background 6"></div>
 </div>
 
-<p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
+<p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
+
+<p>&#8212; A journey through <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a></p>
+
+<p>&#8212; An escape from the prison of nostalgia</p>
+  
+<p>&#8212; An exploration of how much better humanity could become</p>
+  
+<p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
 
 <p style="padding-left: 20px;">&mdash;Shelly H., from Oakland</p>
 
@@ -39,16 +47,6 @@ San Francisco, CA</p>
     });
 </script>
 
-<p>Adventure Cabaret is a unique theater experience, combining live actors with immersive multimedia:</p>
-
-<p>&#8212; A journey through <a href="https://www.youtube.com/watch?v=zemRmZ2hrps" target="__blank">The Empire of the Mind</a></p>
-
-<p>&#8212; An escape from the prison of nostalgia</p>
-  
-<p>&#8212; An exploration of how much better humanity could become</p>
-  
-<p>Spend 90 minutes with us, and go home with lots of laughs and a head full of beautiful and inspiring new ideas.</p>
-
 <p>
 Stay in touch about our progress and performances.
 <form action="email" method="post">
@@ -56,6 +54,8 @@ Stay in touch about our progress and performances.
 <input type="email" name="liame" style="width: 28ch; padding: 6px; border-radius:4px;" placeholder="enter email to stay in touch" required> <button type="submit" class="button">send</button>
 </form>
 </p>
+
+<p>"This play seamlessly blended drama and humor, delivering an inspiring and thought-provoking experience as well as a message that leaves a lasting impact on the audience."</p>
 
 <br>
 
