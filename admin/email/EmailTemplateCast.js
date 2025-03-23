@@ -1,51 +1,11 @@
 const EmailTemplateCast = (first_name) => {
 
   // Remember to change the date in the subject line
-  const subject = `Adventure Cabaret: Message to the Cast - March 23, 2025`;
+  const subject = `Adventure Cabaret: Message to the Cast - March x, 2025`;
 
-  const text = `Another quick but important update:
-  
-April 5th Performance
-Ticket sales are picking up, so I'm sure we will have another sold out show for April 5. I am offering a few complimentary tickets strategically in order to promote the show. It is also possible that a few critics will be at the next performance, because I will be inviting them on comp tickets. We need to be at our best, which means we have to prepare thoroughly and meticulously. Here is the plan for the next rehearsal:
+  const text = ``;
 
-Rehearsal March 30, 12-4pm
-1. Finalize the sequence for warming up for performances and practice it.
-2. Run through the entire show, with emphasis on getting all the details right, and on complete accuracy in wording.
-3. If there is time, we will try out some new material.
-4. If there is time, we will do some musical training.
-
-Please Review the Script
-In the first performance, most of us drifted from the script. That's understandable in a first performance when we are excited and nervous, but we have to move back toward much greater accuracy in the wording. Please review the script and make sure you know your lines word for word. If you have any questions about the script, please ask me. 
-  
-Possible Cast Change
-An excellent actor who was part of the original pilot will probably be replacing me in performances.  His name is Amosi Morgan, and he is muscially gifted, and also has the ability to learn a part word for word at astonishing speed.  Amosi would be a great addition to the cast, and I am sure you would enjoy working with him.
-
-Walkthrough of Major Venues
-On Thursday I will be getting a walkthrough of two major venues we might perform in if demand kicks in the way we want it to kick in. The venues are Brava Theater and the Victoria Theater. These are both great venues, with excellent stages, seating, projection and sound systems. I will take pictures and record a video walkthough from the stage, and post these online fo you.
-
-Thanks, and see you on Sunday, March 30.`;
-
-  const body = `<p>Another quick but important update:</p>
-
-  <p><b>April 5th Performance</b><br>
-Ticket sales are picking up, so I'm sure we will have another sold out show for April 5. I am offering a few complimentary tickets strategically in order to promote the show. It is also possible that a few critics will be at the next performance, because I will be inviting them on comp tickets. We need to be at our best, which means we have to prepare thoroughly and meticulously. Here is the plan for the next rehearsal:</p>
-
-<p><b>Rehearsal March 30, 12-4pm</b><br>
-1. Finalize the sequence for warming up for performances and practice it.<br>
-2. Run through the entire show, with emphasis on getting all the details right, and on complete accuracy in wording.<br>
-3. If there is time, we will try out some new material.<br>
-4. If there is time, we will do some musical training.</p>
-
-<p><b>Please Review the Script</b><br>
-In the first performance, most of us drifted from the script. That's understandable in a first performance when we are excited and nervous, but we have to move back toward much greater accuracy in the wording. Please review the script and make sure you know your lines word for word. If you have any questions about the script, please ask me.</p>
-
-<p><b>Possible Cast Change</b><br>
-An excellent actor who was part of the original pilot will probably be replacing me in performances.  His name is Amosi Morgan, and he is muscially gifted, and also has the ability to learn a part word for word at astonishing speed.  Amosi would be a great addition to the cast, and I am sure you would enjoy working with him.</p>
-
-<p><b>Walkthrough of Major Venues</b><br>
-On Thursday I will be getting a walkthrough of two major venues we might perform in if demand kicks in the way we want it to kick in. The venues are Brava Theater and the Victoria Theater. These are both great venues with excellent stages, seating, projection and sound systems. I will take pictures and record a video walkthough from the stage, and post these online for you.<p>
-
-<p>Thanks, and see you on Sunday, March 30.</p>`;
+  const body = ``;
 
   const html = `<html>
 <head>
