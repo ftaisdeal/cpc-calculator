@@ -19,7 +19,6 @@ const Casting = require('./pages/Casting');
 const Update = require('./pages/Update');
 const Media = require('./pages/Media');
 const Miranda = require('./pages/Miranda');
-const Questions = require('./pages/Questions');
 const EmailAdd = require('./pages/EmailAdd');
 const QR = require('./pages/QR');
 const Email = require('./pages/Email');
@@ -83,11 +82,6 @@ app.get('/miranda', (req, res) => {
 // Store
 app.get('/store', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages/store_redirect.html'));
-});
-
-// Questions
-app.get('/questions', (req, res) => {
-  Questions(res);
 });
 
 // Email add for performances
