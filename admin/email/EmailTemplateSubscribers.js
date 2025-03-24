@@ -65,7 +65,7 @@ a {
   background-color: #eef;
   padding: 20px;
   color: #000;
-  font-size: .9em;
+  font-size: 1em;
   line-height: normal;
   border-radius: 8px;
 }
