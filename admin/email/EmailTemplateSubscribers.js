@@ -1,7 +1,7 @@
 const EmailTemplate = (first_name, token) => {
 
   // Remember to change the date in the subject line
-  const subject = `Adventure Cabaret Newsletter: April x, 2025`;
+  const subject = `Adventure Cabaret Newsletter: March x, 2025`;
 
   const text = ``;
 
@@ -58,6 +58,20 @@ a {
 .footer {
   background-color: #8a8;
   padding: 6px;
+}
+.review {
+  width: 80%;
+  border: 2px solid #888;
+  background-color: #eef;
+  padding: 20px;
+  color: #000;
+  font-size: .9em;
+  line-height: normal;
+  border-radius: 8px;
+}
+.review-name {
+  padding-left: 6ch;
+  padding-top: 2ch;
 }
 </style>
 </head>
