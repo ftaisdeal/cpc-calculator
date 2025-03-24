@@ -7,7 +7,7 @@ const Update = async function (res) {
 <p>
 <ol>
 <li>The reviews of the first performance are beginning to arrive, and are wonderfully positive.</li>
-<li>We now have ads running on Facebook and Instagram, and are getting good results. One result is very surprising, but tells us a lot. One ad performs much better than all the others. That ad features a large purple Linky Pinky hand, and also the sentence "Materialism is for morons." We will continue experimenting broadly with different kinds of ads, including those with challenging content.</li>
+<li>We now have ads running on Facebook and Instagram, and are getting good results. One result is very surprising, but tells us a lot. One ad that performs much better than all the others features a large purple Linky Pinky hand, and also the sentence "Materialism is for morons." We will continue experimenting broadly with different kinds of ads, including those with challenging content.</li>
 <li>We had a tremendously successful opening night on March 1, with a sold out show, a great performance and an appreciative and enthusiastic audience.</li>
 <li><a href="/tickets">Tickets are available for a second performance on April 5th</a>.</li>
 <li>The second performance is at <a href="https://www.phoenixtheatresf.org/" target="__blank">Phoenix Theater</a> in San Francisco's theater district.</li>
