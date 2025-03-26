@@ -2,12 +2,7 @@ const Rundown = async function (res) {
 
   const { header, footer } = require('../components');
 
-  const content = `<div class="review">
-"Adventure Cabaret delivered a highly original, entertaining, and pithy show that courageously addressed important global issues confronting humanity today—with heart, soul, humor, and imagination."
-<div class="review-name">&mdash; Adam M., from San Francisco</div>
-</div>
-
-<h1>Show Rundown</h1>
+  const content = `<h1>Show Rundown</h1>
 Below is the complete rundown for our first show, which runs at a very fast pace over the course of 90 minutes, and contains 68 different segments, plus a party at the end.
 <h4>Pre-Show</h4>
 <ol>
