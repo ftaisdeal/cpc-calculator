@@ -148,7 +148,7 @@ select {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 6px 6px;
+  padding: 6px;
 }
 
 .navbar-brand {

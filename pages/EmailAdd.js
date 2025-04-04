@@ -1,14 +1,4 @@
-const Home = async function (res) {
-
-  const { header, footer } = require('../components');
-
-  const content = `<p>
-<h4>Stay in touch by email</h4>
-<form action="email" method="post">
-<input type="email" name="email" class="email" placeholder="enter email to stay in touch">
-<input type="email" name="liame" style="width: 28ch; padding: 6px; border-radius:4px;" placeholder="enter email to stay in touch" required> <button type="submit" class="button">send</button>
-</form>
-</p>`;
+const EmailAdd = async function (res) {
 
   res.send(`<!DOCTYPE HTML>
 <html lang="en">
@@ -23,7 +13,13 @@ const Home = async function (res) {
 <div class="header">
 <br>
 <span class="title"><a href="/"><span style="color:#674ea7;">A</span><span style="color:#6aa84f;">d<span><span style="color:#e06666;">v<span><span style="color:#ffd966;">e<span><span style="color:#3c78d8;">n<span><span style="color:#38761d;">t<span><span style="color:#a64d78;">u<span><span style="color:#dd7e6b;">r<span><span style="color:#a4c2f4;">e<span> <span style="color:#cd4025;">C</span><span style="color:#fff;">abaret</span></a></span>
-${content}
+<p>
+<h4>Stay in touch by email</h4>
+<form action="email" method="post">
+<input type="email" name="email" class="email" placeholder="enter email to stay in touch">
+<input type="email" name="liame" style="width: 28ch; padding: 6px; border-radius:4px;" placeholder="enter email to stay in touch" required> <button type="submit" class="button">send</button>
+</form>
+</p>
 </div>
 </div>
 </body>
@@ -31,4 +27,4 @@ ${content}
 
 }
 
-module.exports = Home;
+module.exports = EmailAdd;
