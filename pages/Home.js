@@ -23,30 +23,6 @@ const Home = async function (res) {
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2EeoC8HxMnM?si=SyvCFCK9zTik5A1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<p><b>Performance April 5th, 7:30pm</b><br>
-Phoenix Theater<br>
-414 Mason St.<br>
-San Francisco, CA</p>
-
-<noscript><a href="https://www.eventbrite.com/e/adventure-cabaret-metanoia-version-10-tickets-1255264232109" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript>
-<button id="eventbrite-widget-modal-trigger-1255264232109" type="button" class="button">buy tickets</button>
-
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
-<script type="text/javascript">
-    var exampleCallback = function() {
-        console.log('Order complete!');
-    };
-
-    window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: '1255264232109',
-        modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1255264232109',
-        onOrderComplete: exampleCallback
-    });
-</script>
-
 <p>
 Stay in touch about our progress and performances.
 <form action="email" method="post">
