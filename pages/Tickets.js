@@ -8,12 +8,11 @@ const Tickets = async function (res) {
 </div>
 
 <h1>Tickets</h1>
-Performance on Saturday, April 26 at 7:30pm
+Performance on Saturday, May 10 at 7:30pm
 <p>Phoenix Theater<br>
 414 Mason St.<br>
 San Francisco, CA 94102</p>
 <div id="eventbrite-widget-container-1317764602399"></div>
-
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
 <script type="text/javascript">
