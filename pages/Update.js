@@ -7,7 +7,7 @@ const Update = async function (res) {
 <p>
 <ol>
 <li>The show has been renamed to "Planet A," and this means that all of the branding and marketing materials are being updated.</li>
-<li>The renaming of the show suggests that the show is now more explicitly about sustainability and this is indeed true.</li>
+<li>The renaming of the show suggests that the show is now more explicitly about sustainability, and this is indeed true.</li>
 <li>We have temporarily paused performing in order to concentrate on creating an extraordinary lighting design and lighting sequences, to add many enhancements to the multimedia aspects of the show, and also to practice with the UFO drone with flashing LEDs that flies around the theater and has become a character in its own right.</li>
 <li>We are making a full commitment to performing at <a href="https://www.phoenixtheatresf.org/" target="__blank">Phoenix Theater</a> in San Francisco's theater district.</li>
 <li>The reviews of the first performance are beginning to arrive, and are wonderfully positive.</li>
