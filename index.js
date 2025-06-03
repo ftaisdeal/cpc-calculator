@@ -84,6 +84,11 @@ app.get('/store', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages/store_redirect.html'));
 });
 
+// Store
+app.get('/skitsandscripts', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/skitsandscripts_redirect.html'));
+});
+
 // Email add for performances
 app.get('/add', (req, res) => {
   EmailAdd(res);
