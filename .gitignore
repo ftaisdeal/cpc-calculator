@@ -1,6 +1,7 @@
 *.DS_Store
 node_modules
 .env
+.prettierrc
 admin/email/EmailUpdate.js
 admin/email/EmailsImport.js
 admin/email/EmailsAdd.csv
