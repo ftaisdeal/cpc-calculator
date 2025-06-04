@@ -13,12 +13,6 @@
     gtag('js', new Date());
 
     gtag('config', 'G-8B2GTP8VWT');
-
-    // Redirect after logging
-    /* setTimeout(() => {
-      window.location.href = "https://www.meetup.com/skits-scripts-meetup-group//";
-    }, 10000); // 1/10th of a second
-    */
   </script>
 </head>
 
@@ -26,6 +20,18 @@
 
   <h1>Welcome to Skits &amp; Scripts</h1>
   <p>Scroll down or click below to learn more.</p>
+
+  <button onclick="triggerConversion()">Submit</button>
+
+  <script>
+    function triggerConversion() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-873186566/0viTCPzS7qgaEIaKr6AD'
+      });
+    }
+  </script>
+
+
 
   <!-- This button click can be tracked as a valid interaction -->
   <button class="cta-button" onclick="recordClick()">Learn More</button>
