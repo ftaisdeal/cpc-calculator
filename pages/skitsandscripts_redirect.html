@@ -23,6 +23,29 @@
 </head>
 
 <body>
+
+  <h1>Welcome to Skits &amp; Scripts</h1>
+  <p>Scroll down or click below to learn more.</p>
+
+  <!-- This button click can be tracked as a valid interaction -->
+  <button class="cta-button" onclick="recordClick()">Learn More</button>
+
+  <script>
+    function recordClick() {
+      // Example of sending an event to Google Ads
+      gtag('event', 'click', {
+        'event_category': 'engagement',
+        'event_label': 'Learn More Button',
+        'value': 1
+      });
+
+      alert("Thanks for clicking!"); // Just a visual confirmation
+    }
+  </script>
+
+  <!-- Extra content to enable scrolling (another valid interaction) -->
+  <div style="height: 1500px;">Some more content.</div>
+
   Visit our Meetup page for more information: <a href="https://www.meetup.com/skits-scripts-meetup-group//">Skits &
     Scripts Meetup Group</a>
 </body>
