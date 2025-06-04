@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store</title>
+  <title>Skits &amp; Scripts</title>
   <!-- Google Analytics Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B2GTP8VWT"></script>
   <script>
@@ -19,9 +19,9 @@
 <body>
 
   <h1>Welcome to Skits &amp; Scripts</h1>
-  <p>Scroll down or click below to learn more.</p>
 
-  <button onclick="triggerConversion()">Submit</button>
+  Visit our Meetup page: <a href="https://www.meetup.com/skits-scripts-meetup-group//"
+    onclick="triggerConversion()">Skits & Scripts Meetup Group</a>
 
   <script>
     function triggerConversion() {
@@ -31,29 +31,6 @@
     }
   </script>
 
-
-
-  <!-- This button click can be tracked as a valid interaction -->
-  <button class="cta-button" onclick="recordClick()">Learn More</button>
-
-  <script>
-    function recordClick() {
-      // Example of sending an event to Google Ads
-      gtag('event', 'click', {
-        'event_category': 'engagement',
-        'event_label': 'Learn More Button',
-        'value': 1
-      });
-
-      alert("Thanks for clicking!"); // Just a visual confirmation
-    }
-  </script>
-
-  <!-- Extra content to enable scrolling (another valid interaction) -->
-  <div style="height: 1500px;">Some more content.</div>
-
-  Visit our Meetup page for more information: <a href="https://www.meetup.com/skits-scripts-meetup-group//">Skits &
-    Scripts Meetup Group</a>
 </body>
 
 </html>
