@@ -49,12 +49,36 @@
       color: #484;
       letter-spacing: 2ch;
       padding-left: 10px;
-      line-height: 1.6em;
+      line-height: 1em;
     }
 
     .motto {
       font-size: 1.1em;
       color: #000;
+    }
+
+    button {
+      font-size: .95em;
+    }
+
+    /* Small devices */
+    @media only screen and (max-width: 744px) {
+      .container {
+        padding: 10px;
+      }
+
+      .title {
+        font-size: 4em;
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+      }
+
+      .motto {
+        font-size: .9em;
+        color: #000;
+      }
     }
   </style>
 </head>
@@ -62,10 +86,30 @@
 <body>
   <div class="container">
     <span class="title">Planet <span style="color: #88c;">A</span></span>
-    <p class="subtitle">the show</p>
+    <br>
+    <span class="subtitle">the show</span>
     <p class="motto">Tiny aliens drop massive truth bombs on humanity.</p>
-    <img src="spaceship.jpg" alt="Spaceship">
-    <p>Full website coming soon.</p>
+    <!-- Noscript content for added SEO -->
+    <noscript><a href="https://www.eventbrite.com/e/planet-a-the-show-tickets-1467342052579" rel="noopener noreferrer"
+        target="_blank">Buy Tickets on Eventbrite</a></noscript>
+    <!-- You can customize this button any way you like -->
+    <button id="eventbrite-widget-modal-trigger-1467342052579" type="button">buy tickets</button>
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+    <script type="text/javascript">
+      var exampleCallback = function () {
+        console.log('Order complete!');
+      };
+
+      window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '1467342052579',
+        modal: true,
+        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1467342052579',
+        onOrderComplete: exampleCallback
+      });
+    </script>
+    <p><img src="spaceship.jpg" alt="Spaceship"></p>
+    <img src="motto.png" alt="Just give us some truth">
   </div>
 
 </body>
