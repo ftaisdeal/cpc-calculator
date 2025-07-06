@@ -1,11 +1,1 @@
 *.DS_Store
-node_modules
-.env
-.prettierrc
-admin/email/EmailUpdate.js
-admin/email/EmailsImport.js
-admin/email/EmailsAdd.csv
-admin/email/EmailsAdd.sql
-admin/email/EmailUpdate.sql
-admin/notes.txt
-admin/to_do.txt
