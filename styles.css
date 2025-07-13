@@ -27,6 +27,12 @@
       font-weight: 400;
       color: #888;
     }
+
+    h2 {
+      font-size: 1.3em;
+      font-weight: 400;
+      color: #888;
+    }
     
     li {
       margin-bottom: 10px;
