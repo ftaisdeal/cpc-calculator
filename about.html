@@ -15,6 +15,45 @@
     gtag('config', 'G-E7RXLX5FXR');
   </script>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #spaceship-container {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 200px;
+      /* Enough to let the ship wiggle vertically */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      /* Stick to top */
+      pointer-events: none;
+      /* Prevent selection artifacts */
+      user-select: none;
+    }
+
+    #spaceship {
+      width: 600px;
+      opacity: 0;
+      transition: opacity 5s;
+      /* Fade duration is 2 seconds */
+      display: block;
+      margin: 0 auto;
+      /* For side-to-side and up/down animation: */
+      position: relative;
+      /* Enable hardware acceleration for smoother animation */
+      will-change: transform;
+    }
+
+    #spaceship.visible {
+      opacity: .75;
+    }
+
+    #spaceship.hide {
+      opacity: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -49,6 +88,9 @@
         onOrderComplete: exampleCallback
       });
     </script>
+    <div id="spaceship-container">
+      <img src="img/spaceship.png" id="spaceship" alt="Spaceship">
+    </div>
 
     <h1>About</h1>
     <p>Planet A is unlike any production you have ever seen or heard of.</p>
@@ -67,7 +109,43 @@
 
     <br><img src="img/motto.png" alt="Just give us some truth">
   </div>
+  <script>
+    const ship = document.getElementById('spaceship');
+    let movementInterval;
+    let startTime;
 
+    // Function to animate spaceship movement
+    function animateMovement() {
+      const now = Date.now();
+      const elapsed = (now - startTime) / 4000; // seconds
+      const x = Math.sin(elapsed * Math.PI) * 40;
+      const y = Math.cos(elapsed * Math.PI * 1.2) * 6;
+      ship.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    setTimeout(function () {
+      ship.classList.add('visible');
+      startTime = Date.now();
+
+      movementInterval = setInterval(animateMovement, 16);
+
+      setTimeout(function () {
+        // Start fade out
+        ship.classList.remove('visible');
+        ship.classList.add('hide');
+
+        // Listen for the end of the opacity transition
+        function onTransitionEnd(e) {
+          if (e.propertyName === 'opacity') {
+            clearInterval(movementInterval);
+            ship.style.transform = 'none';
+            ship.removeEventListener('transitionend', onTransitionEnd);
+          }
+        }
+        ship.addEventListener('transitionend', onTransitionEnd);
+      }, 6000);
+    }, 3000);
+  </script>
 </body>
 
 </html>
