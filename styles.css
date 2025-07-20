@@ -74,8 +74,8 @@
     }
 
     .spacer {
-      margin-left: 6px;
-      margin-right: 6px;
+      margin-left: 2px;
+      margin-right: 2px;
     }
 
     /* Small devices */
@@ -90,10 +90,5 @@
 
       .subtitle {
         font-size: 1.2em;
-      }
-
-      .motto {
-        font-size: .9em;
-        color: #000;
       }
     }
