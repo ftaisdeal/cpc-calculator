@@ -12,8 +12,11 @@ const Home = async function (req, res) {
       await pool.query('INSERT INTO qr_codes (code, ip_address) VALUES (?, ?)', [code, ip]);
     } catch (err) {
       console.error(err);
+      res.send(err);
     }
   }
+
+/*
 
   const content = `<!DOCTYPE html>
 <html lang="en">
@@ -144,6 +147,8 @@ const Home = async function (req, res) {
 </html>`;
 
   res.send(`${content}`);
+
+  */
 
 };
 
