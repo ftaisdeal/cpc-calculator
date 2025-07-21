@@ -1,4 +1,19 @@
+const mysql = require('mysql2/promise');
+const db_config = require('../admin/db_config');
+const pool = mysql.createPool(db_config);
+
 const Home = async function (req, res) {
+
+  const code = req.query.code;
+  const ip = req.ip;
+
+  if (code) {
+    try {
+      await pool.query('INSERT INTO qr_codes (code, ip_address) VALUES (?, ?)', [code, ip]);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   const content = `<!DOCTYPE html>
 <html lang="en">
@@ -130,6 +145,6 @@ const Home = async function (req, res) {
 
   res.send(`${content}`);
 
-}
+};
 
 module.exports = Home;

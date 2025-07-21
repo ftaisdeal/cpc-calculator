@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 app.set('trust proxy', true);
@@ -12,7 +13,7 @@ const Home = require('./pages/Home');
 const QR = require('./qr/QR');
 
 // Home
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   Home(req, res);
 });
 
