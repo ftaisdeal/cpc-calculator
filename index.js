@@ -9,7 +9,7 @@ const path = require('path');
 const basicAuth = require('express-basic-auth');
 
 const Home = require('./pages/Home');
-const QR = require('./pages/QR');
+const QR = require('./qr/QR');
 
 // Home
 app.get('/', (req, res) => {
