@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const Home = async function (req, res) {
+
+  const content = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -103,11 +105,11 @@
         // Rising motion
         if (elapsed < duration) {
           let y = startY + ((endY - startY) * (elapsed / duration));
-          img.style.bottom = `${y}px`;
+          img.style.bottom = y + "px";
           requestAnimationFrame(step);
         } else {
           img.style.opacity = 0;
-          img.style.bottom = `${endY}px`;
+          img.style.bottom = endY + "px";
         }
       }
       requestAnimationFrame(step);
@@ -124,4 +126,10 @@
 
 </body>
 
-</html>
+</html>`;
+
+  res.send(`${content}`);
+
+}
+
+module.exports = Home;
