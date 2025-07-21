@@ -9,11 +9,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const basicAuth = require('express-basic-auth');
 const port = 3000;
 
-const Home = require('./pages/Home');
-const Error404 = require('./pages/404');
+//const Home = require('./pages/Home');
+//const Error404 = require('./pages/404');
 
-// Admin
-app.get('/', 
+// Home
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+/* QR
+app.get('/qr', 
   basicAuth({
       users: { 'admin': 'firinn' }, // Credentials
       challenge: true, // Prompt the user for credentials
@@ -24,10 +29,13 @@ app.get('/',
   }
 );
 
+
 // 404 handler
 app.use((req, res) => {
   Error404(res);
 });
+
+*/
 
 // Start the server
 app.listen(port, (err) => {

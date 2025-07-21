@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-basic-auth": "^1.2.1",
+    "ipinfo": "^1.5.2",
+    "qrcode": "^1.5.4"
+  }
+}

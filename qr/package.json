@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "ipinfo": "^1.5.2",
-    "qrcode": "^1.5.4"
-  }
-}
