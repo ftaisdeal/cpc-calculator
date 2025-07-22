@@ -1,7 +1,2 @@
-- Get home page working for QR admin
-- Build form for creating QR codes
-- Download QR code to Desktop on generation
-- Code on each page should detect the "code" parameter and drop a record in the database if found
-- Convert site to Node to automatically register the QR hits
 - Install Chart.js to admin area and add basic data visualizations
 - Add ability to specify date range for viewing data
