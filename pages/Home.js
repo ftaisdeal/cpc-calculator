@@ -4,13 +4,12 @@ const pool = mysql.createPool(db_config);
 
 const Home = async function (req, res) {
 
-  const code = req.query.code;
+  const source = req.query.src;
   const ip = req.ip;
 
-  if (code) {
+  if (source) {
     try {
-      await pool.query('INSERT INTO qr_codes (code, ip_address) VALUES (?, ?)', [code, ip]);
-      console.log('OK');
+      await pool.query('INSERT INTO referrers (source, ip_address) VALUES (?, ?)', [source, ip]);
     } catch (err) {
       console.error(err);
     }

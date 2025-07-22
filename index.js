@@ -4,7 +4,8 @@ const app = express();
 app.set('trust proxy', true);
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+const generateQrForUrl = require('./qr/qr-gen');
 const port = 3000;
 const path = require('path');
 const basicAuth = require('express-basic-auth');
@@ -28,6 +29,22 @@ app.get('/qrtracking',
     QR(req, res);
   }
 );
+
+// Handle form POST for generating QR code
+app.post('/generate', async (req, res) => {
+  const codeValue = req.body.code;
+  if (!codeValue) {
+    return res.status(400).send('No code provided!');
+  }
+
+  const url = `https://planetatheshow.com?src=${encodeURIComponent(codeValue)}`;
+  try {
+    const { codesFile, desktopFile } = await generateQrForUrl(url);
+    res.sendFile(codesFile);
+  } catch (err) {
+    res.status(500).send('Error generating QR code: ' + err.message);
+  }
+});
 
 // 404 handler
 app.use((req, res) => {
