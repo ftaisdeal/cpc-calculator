@@ -6,7 +6,7 @@ const Home = async function (req, res) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planet A - QR Code Tracking</title>
+  <title>Planet A - Referrers</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
     input[name="code"] {
@@ -23,28 +23,48 @@ const Home = async function (req, res) {
 <body>
   <div class="container">
     <a href="/index.html"><span class="title">Planet <span style="color: #88c;">A</span></span></a>
-    <h1>QR Code Tracking</h1>
-    <div style="width:100%; height: 600px; margin-top: 20px; padding: 20px; background-color: #eee; border: 1px solid #666;">
-      Data Visualizations
-      <canvas id="myChart"></canvas>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  new Chart(document.getElementById("myChart"), {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow'],
-      datasets: [{
-        label: 'Votes',
-        data: [12, 19, 3],
-        backgroundColor: ['red', 'blue', 'yellow']
-      }]
-    }
-  });
-</script>
+    <h1>Referrers</h1>
+    <div style="width:100%; margin-top: 20px; padding: 20px; background-color: #fbfbfb; border: 1px solid #666;">
+  
+    <canvas id="myChart"></canvas>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        new Chart(document.getElementById("myChart"), {
+          type: 'line',
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true, // This works for most cases
+                min: 0             // Explicitly set to zero if needed
+              }
+            }
+          },
+          data: {
+            labels: ['date 1', 'date 2', 'date 3', 'date 4'],
+            datasets: [{
+              label: 'YouTube',
+              data: [3, 10, 8, 6],
+              tension: 0.4,
+              borderWidth: 1,
+              borderColor: ['#88a'],
+              backgroundColor: ['#88a']
+            },
+            {
+              label: 'Poster SF',
+              data: [6, 8, 14, 9],
+              tension: 0.4,
+              borderWidth: 1,
+              borderColor: ['#8a8'],
+              backgroundColor: ['#8a8']
+            }]
+          }
+        });
+      </script>
+
     </div>
     <br>
     <form action="/generate" method="post">
-      <input type="text" name="code" required> <input type="submit" value="create new code">
+      <input type="text" name="code" required> <input type="submit" value="create new QR code">
     </form>
   </div>
 </body>
