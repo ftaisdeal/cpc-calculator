@@ -56,6 +56,14 @@ const Home = async function (req, res) {
               borderWidth: 1,
               borderColor: ['#8a8'],
               backgroundColor: ['#8a8']
+            },
+            {
+              label: 'Poster East Bay',
+              data: [2, 6, 14, 4],
+              tension: 0.4,
+              borderWidth: 1,
+              borderColor: ['#a88'],
+              backgroundColor: ['#a88']
             }]
           }
         });
