@@ -26,6 +26,21 @@ const Home = async function (req, res) {
     <h1>QR Code Tracking</h1>
     <div style="width:100%; height: 600px; margin-top: 20px; padding: 20px; background-color: #eee; border: 1px solid #666;">
       Data Visualizations
+      <canvas id="myChart"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow'],
+      datasets: [{
+        label: 'Votes',
+        data: [12, 19, 3],
+        backgroundColor: ['red', 'blue', 'yellow']
+      }]
+    }
+  });
+</script>
     </div>
     <br>
     <form action="/generate" method="post">
