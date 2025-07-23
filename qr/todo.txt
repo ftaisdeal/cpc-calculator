@@ -1,2 +1,0 @@
-- Install Chart.js to admin area and add basic data visualizations
-- Add ability to specify date range for viewing data
