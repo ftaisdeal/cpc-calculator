@@ -4,15 +4,20 @@ const Home = async function (req, res) {
   const db_config = require('../admin/db_config');
   const pool = mysql.createPool(db_config);
 
-  // Make "sources" an object with name and color values
-  // Loop through the ojbect and executre the SQL queries and add the results to an array with all the data
+  // Loop through the ojbect and execute the SQL queries and add the results to an array with all the data
 
-  const sources = ['backstage', 'yt', 'full calendar', 'sf-2025-09-01', 'eb-2025-09-01'];
+  const sources = {
+    Backstage: ['backstage', '#88a'],
+    YouTube: ['yt', '#88a'],
+    "SF posters 9/1": ['sf-2025-09-01', '#88a'],
+    "EB posters 9/1": ['eb-2025-09-01', '#88a'],
+    "Full Calendar": ['fc', '#88a']
+  };
 
   const [rows] = await pool.query(`
     SELECT DATE(date_time) AS day, COUNT(*) AS hits 
     FROM referrers 
-    WHERE date_time >= NOW() - INTERVAL 30 DAY AND source = '${sources[0]}' 
+    WHERE date_time >= NOW() - INTERVAL 30 DAY AND source = '${sources["Backstage"][0]}' 
     GROUP BY day 
     ORDER BY day ASC;
   `);
