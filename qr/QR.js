@@ -1,5 +1,30 @@
 const Home = async function (req, res) {
 
+  const mysql = require('mysql2/promise');
+  const db_config = require('../admin/db_config');
+  const pool = mysql.createPool(db_config);
+
+  const [rows] = await pool.query(`
+    SELECT DATE(date_time) AS day, COUNT(*) AS hits 
+    FROM referrers 
+    WHERE date_time >= NOW() - INTERVAL 30 DAY AND source = 'backstage' 
+    GROUP BY day 
+    ORDER BY day DESC;
+  `);
+
+  const dates = rows.map(entry => {
+  // Convert the day string to a Date object
+  const dateObj = new Date(entry.day);
+  // Get month (add 1 since months are 0-indexed), pad with 0
+  const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+  // Get day, pad with 0
+  const day = dateObj.getDate().toString().padStart(2, '0');
+  // Combine as "MM-DD"
+  return `'${month}-${day}'`;
+  });
+
+  const hits = rows.map(entry => entry.hits);
+
   const content = `<!DOCTYPE html>
 <html lang="en">
 
@@ -40,31 +65,19 @@ const Home = async function (req, res) {
             }
           },
           data: {
-            labels: ['date 1', 'date 2', 'date 3', 'date 4'],
+
+            labels: [${dates}],
+
             datasets: [{
-              label: 'YouTube',
-              data: [3, 10, 8, 6],
+
+              label: 'backstage',
+              data: [${hits}],
               tension: 0.4,
               borderWidth: 1,
               borderColor: ['#88a'],
               backgroundColor: ['#88a']
-            },
-            {
-              label: 'Poster SF',
-              data: [6, 8, 14, 9],
-              tension: 0.4,
-              borderWidth: 1,
-              borderColor: ['#8a8'],
-              backgroundColor: ['#8a8']
-            },
-            {
-              label: 'Poster East Bay',
-              data: [2, 6, 14, 4],
-              tension: 0.4,
-              borderWidth: 1,
-              borderColor: ['#a88'],
-              backgroundColor: ['#a88']
             }]
+
           }
         });
       </script>
