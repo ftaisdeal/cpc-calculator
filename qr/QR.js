@@ -4,23 +4,25 @@ const Home = async function (req, res) {
   const db_config = require('../admin/db_config');
   const pool = mysql.createPool(db_config);
 
+  // Make "sources" an object with name and color values
+  // Loop through the ojbect and executre the SQL queries and add the results to an array with all the data
+
+  const sources = ['backstage', 'yt', 'full calendar', 'sf-2025-09-01', 'eb-2025-09-01'];
+
   const [rows] = await pool.query(`
     SELECT DATE(date_time) AS day, COUNT(*) AS hits 
     FROM referrers 
-    WHERE date_time >= NOW() - INTERVAL 30 DAY AND source = 'backstage' 
+    WHERE date_time >= NOW() - INTERVAL 30 DAY AND source = '${sources[0]}' 
     GROUP BY day 
-    ORDER BY day DESC;
+    ORDER BY day ASC;
   `);
 
-  const dates = rows.map(entry => {
-  // Convert the day string to a Date object
-  const dateObj = new Date(entry.day);
-  // Get month (add 1 since months are 0-indexed), pad with 0
-  const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
-  // Get day, pad with 0
-  const day = dateObj.getDate().toString().padStart(2, '0');
-  // Combine as "MM-DD"
-  return `'${month}-${day}'`;
+const dates = rows
+  .map(entry => {
+    const dateObj = new Date(entry.day);
+    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+    const day = dateObj.getDate().toString().padStart(2, '0');
+    return `'${month}-${day}'`; // No need for extra single quotes
   });
 
   const hits = rows.map(entry => entry.hits);
