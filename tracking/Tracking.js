@@ -81,7 +81,13 @@ const Tracking = async function (req, res) {
 <body>
   <div class="container">
     <a href="/index.html"><span class="title">Planet <span style="color: #88c;">A</span></span></a>
-    <h1>Referrers</h1>
+    <h1>Traffic Sources</h1>
+    <a href="https://planetatheshow.com/tracking?days=7">7 days</a> | 
+    <a href="https://planetatheshow.com/tracking?days=14">14 days</a> | 
+    <a href="https://planetatheshow.com/tracking?days=30">30 days</a> | 
+    <a href="https://planetatheshow.com/tracking?days=60">60 days</a> | 
+    <a href="https://planetatheshow.com/tracking?days=90">90 days</a>
+
     <div id="line-chart" style="width:100%; margin-top: 20px; padding: 20px; background-color: #fbfbfb; border: 1px solid #666;">
   
     <canvas id="myChart"></canvas>
