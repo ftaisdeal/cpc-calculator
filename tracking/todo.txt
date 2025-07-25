@@ -1,6 +1,0 @@
-- Pull data from the database and include it in the code for Chart.js
-- Query what sources exist in the database for a date range, then query those sources
-- Assign a color to each source, perhaps according to an array with preset attractive values
-- If there were no hits on a particular day, enter a value of 0
-- Add ability to specify date range in a pulldown menu for viewing data
-- Add ability to show cities queries are coming from
