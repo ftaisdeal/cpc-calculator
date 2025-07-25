@@ -5,11 +5,12 @@ const pool = mysql.createPool(db_config);
 const Home = async function (req, res) {
 
   const source = req.query.src;
-  const ip = req.ip;
+  const referrer = req.get('referer') || null;
+  const ip_address = req.ip;
 
   if (source) {
     try {
-      await pool.query('INSERT INTO referrers (source, ip_address) VALUES (?, ?)', [source, ip]);
+      await pool.query('INSERT INTO referrers (source, referrer, ip_address) VALUES (?, ?, ?)', [source, referrer, ip_address]);
     } catch (err) {
       console.error(err);
     }
