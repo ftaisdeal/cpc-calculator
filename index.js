@@ -5,13 +5,13 @@ app.set('trust proxy', true);
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const generateQrForUrl = require('./qr/qr-gen');
+const generateQrForUrl = require('./tracking/qr-gen');
 const port = 3000;
 const path = require('path');
 const basicAuth = require('express-basic-auth');
 
 const Home = require('./pages/Home');
-const QR = require('./qr/QR');
+const Tracking = require('./tracking/Tracking');
 
 // Home
 app.get('/', async (req, res) => {
@@ -19,14 +19,13 @@ app.get('/', async (req, res) => {
 });
 
 // QR Tracking
-app.get('/qrtracking', 
+app.get('/tracking', 
   basicAuth({
       users: { 'admin': 'firinn' }, // Credentials
       challenge: true, // Prompt the user for credentials
       unauthorizedResponse: 'Unauthorized' // Response for unauthorized users
   }),
   (req, res) => {
-    QR(req, res);
   }
 );
 
