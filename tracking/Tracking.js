@@ -61,7 +61,7 @@ const Tracking = async function (req, res) {
                 borderColor: source[2],
                 backgroundColor: source[2]
               };
-  }
+  } // End function getSourceData
 
 async function loadDatasets() {
   for (const source of sources) {
@@ -72,7 +72,6 @@ async function loadDatasets() {
 }
 
 loadDatasets().then((datasetsJSON) => {
-  // Now you can use datasetsJSON here!
  const content = `<!DOCTYPE html>
 <html lang="en">
 
@@ -127,9 +126,11 @@ loadDatasets().then((datasetsJSON) => {
 
     </div>
 
-    <p><form action="/generate" method="post">
+    <p>
+    <form action="/generate" method="post">
       <input type="text" name="code" required> <input type="submit" value="create new QR code">
-    </form></p>
+    </form>
+    </p>
   </div>
 </body>
 
