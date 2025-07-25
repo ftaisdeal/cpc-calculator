@@ -30,7 +30,7 @@ const dates = rows
 
   const hits = rows.map(entry => entry.hits);
 
-  const dataset = `{
+  const backstage = `{
                 label: '${sources[0][0]}',
                 data: [${hits}],
                 tension: 0.4,
@@ -81,7 +81,7 @@ const dates = rows
           data: {
             labels: [${dates}],
             datasets: [
-              ${dataset}
+              ${backstage}
             ]
           }
         });
