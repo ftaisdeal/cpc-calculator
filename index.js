@@ -26,6 +26,7 @@ app.get('/tracking',
       unauthorizedResponse: 'Unauthorized' // Response for unauthorized users
   }),
   (req, res) => {
+    Tracking(req, res);
   }
 );
 
