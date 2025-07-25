@@ -32,6 +32,15 @@ const dates = rows
 
   const hits = rows.map(entry => entry.hits);
 
+  const dataset = `{
+                label: '${sources[0][0]}',
+                data: [${hits}],
+                tension: 0.4,
+                borderWidth: 1,
+                borderColor: ['${sources[0][2]}'],
+                backgroundColor: ['${sources[0][2]}']
+              }`;
+
   const content = `<!DOCTYPE html>
 <html lang="en">
 
@@ -74,14 +83,7 @@ const dates = rows
           data: {
             labels: [${dates}],
             datasets: [
-              {
-                label: '${sources[0][0]}',
-                data: [${hits}],
-                tension: 0.4,
-                borderWidth: 1,
-                borderColor: ['${sources[0][2]}'],
-                backgroundColor: ['${sources[0][2]}']
-              }
+              ${dataset}
             ]
           }
         });
