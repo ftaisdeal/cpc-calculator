@@ -12,6 +12,19 @@ const Tracking = async function (req, res) {
     ['Full Calendar', 'fc', '#88a']
   ];
 
+  const NUM_DAYS = parseInt(req.query.days, 10) > 0 ? parseInt(req.query.days, 10) : 30;
+  const daysArr = [];
+  const now = new Date();
+  for (let i = NUM_DAYS - 1; i >= 0; i--) {
+    const d = new Date(now);
+    d.setDate(now.getDate() - i);
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    daysArr.push(`${mm}-${dd}`);
+  }
+
+  const quotedDaysArr = daysArr.map(day => `'${day}'`);
+
   const [rows] = await pool.query(`
     SELECT DATE(date_time) AS day, COUNT(*) AS hits 
     FROM referrers 
@@ -20,19 +33,25 @@ const Tracking = async function (req, res) {
     ORDER BY day ASC;
   `);
 
-const dates = rows
-  .map(entry => {
+  const dateHitsArr = rows.map(entry => {
     const dateObj = new Date(entry.day);
     const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
     const day = dateObj.getDate().toString().padStart(2, '0');
-    return `'${month}-${day}'`; // No need for extra single quotes
+    return { date: `${month}-${day}`, hits: entry.hits };
   });
 
-  const hits = rows.map(entry => entry.hits);
+  // Create a map for fast lookup
+  const hitsMap = {};
+  dateHitsArr.forEach(item => {
+    hitsMap[item.date] = item.hits;
+  });
+
+  // Build result array
+  const result = daysArr.map(day => hitsMap[day] || 0);
 
   const backstage = `{
                 label: '${sources[0][0]}',
-                data: [${hits}],
+                data: [${result}],
                 tension: 0.4,
                 borderWidth: 1,
                 borderColor: ['${sources[0][2]}'],
@@ -79,7 +98,7 @@ const dates = rows
             }
           },
           data: {
-            labels: [${dates}],
+            labels: [${quotedDaysArr}],
             datasets: [
               ${backstage}
             ]
@@ -88,7 +107,6 @@ const dates = rows
       </script>
 
     </div>
-    <h2>Cities</h2>
     
     <h2>New QR</h2>
     <form action="/generate" method="post">
