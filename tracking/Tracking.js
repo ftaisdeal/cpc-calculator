@@ -17,51 +17,63 @@ const Tracking = async function (req, res) {
   }
   const quotedDaysArr = daysArr.map(day => `'${day}'`);
 
+  const datasets = [];
+
   const sources = [
     ['Backstage', 'backstage', '#88a'],
-    ['YouTube', 'yt', '#88a'],
-    ['SF posters 9/1', 'sf-2025-09-01', '#88a'],
-    ['EB posters 9/1', 'eb-2025-09-01', '#88a'],
-    ['Full Calendar', 'fc', '#88a']
+    ['YouTube', 'yt', '#8a8'],
+    ['SF posters 9/1', 'sf-2025-09-01', '#a88'],
+    ['EB posters 9/1', 'eb-2025-09-01', '#88b'],
+    ['Full Calendar', 'fc', '#8b8']
   ];
 
-  // Convert the code below into a sweep through the array above,
-  // and generate the entire set of objects for use in Chart.js.
+  async function getSourceData(pool, daysArr, source, numDays) {
+    const [rows] = await pool.query(`
+      SELECT DATE(date_time) AS day, COUNT(*) AS hits 
+      FROM referrers 
+      WHERE date_time >= NOW() - INTERVAL ? DAY AND source = ? 
+      GROUP BY day 
+      ORDER BY day ASC;
+    `, [numDays, source[0]]);
 
-  const [rows] = await pool.query(`
-    SELECT DATE(date_time) AS day, COUNT(*) AS hits 
-    FROM referrers 
-    WHERE date_time >= NOW() - INTERVAL 30 DAY AND source = '${sources[0][0]}' 
-    GROUP BY day 
-    ORDER BY day ASC;
-  `);
+    const dateHitsArr = rows.map(entry => {
+      const dateObj = new Date(entry.day);
+      const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+      const day = dateObj.getDate().toString().padStart(2, '0');
+      return { date: `${month}-${day}`, hits: entry.hits };
+    });
 
-  const dateHitsArr = rows.map(entry => {
-    const dateObj = new Date(entry.day);
-    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
-    const day = dateObj.getDate().toString().padStart(2, '0');
-    return { date: `${month}-${day}`, hits: entry.hits };
-  });
+    // Create a map for fast lookup
+    const hitsMap = {};
+    dateHitsArr.forEach(item => {
+      hitsMap[item.date] = item.hits;
+    });
 
-  // Create a map for fast lookup
-  const hitsMap = {};
-  dateHitsArr.forEach(item => {
-    hitsMap[item.date] = item.hits;
-  });
+    // Build result array
+    const result = daysArr.map(day => hitsMap[day] || 0);
 
-  // Build result array
-  const result = daysArr.map(day => hitsMap[day] || 0);
-
-  const backstage = `{
-                label: '${sources[0][0]}',
-                data: [${result}],
+    // Return as object
+    return {
+                label: source[0],
+                data: result,
                 tension: 0.4,
                 borderWidth: 1,
-                borderColor: ['${sources[0][2]}'],
-                backgroundColor: ['${sources[0][2]}']
-              }`;
+                borderColor: source[2],
+                backgroundColor: source[2]
+              };
+  }
 
-  const content = `<!DOCTYPE html>
+async function loadDatasets() {
+  for (const source of sources) {
+    const dataObj = await getSourceData(pool, daysArr, source, NUM_DAYS);
+    datasets.push(dataObj);
+  }
+  return JSON.stringify(datasets);
+}
+
+loadDatasets().then((datasetsJSON) => {
+  // Now you can use datasetsJSON here!
+ const content = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -108,9 +120,7 @@ const Tracking = async function (req, res) {
           },
           data: {
             labels: [${quotedDaysArr}],
-            datasets: [
-              ${backstage}
-            ]
+            datasets: ${datasetsJSON}
           }
         });
       </script>
@@ -125,13 +135,9 @@ const Tracking = async function (req, res) {
 
 </html>`;
 
-/*
-Get number of times a particular ip address appears in the table and build an array of ip address and hits per ip address
-Get city for each ip address, then display a list of cities and the number of times a request came from that city
-Will have to concatenate results if multiple ip addresses are included within a city in the results
-*/
+ res.send(`${content}`);
 
-  res.send(`${content}`);
+});
 
 }
 
