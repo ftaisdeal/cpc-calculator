@@ -4,14 +4,7 @@ const Tracking = async function (req, res) {
   const db_config = require('../admin/db_config');
   const pool = mysql.createPool(db_config);
 
-  const sources = [
-    ['Backstage', 'backstage', '#88a'],
-    ['YouTube', 'yt', '#88a'],
-    ['SF posters 9/1', 'sf-2025-09-01', '#88a'],
-    ['EB posters 9/1', 'eb-2025-09-01', '#88a'],
-    ['Full Calendar', 'fc', '#88a']
-  ];
-
+  // Create array of days, one unquoted for use with the DB, the other quoted for use in Chart.js
   const NUM_DAYS = parseInt(req.query.days, 10) > 0 ? parseInt(req.query.days, 10) : 30;
   const daysArr = [];
   const now = new Date();
@@ -22,8 +15,18 @@ const Tracking = async function (req, res) {
     const dd = String(d.getDate()).padStart(2, '0');
     daysArr.push(`${mm}-${dd}`);
   }
-
   const quotedDaysArr = daysArr.map(day => `'${day}'`);
+
+  const sources = [
+    ['Backstage', 'backstage', '#88a'],
+    ['YouTube', 'yt', '#88a'],
+    ['SF posters 9/1', 'sf-2025-09-01', '#88a'],
+    ['EB posters 9/1', 'eb-2025-09-01', '#88a'],
+    ['Full Calendar', 'fc', '#88a']
+  ];
+
+  // Convert the code below into a sweep through the array above,
+  // and generate the entire set of objects for use in Chart.js.
 
   const [rows] = await pool.query(`
     SELECT DATE(date_time) AS day, COUNT(*) AS hits 
@@ -113,11 +116,10 @@ const Tracking = async function (req, res) {
       </script>
 
     </div>
-    
-    <h2>New QR</h2>
-    <form action="/generate" method="post">
+
+    <p><form action="/generate" method="post">
       <input type="text" name="code" required> <input type="submit" value="create new QR code">
-    </form>
+    </form></p>
   </div>
 </body>
 
