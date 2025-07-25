@@ -4,8 +4,6 @@ const Tracking = async function (req, res) {
   const db_config = require('../admin/db_config');
   const pool = mysql.createPool(db_config);
 
-  // Loop through the array and execute the SQL queries and add the results to an array with all the data
-
   const sources = [
     ['Backstage', 'backstage', '#88a'],
     ['YouTube', 'yt', '#88a'],
