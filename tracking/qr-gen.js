@@ -75,6 +75,26 @@ async function generateQrForUrl(url) {
   return { codesFile: outputFile, desktopFile: fs.existsSync(desktopDir) ? desktopFile : null };
 }
 
+/**
+ * Express route handler for generating QR codes from form submissions.
+ * @param {object} req - Express request object
+ * @param {object} res - Express response object
+ */
+async function handleQrGeneration(req, res) {
+  const codeValue = req.body.code;
+  if (!codeValue) {
+    return res.status(400).send('No code provided!');
+  }
+
+  const url = `https://planetatheshow.com?src=${encodeURIComponent(codeValue)}`;
+  try {
+    const { codesFile, desktopFile } = await generateQrForUrl(url);
+    res.sendFile(codesFile);
+  } catch (err) {
+    res.status(500).send('Error generating QR code: ' + err.message);
+  }
+}
+
 // If run directly from the command line, use the function with process.argv[2]
 if (require.main === module) {
   const url = process.argv[2];
@@ -91,4 +111,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = generateQrForUrl;
+module.exports = { generateQrForUrl, handleQrGeneration };

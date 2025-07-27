@@ -6,52 +6,57 @@ app.set('trust proxy', true);
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 const path = require('path');
 
-const generateQrForUrl = require('./tracking/qr-gen');
+const { generateQrForUrl, handleQrGeneration } = require('./tracking/QR-gen');
 const basicAuth = require('express-basic-auth');
 
 const Home = require('./pages/Home');
 const Tracking = require('./tracking/Tracking');
 const UpdateSources = require('./tracking/UpdateSources');
 
+// Basic auth configuration
+const basicAuthConfig = {
+  users: { [process.env.ADMIN_USER || 'admin']: process.env.ADMIN_PASSWORD || 'password' },
+  challenge: true,
+  unauthorizedResponse: 'Unauthorized'
+};
+
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
 // Home
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
   Home(req, res);
 });
 
-// Traffic Source Tracking
+// CPC Calculator
 app.get('/tracking', 
-  basicAuth({
-      users: { 'admin': 'password' }, // Credentials
-      challenge: true, // Prompt the user for credentials
-      unauthorizedResponse: 'Unauthorized' // Response for unauthorized users
-  }),
+  basicAuth(basicAuthConfig),
   (req, res) => {
     Tracking(req, res);
   }
 );
 
 // Update sources to be tracked
-app.post('/sources', async (req, res) => {
+app.post('/sources', (req, res) => {
   UpdateSources(req, res);
 });
 
 // Handle form POST for generating QR code
-app.post('/generate', async (req, res) => {
-  const codeValue = req.body.code;
-  if (!codeValue) {
-    return res.status(400).send('No code provided!');
-  }
+app.post('/generate', (req, res) => {
+  handleQrGeneration(req, res);
+});
 
-  const url = `https://planetatheshow.com?src=${encodeURIComponent(codeValue)}`;
-  try {
-    const { codesFile, desktopFile } = await generateQrForUrl(url);
-    res.sendFile(codesFile);
-  } catch (err) {
-    res.status(500).send('Error generating QR code: ' + err.message);
-  }
+// Error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Error 500');
 });
 
 // 404 handler
@@ -62,16 +67,35 @@ app.use((req, res) => {
 // Serve all files in public/docs at /docs route
 app.use('/docs', express.static(path.join(__dirname, 'public/docs')));
 
-// Error handler
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Error 500');
-});
+let server;
 
-app.listen(port, (err) => {
+// Store the server instance
+server = app.listen(port, (err) => {
   if (err) {
     console.error('Failed to start server:', err);
   } else {
     console.log(`Server listening on port ${port}`);
   }
 });
+
+// Enhanced graceful shutdown
+function gracefulShutdown(signal) {
+  console.log(`Received ${signal}, shutting down gracefully`);
+  
+  // Stop accepting new connections
+  server.close(() => {
+    console.log('HTTP server closed');
+    
+    // Close database connections, cleanup resources, etc.
+    process.exit(0);
+  });
+  
+  // Force shutdown after 10 seconds if graceful shutdown fails
+  setTimeout(() => {
+    console.error('Could not close connections in time, forcefully shutting down');
+    process.exit(1);
+  }, 10000);
+}
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
