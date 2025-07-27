@@ -76,25 +76,55 @@ loadDatasets().then((datasetsJSON) => {
   <title>CPC Calculator</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
+    table {
+      border: 1px solid #888;
+      border-collapse: collapse;
+      padding: 2px;
+    }
     th {
+      border: 1px solid #888;
+      border-collapse: collapse;
       text-align: left;
       font-size: 14px;
       font-weight: normal;
       background-color: #ccf;
+      padding: 2px;
     }
     td {
+      border: 1px solid #888;
+      border-collapse: collapse;
       background-color: #eef;
       font-size: 14px;
+      color: #444;
+      padding: 2px;
     }
     input {
       background-color: #eef;
-      border: 1px solid #888;
+      border: none;
+      background: transparent;
+      color: #444;
+      padding: 2px;
     }
     input:focus {
       background-color: #fff !important;
+      color: #444;
+      padding: 2px;
+    }
+    /* More specific selector to override inline styles */
+    #edit_sources input[type="text"] {
+      color: #444 !important;
+      padding: 2px;
     }
     input[type="submit"] {
       background-color: #bcb;
+      border: solid 1px #888;
+      margin-top: 2px;
+    }
+    #totals {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
     }
   </style>
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
@@ -104,11 +134,11 @@ loadDatasets().then((datasetsJSON) => {
   <div class="container">
     <a href="/index.html"><span class="title">Planet <span style="color: #88c;">A</span></span></a>
     <h1>CPC Calculator</h1>
-    <a href="https://planetatheshow.com/tracking?days=7">7 days</a> | 
-    <a href="https://planetatheshow.com/tracking?days=14">14 days</a> | 
-    <a href="https://planetatheshow.com/tracking?days=30">30 days</a> | 
-    <a href="https://planetatheshow.com/tracking?days=60">60 days</a> | 
-    <a href="https://planetatheshow.com/tracking?days=90">90 days</a>
+    <a href="/tracking?days=7">7 days</a> | 
+    <a href="/tracking?days=14">14 days</a> | 
+    <a href="/tracking?days=30">30 days</a> | 
+    <a href="/tracking?days=60">60 days</a> | 
+    <a href="/tracking?days=90">90 days</a>
 
     <div id="line-chart" style="width:100%; margin-top: 20px; padding: 20px; background-color: #fbfbfb; border: 1px solid #666;">
   
@@ -150,8 +180,8 @@ loadDatasets().then((datasetsJSON) => {
 
     </div>
 
-    <div style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border: 1px solid #ccc;">
-      <b>Totals</b>
+    <div id="totals">
+      Totals
       <div id="dataset-totals"></div>
       <script>
         const datasets = ${datasetsJSON};
@@ -181,8 +211,6 @@ loadDatasets().then((datasetsJSON) => {
           
           // Create table
           const table = document.createElement('table');
-          table.style.borderCollapse = 'collapse';
-          table.border = '1';
           
           // Create header
           const headerRow = document.createElement('tr');
@@ -190,7 +218,6 @@ loadDatasets().then((datasetsJSON) => {
           headers.forEach((headerText, index) => {
             const th = document.createElement('th');
             th.textContent = headerText;
-            th.style.padding = '2px';
             th.style.cursor = 'pointer';
             th.style.userSelect = 'none';
             
@@ -225,7 +252,6 @@ loadDatasets().then((datasetsJSON) => {
             cellValues.forEach((cellText, index) => {
               const td = document.createElement('td');
               td.textContent = cellText;
-              td.style.padding = '2px';
               // Right-align columns 2, 3, and 4 (Clicks, Cost, CPC)
               if (index >= 1) {
                 td.style.textAlign = 'right';
@@ -290,7 +316,7 @@ loadDatasets().then((datasetsJSON) => {
       <form action="/sources" method="post">
         <div id="inputs">
 
-        <table border="1" style="border-collapse: collapse;">
+        <table>
           <thead>
             <tr>
               <th>Name</th>
@@ -310,16 +336,16 @@ loadDatasets().then((datasetsJSON) => {
               }
             });
           });
-          // Use the max length as is
+          // Use the max length of each column to set the table cell width
           const inputSizes = maxLengths;
           
           return sources.map((subArr, i) => 
-            `<tr>
+            `    <tr>
                 ${subArr.map((val, j) => 
-                  `<td><input type="text" name="data[${i}][${j}]" value="${val}" size="${inputSizes[j]}" style="border: none; background: transparent;"></td>`
-                ).join('')}
-              </tr>`
-          ).join('\n            ');
+                `<td${j === 3 ? ' style="text-align: right;"' : ''}><input type="text" name="data[${i}][${j}]" value="${val}" size="${inputSizes[j]}"${j === 3 ? ' style="text-align: right;"' : ''}></td>`
+           ).join('')}
+            </tr>`
+          ).join('\n        ');
         })()}
           </tbody>
         </table>
