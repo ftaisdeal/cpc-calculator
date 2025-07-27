@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
 // Traffic Source Tracking
 app.get('/tracking', 
   basicAuth({
-      users: { 'admin': 'firinn' }, // Credentials
+      users: { 'admin': 'password' }, // Credentials
       challenge: true, // Prompt the user for credentials
       unauthorizedResponse: 'Unauthorized' // Response for unauthorized users
   }),
