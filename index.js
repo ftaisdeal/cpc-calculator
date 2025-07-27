@@ -1,13 +1,15 @@
 require('dotenv').config();
+
 const express = require('express');
 const app = express();
 app.set('trust proxy', true);
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const generateQrForUrl = require('./tracking/qr-gen');
 const port = 3000;
 const path = require('path');
+
+const generateQrForUrl = require('./tracking/qr-gen');
 const basicAuth = require('express-basic-auth');
 
 const Home = require('./pages/Home');
@@ -18,7 +20,7 @@ app.get('/', async (req, res) => {
   Home(req, res);
 });
 
-// QR Tracking
+// Traffic Source Tracking
 app.get('/tracking', 
   basicAuth({
       users: { 'admin': 'firinn' }, // Credentials
@@ -29,6 +31,11 @@ app.get('/tracking',
     Tracking(req, res);
   }
 );
+
+// Update sources to be tracked
+app.post('/sources', async (req, res) => {
+  UpdateSources(req, res);
+});
 
 // Handle form POST for generating QR code
 app.post('/generate', async (req, res) => {
@@ -51,7 +58,7 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
-// Serve all files in public/pdfs at /pdfs route
+// Serve all files in public/docs at /docs route
 app.use('/docs', express.static(path.join(__dirname, 'public/docs')));
 
 // Error handler

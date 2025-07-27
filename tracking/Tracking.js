@@ -1,5 +1,6 @@
 const Tracking = async function (req, res) {
 
+  const sources = require('./sources');
   const mysql = require('mysql2/promise');
   const db_config = require('../admin/db_config');
   const pool = mysql.createPool(db_config);
@@ -18,14 +19,6 @@ const Tracking = async function (req, res) {
   const quotedDaysArr = daysArr.map(day => `'${day}'`);
 
   const datasets = [];
-
-  const sources = [
-    ['Backstage', 'backstage', '#88a'],
-    ['YouTube', 'yt', '#8a8'],
-    ['SF posters 9/1', 'sf-2025-09-01', '#a88'],
-    ['EB posters 9/1', 'eb-2025-09-01', '#88b'],
-    ['Full Calendar', 'fc', '#8b8']
-  ];
 
   async function getSourceData(pool, daysArr, source, numDays) {
     const [rows] = await pool.query(`
@@ -68,7 +61,9 @@ async function loadDatasets() {
     const dataObj = await getSourceData(pool, daysArr, source, NUM_DAYS);
     datasets.push(dataObj);
   }
-  return JSON.stringify(datasets);
+  // Format with line breaks between datasets but compact data arrays
+  const formattedDatasets = datasets.map(dataset => JSON.stringify(dataset)).join(',\n              ');
+  return `[\n              ${formattedDatasets}\n            ]`;
 }
 
 loadDatasets().then((datasetsJSON) => {
@@ -81,12 +76,15 @@ loadDatasets().then((datasetsJSON) => {
   <title>Planet A - Referrers</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
-    input[name="code"] {
-      background-color: #f8f8f8;
+    input {
+      background-color: #eef;
       border: 1px solid #888;
     }
-    input[name="code"]:focus {
+    input:focus {
       background-color: #fff;
+    }
+    input[type="submit"] {
+      background-color: #bcb;
     }
   </style>
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
@@ -104,16 +102,21 @@ loadDatasets().then((datasetsJSON) => {
 
     <div id="line-chart" style="width:100%; margin-top: 20px; padding: 20px; background-color: #fbfbfb; border: 1px solid #666;">
   
-    <canvas id="myChart"></canvas>
+    <canvas id="SourceChart"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
-        new Chart(document.getElementById("myChart"), {
+        new Chart(document.getElementById("SourceChart"), {
           type: 'line',
           options: {
+            plugins: {
+              legend: {
+                display: true
+              }
+            },
             scales: {
               y: {
-                beginAtZero: true, // This works for most cases
-                min: 0             // Explicitly set to zero if needed
+                beginAtZero: true,
+                min: 0
               }
             }
           },
@@ -124,13 +127,71 @@ loadDatasets().then((datasetsJSON) => {
         });
       </script>
 
+      <script>
+        function toggleHidden(id) {
+          const editDiv = document.getElementById(id);
+          if (editDiv.style.display === 'none' || editDiv.style.display === '') {
+            editDiv.style.display = 'block';
+          } else {
+            editDiv.style.display = 'none';
+          }
+        }
+      </script>
+
     </div>
 
-    <p>
-    <form action="/generate" method="post">
-      <input type="text" name="code" required> <input type="submit" value="create new QR code">
-    </form>
-    </p>
+    <div style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border: 1px solid #ccc;">
+      <b>Totals</b>
+      <div id="dataset-totals"></div>
+      <script>
+        const datasets = ${datasetsJSON};
+        const totalsDiv = document.getElementById('dataset-totals');
+        
+        // Calculate totals and sort in decreasing order
+        const datasetTotals = datasets.map(dataset => ({
+          label: dataset.label,
+          total: dataset.data.reduce((sum, value) => sum + value, 0)
+        })).sort((a, b) => b.total - a.total);
+        
+        datasetTotals.forEach(item => {
+          const totalLine = document.createElement('div');
+          totalLine.textContent = item.label + ': ' + item.total;
+          totalsDiv.appendChild(totalLine);
+        });
+      </script>
+    </div>
+
+    <br>
+    <a href="#" onclick="toggleHidden('edit_sources'); return false;">Edit Sources</a>
+    <div id="edit_sources" style="display: none;">
+    <form action="your-action-url" method="post">
+        <div id="inputs"></div>
+        <input type="submit" value="update">
+      </form>
+      <script>
+        const arr = ${JSON.stringify(sources)};
+
+        const inputsDiv = document.getElementById('inputs');
+
+        arr.forEach((subArr, i) => {
+          subArr.forEach((val, j) => {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = "data[i][j]";
+            input.value = val;
+            inputsDiv.appendChild(input);
+          });
+          inputsDiv.appendChild(document.createElement('br'));
+        });
+      </script>
+      </div>
+      <br>
+      <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
+      <div id="create_qr" style="display: none;">
+      <form action="/generate" method="post">
+        <input type="text" name="code" required> <input type="submit" value="create">
+      </form>
+      </div>
   </div>
 </body>
 

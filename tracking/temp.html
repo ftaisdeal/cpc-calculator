@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Array to Form Inputs (No Table)</title>
+</head>
+
+<body>
+  <form action="your-action-url" method="post">
+    <div id="inputs"></div>
+    <input type="submit" value="update">
+  </form>
+  <script>
+    const arr = [
+      ['Backstage', 'backstage', '#88a'],
+      ['YouTube', 'yt', '#8a8'],
+      ['SF posters 9/1', 'sf-2025-09-01', '#a88'],
+      ['EB posters 9/1', 'eb-2025-09-01', '#88b'],
+      ['Full Calendar', 'fc', '#8b8']
+    ];
+
+    const inputsDiv = document.getElementById('inputs');
+
+    arr.forEach((subArr, i) => {
+      subArr.forEach((val, j) => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `data[${i}][${j}]`;
+        input.value = val;
+        inputsDiv.appendChild(input);
+      });
+      inputsDiv.appendChild(document.createElement('br'));
+    });
+  </script>
+</body>
+
+</html>
