@@ -73,15 +73,25 @@ loadDatasets().then((datasetsJSON) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planet A - Referrers</title>
+  <title>CPC Calculator</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
+    th {
+      text-align: left;
+      font-size: 14px;
+      font-weight: normal;
+      background-color: #ccf;
+    }
+    td {
+      background-color: #eef;
+      font-size: 14px;
+    }
     input {
       background-color: #eef;
       border: 1px solid #888;
     }
     input:focus {
-      background-color: #fff;
+      background-color: #fff !important;
     }
     input[type="submit"] {
       background-color: #bcb;
@@ -93,7 +103,7 @@ loadDatasets().then((datasetsJSON) => {
 <body>
   <div class="container">
     <a href="/index.html"><span class="title">Planet <span style="color: #88c;">A</span></span></a>
-    <h1>Traffic Sources</h1>
+    <h1>CPC Calculator</h1>
     <a href="https://planetatheshow.com/tracking?days=7">7 days</a> | 
     <a href="https://planetatheshow.com/tracking?days=14">14 days</a> | 
     <a href="https://planetatheshow.com/tracking?days=30">30 days</a> | 
@@ -145,19 +155,132 @@ loadDatasets().then((datasetsJSON) => {
       <div id="dataset-totals"></div>
       <script>
         const datasets = ${datasetsJSON};
+        const sources = ${JSON.stringify(sources)};
         const totalsDiv = document.getElementById('dataset-totals');
         
-        // Calculate totals and sort in decreasing order
-        const datasetTotals = datasets.map(dataset => ({
+        // Calculate totals
+        let datasetTotals = datasets.map((dataset, index) => ({
           label: dataset.label,
-          total: dataset.data.reduce((sum, value) => sum + value, 0)
-        })).sort((a, b) => b.total - a.total);
+          total: dataset.data.reduce((sum, value) => sum + value, 0),
+          cost: parseFloat(sources[index][3]) || 0
+        }));
         
+        // Add CPC calculation
         datasetTotals.forEach(item => {
-          const totalLine = document.createElement('div');
-          totalLine.textContent = item.label + ': ' + item.total;
-          totalsDiv.appendChild(totalLine);
+          item.cpc = item.total > 0 ? item.cost / item.total : 0;
         });
+        
+        // Initial sort by total clicks descending
+        datasetTotals.sort((a, b) => b.total - a.total);
+        
+        // Sorting state
+        let sortState = { column: 1, ascending: false }; // Start sorted by clicks descending
+        
+        function renderTable() {
+          totalsDiv.innerHTML = '';
+          
+          // Create table
+          const table = document.createElement('table');
+          table.style.borderCollapse = 'collapse';
+          table.border = '1';
+          
+          // Create header
+          const headerRow = document.createElement('tr');
+          const headers = ['Source', 'Clicks', 'Cost', 'CPC'];
+          headers.forEach((headerText, index) => {
+            const th = document.createElement('th');
+            th.textContent = headerText;
+            th.style.padding = '2px';
+            th.style.cursor = 'pointer';
+            th.style.userSelect = 'none';
+            
+            // Make Clicks column 2 characters wider to accommodate sort arrow
+            if (index === 1) {
+              th.style.minWidth = '3.5em';
+            }
+            
+            // Add sort indicator
+            if (sortState.column === index) {
+              th.textContent += sortState.ascending ? ' ↑' : ' ↓';
+            }
+            
+            // Add click handler
+            th.onclick = () => sortTable(index);
+            
+            headerRow.appendChild(th);
+          });
+          table.appendChild(headerRow);
+          
+          // Create data rows
+          datasetTotals.forEach(item => {
+            const row = document.createElement('tr');
+            
+            const cellValues = [
+              item.label, 
+              item.total, 
+              '$' + item.cost.toFixed(2), 
+              '$' + item.cpc.toFixed(2)
+            ];
+            
+            cellValues.forEach((cellText, index) => {
+              const td = document.createElement('td');
+              td.textContent = cellText;
+              td.style.padding = '2px';
+              // Right-align columns 2, 3, and 4 (Clicks, Cost, CPC)
+              if (index >= 1) {
+                td.style.textAlign = 'right';
+                td.style.backgroundColor = '#fff';
+              }
+              row.appendChild(td);
+            });
+            table.appendChild(row);
+          });
+          
+          totalsDiv.appendChild(table);
+        }
+        
+        function sortTable(columnIndex) {
+          // Toggle sort direction if same column, otherwise start with ascending
+          if (sortState.column === columnIndex) {
+            sortState.ascending = !sortState.ascending;
+          } else {
+            sortState.column = columnIndex;
+            sortState.ascending = true;
+          }
+          
+          // Sort the data
+          datasetTotals.sort((a, b) => {
+            let valueA, valueB;
+            
+            switch (columnIndex) {
+              case 0: // Source
+                valueA = a.label.toLowerCase();
+                valueB = b.label.toLowerCase();
+                break;
+              case 1: // Clicks
+                valueA = a.total;
+                valueB = b.total;
+                break;
+              case 2: // Cost
+                valueA = a.cost;
+                valueB = b.cost;
+                break;
+              case 3: // CPC
+                valueA = a.cpc;
+                valueB = b.cpc;
+                break;
+            }
+            
+            if (valueA < valueB) return sortState.ascending ? -1 : 1;
+            if (valueA > valueB) return sortState.ascending ? 1 : -1;
+            return 0;
+          });
+          
+          renderTable();
+        }
+        
+        // Initial render
+        renderTable();
       </script>
     </div>
 
@@ -166,11 +289,41 @@ loadDatasets().then((datasetsJSON) => {
     <div id="edit_sources" style="display: none;">
       <form action="/sources" method="post">
         <div id="inputs">
-        ${sources.map((subArr, i) => 
-          subArr.map((val, j) => 
-            `<input type="text" name="data[${i}][${j}]" value="${val}">`
-          ).join('') + (i < sources.length - 1 ? '<br>\n        ' : '')
-        ).join('')}
+
+        <table border="1" style="border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Parameter</th>
+              <th>Color</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+        ${(() => {
+          // Calculate max length for each column
+          const maxLengths = [0, 0, 0, 0];
+          sources.forEach(subArr => {
+            subArr.forEach((val, j) => {
+              if (val && val.length > maxLengths[j]) {
+                maxLengths[j] = val.length;
+              }
+            });
+          });
+          // Use the max length as is
+          const inputSizes = maxLengths;
+          
+          return sources.map((subArr, i) => 
+            `<tr>
+                ${subArr.map((val, j) => 
+                  `<td><input type="text" name="data[${i}][${j}]" value="${val}" size="${inputSizes[j]}" style="border: none; background: transparent;"></td>`
+                ).join('')}
+              </tr>`
+          ).join('\n            ');
+        })()}
+          </tbody>
+        </table>
+
         </div>
         <input type="submit" value="update">
       </form>
