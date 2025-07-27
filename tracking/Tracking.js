@@ -164,34 +164,24 @@ loadDatasets().then((datasetsJSON) => {
     <br>
     <a href="#" onclick="toggleHidden('edit_sources'); return false;">Edit Sources</a>
     <div id="edit_sources" style="display: none;">
-    <form action="your-action-url" method="post">
-        <div id="inputs"></div>
+      <form action="your-action-url" method="post">
+        <div id="inputs">
+        ${sources.map((subArr, i) => 
+          subArr.map((val, j) => 
+            `<input type="text" name="data[${i}][${j}]" value="${val}">`
+          ).join('') + (i < sources.length - 1 ? '<br>\n        ' : '')
+        ).join('')}
+        </div>
         <input type="submit" value="update">
       </form>
-      <script>
-        const arr = ${JSON.stringify(sources)};
-
-        const inputsDiv = document.getElementById('inputs');
-
-        arr.forEach((subArr, i) => {
-          subArr.forEach((val, j) => {
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.name = "data[i][j]";
-            input.value = val;
-            inputsDiv.appendChild(input);
-          });
-          inputsDiv.appendChild(document.createElement('br'));
-        });
-      </script>
-      </div>
-      <br>
-      <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
-      <div id="create_qr" style="display: none;">
+    </div>
+    <br>
+    <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
+    <div id="create_qr" style="display: none;">
       <form action="/generate" method="post">
         <input type="text" name="code" required> <input type="submit" value="create">
       </form>
-      </div>
+    </div>
   </div>
 </body>
 
