@@ -14,6 +14,7 @@ const basicAuth = require('express-basic-auth');
 
 const Home = require('./pages/Home');
 const Tracking = require('./tracking/Tracking');
+const UpdateSources = require('./tracking/UpdateSources');
 
 // Home
 app.get('/', async (req, res) => {

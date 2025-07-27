@@ -164,7 +164,7 @@ loadDatasets().then((datasetsJSON) => {
     <br>
     <a href="#" onclick="toggleHidden('edit_sources'); return false;">Edit Sources</a>
     <div id="edit_sources" style="display: none;">
-      <form action="your-action-url" method="post">
+      <form action="/sources" method="post">
         <div id="inputs">
         ${sources.map((subArr, i) => 
           subArr.map((val, j) => 
