@@ -120,11 +120,32 @@ loadDatasets().then((datasetsJSON) => {
       border: solid 1px #888;
       margin-top: 2px;
     }
-    #totals {
+    #line-chart {
+      width:90%;
       margin-top: 20px;
+      padding: 20px;
+      background-color: #fbfbfb;
+      border: 1px solid #666;
+    }
+    #totals {
+      width: 90%;
       padding: 15px;
       background-color: #f5f5f5;
       border: 1px solid #ccc;
+    }
+    #edit_sources {
+      width: 90%;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      display: none;
+    }
+    #create_qr {
+      width: 90%;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      display: none;
     }
   </style>
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
@@ -140,7 +161,7 @@ loadDatasets().then((datasetsJSON) => {
     <a href="/tracking?days=60">60 days</a> | 
     <a href="/tracking?days=90">90 days</a>
 
-    <div id="line-chart" style="width:100%; margin-top: 20px; padding: 20px; background-color: #fbfbfb; border: 1px solid #666;">
+    <div id="line-chart">
   
     <canvas id="SourceChart"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -179,9 +200,9 @@ loadDatasets().then((datasetsJSON) => {
       </script>
 
     </div>
-
+    <br>
+    CPC
     <div id="totals">
-      Totals
       <div id="dataset-totals"></div>
       <script>
         const datasets = ${datasetsJSON};
@@ -312,7 +333,7 @@ loadDatasets().then((datasetsJSON) => {
 
     <br>
     <a href="#" onclick="toggleHidden('edit_sources'); return false;">Edit Sources</a>
-    <div id="edit_sources" style="display: none;">
+    <div id="edit_sources">
       <form action="/sources" method="post">
         <div id="inputs">
 
@@ -356,9 +377,9 @@ loadDatasets().then((datasetsJSON) => {
     </div>
     <br>
     <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
-    <div id="create_qr" style="display: none;">
+    <div id="create_qr">
       <form action="/generate" method="post">
-        <input type="text" name="code" required> <input type="submit" value="create">
+        <input type="text" name="code" style="border: 1px solid #888; background-color: #fff;" required> <input type="submit" value="create">
       </form>
     </div>
   </div>
