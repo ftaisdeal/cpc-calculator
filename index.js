@@ -26,7 +26,10 @@ const basicAuthConfig = {
 
 // Request logging middleware
 app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  // Only log non-static file requests
+  if (!req.url.match(/\.(css|js|png|jpg|jpeg|gif|ico|woff|woff2|ttf|eot|svg|pdf|mp3|mp4)$/)) {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  }
   next();
 });
 
@@ -39,12 +42,6 @@ app.get('/', (req, res) => {
 app.get('/tracking', 
   basicAuth(basicAuthConfig),
   (req, res) => {
-    // Add cache-busting headers for dynamic content
-    res.set({
-      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
     Tracking(req, res);
   }
 );
