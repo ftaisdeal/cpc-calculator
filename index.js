@@ -39,6 +39,12 @@ app.get('/', (req, res) => {
 app.get('/tracking', 
   basicAuth(basicAuthConfig),
   (req, res) => {
+    // Add cache-busting headers for dynamic content
+    res.set({
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
     Tracking(req, res);
   }
 );
@@ -101,6 +107,14 @@ app.post('/ip-locations',
           });
         }
       }
+      
+      // Add cache-busting headers to ensure fresh data
+      res.set({
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+        'Surrogate-Control': 'no-store'
+      });
       
       res.json(locationData);
     } catch (error) {
