@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 const path = require('path');
 
-const { generateQrForUrl, handleQrGeneration } = require('./tracking/QR-gen');
+const { generateQrForUrl, handleQrGeneration } = require('./tracking/qr-generator');
 const basicAuth = require('express-basic-auth');
 
 const Home = require('./pages/Home');
