@@ -164,15 +164,13 @@ loadDatasets().then((datasetsJSON) => {
             return sources.map((source, index) => 
               `<label style="display: flex; align-items: center; cursor: pointer;">
                 <input type="checkbox" id="source-${index}" value="${index}" checked style="margin-right: 6px;">
-                <span style="color: ${source[2]}; font-weight: bold;">●</span>
+                <span style="color: ${source[2]}; font-size: 1.5em;">●</span>
                 <span style="margin-left: 4px;">${source[0]}</span>
               </label>`
             ).join('\n          ');
           })()}
-        </div>
-        <div style="margin-top: 8px;">
-          <button id="select-all" style="padding: 3px 8px; margin-right: 8px; font-size: 12px; border: 1px solid #888; background-color: #eef; cursor: pointer;">Select All</button>
-          <button id="select-none" style="padding: 3px 8px; font-size: 12px; border: 1px solid #888; background-color: #eef; cursor: pointer;">Select None</button>
+          <button id="select-all" style="padding: 3px 6px; font-size: 12px; border: 1px solid #888; background-color: #eef; cursor: pointer;">select all</button>
+          <button id="select-none" style="padding: 3px 6px; font-size: 12px; border: 1px solid #888; background-color: #eef; cursor: pointer;">select none</button>
         </div>
       </div>
   
@@ -188,7 +186,7 @@ loadDatasets().then((datasetsJSON) => {
           options: {
             plugins: {
               legend: {
-                display: true
+                display: false
               }
             },
             scales: {
