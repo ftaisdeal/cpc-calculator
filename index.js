@@ -60,7 +60,7 @@ app.post('/ip-locations',
     try {
       const mysql = require('mysql2/promise');
       const db_config = require('./admin/db_config');
-      const getLocationInfo = require('./tracking/Geo-ip');
+      const getLocationInfo = require('./tracking/geo-location');
       
       const pool = mysql.createPool(db_config);
       
