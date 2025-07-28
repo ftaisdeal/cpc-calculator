@@ -83,15 +83,16 @@ async function generateQrForUrl(url) {
 async function handleQrGeneration(req, res) {
   const codeValue = req.body.code;
   if (!codeValue) {
-    return res.status(400).send('No code provided!');
+    return res.status(400).end(); // No content response
   }
 
   const url = `https://planetatheshow.com?src=${encodeURIComponent(codeValue)}`;
   try {
     const { codesFile, desktopFile } = await generateQrForUrl(url);
-    res.sendFile(codesFile);
+    res.status(200).end(); // Just send success status, no content
   } catch (err) {
-    res.status(500).send('Error generating QR code: ' + err.message);
+    console.error('QR Generation Error:', err.message); // Log error server-side
+    res.status(500).end(); // Send error status, no content
   }
 }
 

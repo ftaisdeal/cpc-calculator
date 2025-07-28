@@ -98,6 +98,9 @@ loadDatasets().then((datasetsJSON) => {
       color: #444;
       padding: 2px;
     }
+    #cities td {
+      background-color: #fff;
+    }
     input {
       background-color: #eef;
       border: none;
@@ -133,14 +136,7 @@ loadDatasets().then((datasetsJSON) => {
       background-color: #f5f5f5;
       border: 1px solid #ccc;
     }
-    #edit_sources {
-      width: 90%;
-      padding: 15px;
-      background-color: #f5f5f5;
-      border: 1px solid #ccc;
-      display: none;
-    }
-    #create_qr {
+    .toggle_hide {
       width: 90%;
       padding: 15px;
       background-color: #f5f5f5;
@@ -221,11 +217,11 @@ loadDatasets().then((datasetsJSON) => {
           item.cpc = item.total > 0 ? item.cost / item.total : 0;
         });
         
-        // Initial sort by total clicks descending
-        datasetTotals.sort((a, b) => b.total - a.total);
+        // Initial sort by CPC ascending
+        datasetTotals.sort((a, b) => a.cpc - b.cpc);
         
         // Sorting state
-        let sortState = { column: 1, ascending: false }; // Start sorted by clicks descending
+        let sortState = { column: 3, ascending: true }; // Start sorted by CPC ascending
         
         function renderTable() {
           totalsDiv.innerHTML = '';
@@ -330,10 +326,181 @@ loadDatasets().then((datasetsJSON) => {
         renderTable();
       </script>
     </div>
-
+    <br>
+    <a href="#" onclick="toggleHidden('cities'); return false;">Cities</a>
+    <div id="cities" class="toggle_hide">
+      <form id="cities-form">
+        <label for="city-source">Source: </label>
+        <select name="source" id="city-source">
+        ${(() => {
+          return sources.map(source => 
+            `<option value="${source[1]}">${source[0]}</option>`
+          ).join('\n          ');
+        })()}
+        </select>
+        <input type="submit" value="get location info">
+        <div id="cities-status" style="margin-top: 10px; color: #666; font-style: italic; display: none;">
+          Loading IP location data...
+        </div>
+      </form>
+      <div id="cities-results" style="margin-top: 20px;"></div>
+      
+      <script>
+        document.getElementById('cities-form').addEventListener('submit', function(e) {
+          e.preventDefault(); // Prevent normal form submission
+          
+          const sourceSelect = this.querySelector('select[name="source"]');
+          const statusDiv = document.getElementById('cities-status');
+          const resultsDiv = document.getElementById('cities-results');
+          
+          // Show loading message
+          statusDiv.style.display = 'block';
+          statusDiv.style.color = '#666';
+          statusDiv.textContent = 'Loading IP location data...';
+          resultsDiv.innerHTML = '';
+          
+          // Submit via AJAX
+          const formData = new URLSearchParams();
+          formData.append('source', sourceSelect.value);
+          formData.append('days', ${NUM_DAYS});
+          
+          fetch('/ip-locations', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Failed to fetch location data');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Hide loading message
+            statusDiv.style.display = 'none';
+            
+            // Display results
+            if (data.length === 0) {
+              resultsDiv.innerHTML = '<p>No IP addresses found for the selected source.</p>';
+              return;
+            }
+            
+            // Sort data by Hits descending by default
+            data.sort((a, b) => b.hits - a.hits);
+            
+            // Sorting state for cities table
+            let citiesSortState = { column: 1, ascending: false }; // Start sorted by Hits descending
+            
+            function renderCitiesTable(tableData) {
+              // Create table
+              let tableHTML = \`
+                <table id="cities-table">
+                  <thead>
+                    <tr>
+                      <th style="cursor: pointer; user-select: none;" onclick="sortCitiesTable(0)">IP Address\${citiesSortState.column === 0 ? (citiesSortState.ascending ? ' ↑' : ' ↓') : ''}</th>
+                      <th style="cursor: pointer; user-select: none; text-align: right;" onclick="sortCitiesTable(1)">Hits\${citiesSortState.column === 1 ? (citiesSortState.ascending ? ' ↑' : ' ↓') : ''}</th>
+                      <th style="cursor: pointer; user-select: none;" onclick="sortCitiesTable(2)">City\${citiesSortState.column === 2 ? (citiesSortState.ascending ? ' ↑' : ' ↓') : ''}</th>
+                      <th style="cursor: pointer; user-select: none;" onclick="sortCitiesTable(3)">Region\${citiesSortState.column === 3 ? (citiesSortState.ascending ? ' ↑' : ' ↓') : ''}</th>
+                      <th style="cursor: pointer; user-select: none;" onclick="sortCitiesTable(4)">Country\${citiesSortState.column === 4 ? (citiesSortState.ascending ? ' ↑' : ' ↓') : ''}</th>
+                      <th style="cursor: pointer; user-select: none;" onclick="sortCitiesTable(5)">Coordinates\${citiesSortState.column === 5 ? (citiesSortState.ascending ? ' ↑' : ' ↓') : ''}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              \`;
+              
+              tableData.forEach((item, index) => {
+                tableHTML += \`
+                  <tr>
+                    <td style="background-color: #fff;">\${item.ip}</td>
+                    <td style="text-align: right; background-color: #fafafa;">\${item.hits}</td>
+                    <td style="background-color: #fff;">\${item.city}</td>
+                    <td style="background-color: #fafafa;">\${item.region}</td>
+                    <td style="background-color: #fff;">\${item.country}</td>
+                    <td style="background-color: #fafafa;"><a href="https://www.google.com/maps/@\${item.coordinates},15z" target="_blank">\${item.coordinates}</a></td>
+                  </tr>
+                \`;
+              });
+              
+              tableHTML += \`
+                  </tbody>
+                </table>
+              \`;
+              
+              return tableHTML;
+            }
+            
+            // Store data globally for sorting
+            window.citiesData = data;
+            
+            // Define sorting function
+            window.sortCitiesTable = function(columnIndex) {
+              // Toggle sort direction if same column, otherwise start with ascending
+              if (citiesSortState.column === columnIndex) {
+                citiesSortState.ascending = !citiesSortState.ascending;
+              } else {
+                citiesSortState.column = columnIndex;
+                citiesSortState.ascending = true;
+              }
+              
+              // Sort the data
+              window.citiesData.sort((a, b) => {
+                let valueA, valueB;
+                
+                switch (columnIndex) {
+                  case 0: // IP Address
+                    valueA = a.ip;
+                    valueB = b.ip;
+                    break;
+                  case 1: // Hits
+                    valueA = parseInt(a.hits);
+                    valueB = parseInt(b.hits);
+                    break;
+                  case 2: // City
+                    valueA = a.city.toLowerCase();
+                    valueB = b.city.toLowerCase();
+                    break;
+                  case 3: // Region
+                    valueA = a.region.toLowerCase();
+                    valueB = b.region.toLowerCase();
+                    break;
+                  case 4: // Country
+                    valueA = a.country.toLowerCase();
+                    valueB = b.country.toLowerCase();
+                    break;
+                  case 5: // Coordinates
+                    valueA = a.coordinates;
+                    valueB = b.coordinates;
+                    break;
+                }
+                
+                if (valueA < valueB) return citiesSortState.ascending ? -1 : 1;
+                if (valueA > valueB) return citiesSortState.ascending ? 1 : -1;
+                return 0;
+              });
+              
+              // Re-render table
+              const resultsDiv = document.getElementById('cities-results');
+              resultsDiv.innerHTML = renderCitiesTable(window.citiesData);
+            };
+            
+            // Initial render with default sort
+            resultsDiv.innerHTML = renderCitiesTable(data);
+          })
+          .catch(error => {
+            // Show error message
+            statusDiv.style.display = 'block';
+            statusDiv.style.color = '#c66';
+            statusDiv.textContent = 'Error loading location data';
+            console.error('Error:', error);
+          });
+        });
+      </script>
+    </div>
     <br>
     <a href="#" onclick="toggleHidden('edit_sources'); return false;">Edit Sources</a>
-    <div id="edit_sources">
+    <div id="edit_sources" class="toggle_hide">
       <form action="/sources" method="post">
         <div id="inputs">
 
@@ -377,10 +544,70 @@ loadDatasets().then((datasetsJSON) => {
     </div>
     <br>
     <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
-    <div id="create_qr">
-      <form action="/generate" method="post">
-        <input type="text" name="code" style="border: 1px solid #888; background-color: #fff;" required> <input type="submit" value="create">
+    <div id="create_qr" class="toggle_hide">
+      <form id="qr-form">
+        https://planetatheshow.com?src=<input type="text" name="code" style="border: 1px solid #888; background-color: #fff;" required> 
+        <input type="submit" value="create">
+        <div id="qr-status" style="margin-top: 10px; color: #666; font-style: italic; display: none;">
+          QR downloaded to desktop and stored in "tracking/codes"
+        </div>
       </form>
+      <script>
+        document.getElementById('qr-form').addEventListener('submit', function(e) {
+          e.preventDefault(); // Prevent normal form submission
+          
+          const codeInput = this.querySelector('input[name="code"]');
+          const statusDiv = document.getElementById('qr-status');
+          
+          // Validate that the code field is not empty
+          if (!codeInput.value.trim()) {
+            // Show validation message manually since we prevented default
+            codeInput.setCustomValidity('Please fill out this field.');
+            codeInput.reportValidity();
+            return;
+          }
+          
+          // Clear any previous validation
+          codeInput.setCustomValidity('');
+          
+          // Submit via AJAX with URL-encoded data
+          const formData = new URLSearchParams();
+          formData.append('code', codeInput.value);
+          
+          fetch('/generate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              // Show success message
+              statusDiv.style.display = 'block';
+              statusDiv.style.color = '#666';
+              statusDiv.textContent = 'QR downloaded to desktop and stored in "tracking/codes"';
+              
+              // Clear the input field
+              codeInput.value = '';
+              
+              // Hide message after 5 seconds
+              setTimeout(() => {
+                statusDiv.style.display = 'none';
+              }, 5000);
+            } else {
+              throw new Error('Failed to generate QR code');
+            }
+          })
+          .catch(error => {
+            // Show error message
+            statusDiv.style.display = 'block';
+            statusDiv.style.color = '#c66';
+            statusDiv.textContent = 'Error generating QR code';
+            console.error('Error:', error);
+          });
+        });
+      </script>
     </div>
   </div>
 </body>
