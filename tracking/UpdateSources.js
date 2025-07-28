@@ -24,8 +24,8 @@ const UpdateSources = async function (req, res) {
     const sourcesPath = path.join(__dirname, 'sources.js');
     fs.writeFileSync(sourcesPath, content);
     
-    // Redirect back to tracking page
-    res.redirect('/tracking');
+    // Redirect back to tracking page with cache-busting parameter to force full reload
+    res.redirect(`/tracking?t=${Date.now()}`);
     
   } catch (error) {
     console.error('Error updating sources:', error);
