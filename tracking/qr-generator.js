@@ -1,7 +1,7 @@
 // Script: create-qrcode.js
 // Description: Exports a function that generates a QR code image for a given URL.
-// The output file is named "qr" + the value of the "code" param in the URL + ".png", saved in the "codes" directory
-// and also copied to the user's Desktop.
+// The output file is named "qr" + the value of the "src" param in the URL + ".png" and is saved
+// in the "codes" directory and also downloaded to the user's Desktop.
 
 const QRCode = require('qrcode');
 const fs = require('fs');
