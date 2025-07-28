@@ -595,7 +595,6 @@ loadDatasets().then((datasetsJSON) => {
     <div id="edit_sources" class="toggle_hide">
       <form action="/sources" method="post">
         <div id="inputs">
-
         <table>
           <thead>
             <tr>
@@ -629,7 +628,6 @@ loadDatasets().then((datasetsJSON) => {
         })()}
           </tbody>
         </table>
-
         </div>
         <input type="submit" value="update">
       </form>

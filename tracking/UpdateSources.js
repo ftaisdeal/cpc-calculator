@@ -13,8 +13,12 @@ const UpdateSources = async function (req, res) {
     // Convert the data object to the sources array format
     const sourcesArray = Object.values(data);
     
-    // Create the module.exports content
-    const content = `module.exports = ${JSON.stringify(sourcesArray, null, 2)};`;
+    // Create the module.exports content with compact formatting
+    const formattedSources = sourcesArray.map(source => 
+      `  [${source.map(item => JSON.stringify(item)).join(', ')}]`
+    ).join(',\n');
+    
+    const content = `module.exports = [\n${formattedSources}\n];`;
     
     // Write to sources.js file
     const sourcesPath = path.join(__dirname, 'sources.js');
