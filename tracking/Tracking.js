@@ -180,6 +180,34 @@ loadDatasets().then((datasetsJSON) => {
         const allDatasets = ${datasetsJSON};
         const chartLabels = [${quotedDaysArr}];
         
+        // Function to save checkbox states to localStorage
+        function saveCheckboxStates() {
+          const checkboxes = document.querySelectorAll('input[type="checkbox"][id^="source-"]');
+          const states = {};
+          checkboxes.forEach(checkbox => {
+            states[checkbox.id] = checkbox.checked;
+          });
+          localStorage.setItem('sourceCheckboxStates', JSON.stringify(states));
+        }
+        
+        // Function to load checkbox states from localStorage
+        function loadCheckboxStates() {
+          const saved = localStorage.getItem('sourceCheckboxStates');
+          if (saved) {
+            try {
+              const states = JSON.parse(saved);
+              const checkboxes = document.querySelectorAll('input[type="checkbox"][id^="source-"]');
+              checkboxes.forEach(checkbox => {
+                if (states.hasOwnProperty(checkbox.id)) {
+                  checkbox.checked = states[checkbox.id];
+                }
+              });
+            } catch (error) {
+              console.error('Error loading checkbox states:', error);
+            }
+          }
+        }
+        
         // Initialize chart
         const chart = new Chart(document.getElementById("SourceChart"), {
           type: 'line',
@@ -215,7 +243,13 @@ loadDatasets().then((datasetsJSON) => {
           
           chart.data.datasets = selectedDatasets;
           chart.update();
+          
+          // Save state after updating
+          saveCheckboxStates();
         }
+        
+        // Load saved states on page load
+        loadCheckboxStates();
         
         // Add event listeners to checkboxes
         document.querySelectorAll('input[type="checkbox"][id^="source-"]').forEach(checkbox => {
@@ -237,6 +271,9 @@ loadDatasets().then((datasetsJSON) => {
           });
           updateChart();
         });
+        
+        // Initial chart update based on loaded states
+        updateChart();
       </script>
 
       <script>
