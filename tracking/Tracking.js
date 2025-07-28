@@ -27,7 +27,7 @@ const Tracking = async function (req, res) {
       WHERE date_time >= NOW() - INTERVAL ? DAY AND source = ? 
       GROUP BY day 
       ORDER BY day ASC;
-    `, [numDays, source[0]]);
+    `, [numDays, source[1]]);  // Use source[1] (parameter) instead of source[0] (name)
 
     const dateHitsArr = rows.map(entry => {
       const dateObj = new Date(entry.day);
@@ -613,6 +613,14 @@ loadDatasets().then((datasetsJSON) => {
 </body>
 
 </html>`;
+
+ // Add cache-busting headers to ensure fresh data
+ res.set({
+   'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+   'Pragma': 'no-cache',
+   'Expires': '0',
+   'Surrogate-Control': 'no-store'
+ });
 
  res.send(`${content}`);
 
