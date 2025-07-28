@@ -10,9 +10,7 @@ const UpdateSources = async function (req, res) {
     console.log('Received POST data:', postData);
     
     // Check if data exists in the expected format
-    if (postData.data) {
-      console.log('Sources data:', postData.data);
-      
+    if (postData.data) {      
       // Process the data array
       // postData.data should be in format: data[0][0], data[0][1], data[0][2], data[1][0], etc.
       const sourcesArray = [];
@@ -30,8 +28,6 @@ const UpdateSources = async function (req, res) {
         });
       });
       
-      console.log('Processed sources array:', sourcesArray);
-      
       // Format the array as a JavaScript module export
       const formattedArray = sourcesArray.map(subArray => 
         `    [${subArray.map(val => `'${val}'`).join(', ')}]`
@@ -45,8 +41,6 @@ const UpdateSources = async function (req, res) {
       
       // Clear the require cache so the updated sources.js will be reloaded
       delete require.cache[require.resolve('./sources.js')];
-      
-      console.log('Sources file updated successfully and cache cleared');
       res.redirect('/tracking');
       
     } else {
@@ -55,7 +49,6 @@ const UpdateSources = async function (req, res) {
     
   } catch (error) {
     console.error('Error updating sources:', error);
-    res.status(500).send('Error updating sources: ' + error.message);
   }
   
 };
