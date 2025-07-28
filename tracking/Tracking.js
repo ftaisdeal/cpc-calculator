@@ -158,11 +158,32 @@ loadDatasets().then((datasetsJSON) => {
     <a href="/tracking?days=90">90 days</a>
 
     <div id="line-chart">
+      <div style="margin-bottom: 15px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;">
+          ${(() => {
+            return sources.map((source, index) => 
+              `<label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="checkbox" id="source-${index}" value="${index}" checked style="margin-right: 6px;">
+                <span style="color: ${source[2]}; font-weight: bold;">●</span>
+                <span style="margin-left: 4px;">${source[0]}</span>
+              </label>`
+            ).join('\n          ');
+          })()}
+        </div>
+        <div style="margin-top: 8px;">
+          <button id="select-all" style="padding: 3px 8px; margin-right: 8px; font-size: 12px; border: 1px solid #888; background-color: #eef; cursor: pointer;">Select All</button>
+          <button id="select-none" style="padding: 3px 8px; font-size: 12px; border: 1px solid #888; background-color: #eef; cursor: pointer;">Select None</button>
+        </div>
+      </div>
   
     <canvas id="SourceChart"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
-        new Chart(document.getElementById("SourceChart"), {
+        const allDatasets = ${datasetsJSON};
+        const chartLabels = [${quotedDaysArr}];
+        
+        // Initialize chart
+        const chart = new Chart(document.getElementById("SourceChart"), {
           type: 'line',
           options: {
             plugins: {
@@ -178,9 +199,45 @@ loadDatasets().then((datasetsJSON) => {
             }
           },
           data: {
-            labels: [${quotedDaysArr}],
-            datasets: ${datasetsJSON}
+            labels: chartLabels,
+            datasets: allDatasets
           }
+        });
+        
+        // Function to update chart based on checkbox selection
+        function updateChart() {
+          const checkboxes = document.querySelectorAll('input[type="checkbox"][id^="source-"]');
+          const selectedDatasets = [];
+          
+          checkboxes.forEach((checkbox, index) => {
+            if (checkbox.checked) {
+              selectedDatasets.push(allDatasets[index]);
+            }
+          });
+          
+          chart.data.datasets = selectedDatasets;
+          chart.update();
+        }
+        
+        // Add event listeners to checkboxes
+        document.querySelectorAll('input[type="checkbox"][id^="source-"]').forEach(checkbox => {
+          checkbox.addEventListener('change', updateChart);
+        });
+        
+        // Select All button
+        document.getElementById('select-all').addEventListener('click', function() {
+          document.querySelectorAll('input[type="checkbox"][id^="source-"]').forEach(checkbox => {
+            checkbox.checked = true;
+          });
+          updateChart();
+        });
+        
+        // Select None button
+        document.getElementById('select-none').addEventListener('click', function() {
+          document.querySelectorAll('input[type="checkbox"][id^="source-"]').forEach(checkbox => {
+            checkbox.checked = false;
+          });
+          updateChart();
         });
       </script>
 
