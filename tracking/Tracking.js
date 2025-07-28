@@ -149,7 +149,7 @@ loadDatasets().then((datasetsJSON) => {
 
 <body>
   <div class="container">
-    <a href="/index.html"><span class="title">Planet <span style="color: #88c;">A</span></span></a>
+    <span class="title">Planet <span style="color: #88c;">A</span></span>
     <h1>CPC Calculator</h1>
     <a href="/tracking?days=7">7 days</a> | 
     <a href="/tracking?days=14">14 days</a> | 
