@@ -16,6 +16,7 @@ const basicAuth = require('express-basic-auth');
 const Home = require('./pages/Home');
 const Tracking = require('./tracking/Tracking');
 const UpdateSources = require('./tracking/UpdateSources');
+const NotFound = require('./pages/404');
 const ipLocations = require('./tracking/ip-locations');
 
 // Basic auth configuration
@@ -71,11 +72,8 @@ app.use((err, req, res, next) => {
 
 // 404 handler
 app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    NotFound(req, res);
 });
-
-// Serve all files in public/docs at /docs route
-app.use('/docs', express.static(path.join(__dirname, 'public/docs')));
 
 let server;
 

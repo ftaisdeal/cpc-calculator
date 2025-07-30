@@ -1,6 +1,6 @@
 module.exports = [
-  ["Backstage", "bs", "#88a", "16.95"],
-  ["YouTube", "yt", "#8a8", "0"],
-  ["Eventbrite", "eb", "#a88", "0"],
-  ["Full Calendar", "fc", "#8b8", "0"]
+  ["Source 1", "s1", "#88a", "100"],
+  ["Source 2", "s2", "#8a8", "100"],
+  ["Source 3", "s3", "#a88", "100"],
+  ["Source 4", "s4", "#8b8", "100"]
 ];

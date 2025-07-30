@@ -1,5 +1,5 @@
   body {
-      font-family: Avenir, Verdana, Arial, sans-serif;
+      font-family: Verdana, Arial, sans-serif;
       background-color: #f0f0f0;
       font-size: 1em;
       color: #444;
@@ -53,29 +53,14 @@
     }
 
     .title {
-      font-size: 6em;
+      font-size: 2em;
       font-weight: 300;
       color: #bbb;
       line-height: 1em;
     }
 
-    .subtitle {
-      font-size: 1.85em;
-      color: #484;
-      letter-spacing: 2ch;
-      padding-left: 10px;
-      line-height: 1em;
-    }
-
-    .motto {
-      font-size: .8em;
-      letter-spacing: .6ch;
-      color: #666;
-    }
-
-    .spacer {
-      margin-left: 2px;
-      margin-right: 2px;
+    .toggle_hide {
+      display: none;
     }
 
     /* Small devices */

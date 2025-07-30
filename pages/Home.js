@@ -8,6 +8,7 @@ const Home = async function (req, res) {
   const referrer = req.get('referer') || null;
   const ip_address = req.ip;
 
+  // Insert a record into the database for tracking clicks
   if (source) {
     try {
       await pool.query('INSERT INTO referrers (source, referrer, ip_address) VALUES (?, ?, ?)', [source, referrer, ip_address]);
@@ -22,124 +23,26 @@ const Home = async function (req, res) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planet A - The Show</title>
-  <meta name="description"
-    content="Planet A - A live theater/multimedia show about aliens arriving on Earth and dropping massive truth bombs all over humanity.">
-  <meta property="og:title" content="Planet A - The Show">
-  <meta property="og:description"
-    content="Planet A - A live theater/multimedia show about aliens arriving on Earth and dropping massive truth bombs all over humanity.">
-  <meta property="og:site_name" content="Planet A - The Show">
+  <title>CPC Calculator</title>
+  <meta name="description" content="A system for displaying live calculations of cost-per-click from a range of sources, including QR codes.">
+  <meta property="og:title" content="CPC Calculator<">
+  <meta property="og:description" content="A system for displaying live calculations of cost-per-click from a range of sources, including QR codes.">
+  <meta property="og:site_name" content="CPC Calculator">
   <meta property="og:image" content="OG-default.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7RXLX5FXR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-E7RXLX5FXR');
-  </script>
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-  <style>
-    #brain-flex {
-      position: absolute;
-      left: 180px;
-      transform: translateX(-50%);
-      bottom: 0;
-      opacity: 0;
-      width: 300px;
-      pointer-events: none;
-      transition: opacity 2s;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container">
-    <span class="title">Planet <span style="color: #88c;">A</span></span>
-    <br>
-    <span class="subtitle">the show</span>
-    <p class="motto">Tiny aliens drop massive truth bombs on humanity.</p>
-
-    <a href="about.html">about</a> <span class="spacer">|</span>
-    <a href="origins.html">origins</a> <span class="spacer">|</span>
-    <a href="venue.html">venue</a> <span class="spacer">|</span>
-
-    <!-- Noscript content for added SEO -->
-    <noscript><a href="https://www.eventbrite.com/e/planet-a-the-show-tickets-1467492191649" rel="noopener noreferrer"
-        target="_blank">buy tickets</a></noscript>
-    <!-- You can customize this button any way you like -->
-    <button id="eventbrite-widget-modal-trigger-1467492191649" type="button">buy tickets</button>
-
-    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
-    <script type="text/javascript">
-      var exampleCallback = function () {
-        console.log('Order complete!');
-      };
-
-      window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: '1467492191649',
-        modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1467492191649',
-        onOrderComplete: exampleCallback
-      });
-    </script>
-
-    <p><img src="img/spaceship.jpg" alt="Spaceship"></p>
-    <img src="img/motto.png" alt="Just give us some truth">
-    <img id="brain-flex" src="img/brain-flex.png" alt="Brain Flex">
+<div class="container">
+<h1>Your Home Page</h1>
+  <p>Replace the HTML with the HTML from your home page, or any other page for which you would like to track clicks.</p>
+  <p>If you want to track additional pages, you will have to enter new routes in Express.</p>
+  <p>The CPC tracking page is at /tracking.
   </div>
-
-  <script>
-    const img = document.getElementById('brain-flex');
-    const duration = 10000;         // total animation time in ms
-    const fadeTime = 2000;         // fade in/out duration in ms
-
-    function animateBrainFlex(imgHeight) {
-      const startTime = performance.now();
-      const startY = 0; // start at bottom
-      const endY = window.innerHeight - imgHeight; // reach top
-
-      function step(now) {
-        const elapsed = now - startTime;
-        // Fade in
-        if (elapsed < fadeTime) {
-          img.style.opacity = (elapsed / fadeTime).toFixed(2);
-        }
-        // Fade out
-        else if (elapsed > duration - fadeTime) {
-          img.style.opacity = ((duration - elapsed) / fadeTime).toFixed(2);
-        } else {
-          img.style.opacity = 1;
-        }
-        // Rising motion
-        if (elapsed < duration) {
-          let y = startY + ((endY - startY) * (elapsed / duration));
-          img.style.bottom = y + "px";
-          requestAnimationFrame(step);
-        } else {
-          img.style.opacity = 0;
-          img.style.bottom = endY + "px";
-        }
-      }
-      requestAnimationFrame(step);
-    }
-
-    img.onload = function () {
-      animateBrainFlex(img.height);
-    };
-    // If cached and loaded, trigger manually
-    if (img.complete) {
-      img.onload();
-    }
-  </script>
-
 </body>
 
 </html>`;

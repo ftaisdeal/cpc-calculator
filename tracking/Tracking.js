@@ -3,6 +3,7 @@ const Tracking = async function (req, res) {
   const sources = require('./sources');
   const mysql = require('mysql2/promise');
   const db_config = require('../admin/db_config');
+  const config = require('../config/config');
   const pool = mysql.createPool(db_config);
 
   // Create array of days, one unquoted for use with the DB, the other quoted for use in Chart.js
@@ -149,7 +150,7 @@ loadDatasets().then((datasetsJSON) => {
 
 <body>
   <div class="container">
-    <span class="title">Planet <span style="color: #88c;">A</span></span>
+    <span class="title">Your Website</span>
     <h1>CPC Calculator</h1>
     <a href="/tracking?days=7">7 days</a> | 
     <a href="/tracking?days=14">14 days</a> | 
@@ -636,7 +637,7 @@ loadDatasets().then((datasetsJSON) => {
     <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
     <div id="create_qr" class="toggle_hide">
       <form id="qr-form">
-        https://planetatheshow.com?src=<input type="text" name="code" style="border: 1px solid #888; background-color: #fff;" required> 
+        ${config.URL}?src=<input type="text" name="code" style="border: 1px solid #888; background-color: #fff;" required> 
         <input type="submit" value="create">
         <div id="qr-status" style="margin-top: 10px; color: #666; font-style: italic; display: none;">
           QR downloaded to desktop and stored in "tracking/codes"
