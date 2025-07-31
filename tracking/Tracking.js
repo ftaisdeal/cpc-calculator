@@ -221,7 +221,15 @@ loadDatasets().then((datasetsJSON) => {
             scales: {
               y: {
                 beginAtZero: true,
-                min: 0
+                min: 0,
+                ticks: {
+                  callback: function(value) {
+                    if (Number.isInteger(value)) {
+                      return value;
+                    }
+                  },
+                  stepSize: 1
+                }
               }
             }
           },
