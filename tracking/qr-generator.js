@@ -3,6 +3,7 @@
 // The output file is named "qr" + the value of the "src" param in the URL + ".png" and is saved
 // in the "codes" directory and also downloaded to the user's Desktop.
 
+const config = require('../config/config');
 const QRCode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
@@ -51,7 +52,7 @@ async function generateQrForUrl(url) {
   }
 
   // Output file name in codes directory
-  const outputFile = path.join(codesDir, `planeta-${sanitizedCode}.png`);
+  const outputFile = path.join(codesDir, `${config.short_name}-${sanitizedCode}.png`);
 
   // Generate QR code and save as PNG
   await QRCode.toFile(outputFile, url, {
@@ -63,7 +64,7 @@ async function generateQrForUrl(url) {
 
   // Also copy the file to the user's Desktop
   const desktopDir = path.join(os.homedir(), 'Desktop');
-  const desktopFile = path.join(desktopDir, `planeta-${sanitizedCode}.png`);
+  const desktopFile = path.join(desktopDir, `${config.short_name}-${sanitizedCode}.png`);
 
   // Copy only if Desktop directory exists
   if (fs.existsSync(desktopDir)) {
@@ -86,10 +87,20 @@ async function handleQrGeneration(req, res) {
     return res.status(400).end(); // No content response
   }
 
-  const url = `https://planetatheshow.com?src=${encodeURIComponent(codeValue)}`;
+  const url = `${config.URL}?src=${encodeURIComponent(codeValue)}`;
   try {
     const { codesFile, desktopFile } = await generateQrForUrl(url);
-    res.status(200).end(); // Just send success status, no content
+    
+    // Send the file as a download
+    const filename = path.basename(codesFile);
+    res.download(codesFile, filename, (err) => {
+      if (err) {
+        console.error('Download error:', err);
+        if (!res.headersSent) {
+          res.status(500).end();
+        }
+      }
+    });
   } catch (err) {
     console.error('QR Generation Error:', err.message); // Log error server-side
     res.status(500).end(); // Send error status, no content

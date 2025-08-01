@@ -1,10 +1,13 @@
 const Tracking = async function (req, res) {
 
+  // Load sources fresh each time to pick up any updates
   const sources = require('./sources');
+  const config = require('../config/config');
   const mysql = require('mysql2/promise');
   const db_config = require('../admin/db_config');
-  const config = require('../config/config');
   const pool = mysql.createPool(db_config);
+  const fs = require('fs');
+  const path = require('path');
 
   // Create array of days, one unquoted for use with the DB, the other quoted for use in Chart.js
   const NUM_DAYS = parseInt(req.query.days, 10) > 0 ? parseInt(req.query.days, 10) : 30;
@@ -57,6 +60,21 @@ const Tracking = async function (req, res) {
               };
   } // End function getSourceData
 
+// Function to check if QR code files exist
+function hasQRCodeFiles() {
+  try {
+    const codesDir = path.join(__dirname, 'codes');
+    if (!fs.existsSync(codesDir)) {
+      return false;
+    }
+    const files = fs.readdirSync(codesDir);
+    return files.some(file => file.toLowerCase().endsWith('.png'));
+  } catch (error) {
+    console.error('Error checking QR code files:', error);
+    return false;
+  }
+}
+
 async function loadDatasets() {
   for (const source of sources) {
     const dataObj = await getSourceData(pool, daysArr, source, NUM_DAYS);
@@ -68,6 +86,9 @@ async function loadDatasets() {
 }
 
 loadDatasets().then((datasetsJSON) => {
+ // Check if QR code files exist
+ const showQRCodesLink = hasQRCodeFiles();
+ 
  const content = `<!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +128,7 @@ loadDatasets().then((datasetsJSON) => {
       border: none;
       background: transparent;
       color: #444;
-      padding: 2px;
+      padding: 3px;
     }
     input:focus {
       background-color: #fff !important;
@@ -123,6 +144,29 @@ loadDatasets().then((datasetsJSON) => {
       background-color: #bcb;
       border: solid 1px #888;
       margin-top: 2px;
+    }
+    button {
+      background-color: #eef;
+      border: 1px solid #888;
+      color: #444;
+      padding: 3px;
+      cursor: pointer;
+    }
+    select {
+      color: #444;
+      padding: 2px;
+    }
+    .btn-add {
+      background-color: #bcb;
+      border: solid 1px #888;
+      margin-top: 2px;
+      font-size: 13px;
+    }
+    .btn-delete {
+      background-color: #cbb;
+    }
+    .btn-save {
+      background-color: #bcb;
     }
     #line-chart {
       width:90%;
@@ -144,13 +188,26 @@ loadDatasets().then((datasetsJSON) => {
       border: 1px solid #ccc;
       display: none;
     }
+    #sources_update {
+      margin-top: 6px;
+    }
+    #qr_src_input {
+      border: 1px solid #888;
+      background-color: #fff;
+      width: 4ch;
+    }
+    #success-message {
+      color: #484;
+      font-size: 14px;
+      display: none;
+    }
   </style>
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
   <div class="container">
-    <span class="title">Your Website</span>
+    <span class="title">Planet <span style="color: #88c;">A</span></span>
     <h1>CPC Calculator</h1>
     <a href="/tracking?days=7">7 days</a> | 
     <a href="/tracking?days=14">14 days</a> | 
@@ -604,13 +661,14 @@ loadDatasets().then((datasetsJSON) => {
     <div id="edit_sources" class="toggle_hide">
       <form action="/sources" method="post">
         <div id="inputs">
-        <table>
+        <table id="sources-table">
           <thead>
             <tr>
               <th>Name</th>
-              <th>Parameter</th>
+              <th>Param</th>
               <th>Color</th>
               <th>Cost</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -632,26 +690,156 @@ loadDatasets().then((datasetsJSON) => {
                 ${subArr.map((val, j) => 
                 `<td${j === 3 ? ' style="text-align: right;"' : ''}><input type="text" name="data[${i}][${j}]" value="${val}" size="${inputSizes[j]}"${j === 3 ? ' style="text-align: right;"' : ''}></td>`
            ).join('')}
+                <td><button type="button" onclick="deleteSourceRow(this)" class="btn-delete">delete</button></td>
             </tr>`
           ).join('\n        ');
         })()}
+            <tr id="add-source-row" style="display: none;">
+              <td><input type="text" name="new_name" placeholder="Name" size="10"></td>
+              <td><input type="text" name="new_param" placeholder="param" size="5"></td>
+              <td><input type="text" name="new_color" placeholder="#888" size="5"></td>
+              <td style="text-align: right;"><input type="text" name="new_cost" placeholder="0.00" size="6" style="text-align: right;"></td>
+              <td>
+              <button type="button" onclick="cancelNewSource()" class="btn-delete">cancel</button>
+              <button type="button" onclick="saveNewSource()" class="btn-save">add</button>
+                <span id="validation-message" style="color: #c66; display: none;">Please fill in all fields.</span>
+              </td>
+            </tr>
           </tbody>
         </table>
         </div>
-        <input type="submit" value="update">
+        <input id="sources_update" type="submit" value="update">
+        <button type="button" id="add-source-btn" onclick="showAddSourceRow()" class="btn-add">add source</button>
+        <div id="message-area" style="margin-top: 5px;">
+          <span id="success-message">Please now update.</span>
+        </div>
       </form>
+      
+      <script>
+        // Function to delete a source row
+        function deleteSourceRow(button) {
+          const row = button.closest('tr');
+          row.remove();
+          renumberRows();
+          
+          // Show the "Please now update" message
+          const successMessage = document.getElementById('success-message');
+          successMessage.style.display = 'inline';
+        }
+        
+        // Function to show the add new source row
+        function showAddSourceRow() {
+          document.getElementById('add-source-row').style.display = 'table-row';
+          document.getElementById('add-source-btn').style.display = 'none';
+          // Hide any previous messages
+          document.getElementById('validation-message').style.display = 'none';
+          document.getElementById('success-message').style.display = 'none';
+        }
+        
+        // Function to save a new source
+        function saveNewSource() {
+          const row = document.getElementById('add-source-row');
+          const inputs = row.querySelectorAll('input[type="text"]');
+          const validationMessage = document.getElementById('validation-message');
+          const successMessage = document.getElementById('success-message');
+          
+          // Validate that all fields are filled
+          let allFilled = true;
+          inputs.forEach(input => {
+            if (!input.value.trim()) {
+              allFilled = false;
+              input.style.backgroundColor = '#ccc';
+            } else {
+              input.style.backgroundColor = '';
+            }
+          });
+          
+          if (!allFilled) {
+            validationMessage.style.display = 'inline';
+            successMessage.style.display = 'none';
+            return;
+          }
+          
+          // Hide validation message
+          validationMessage.style.display = 'none';
+          
+          // Get the tbody and current row count
+          const tbody = document.querySelector('#sources-table tbody');
+          const currentRowCount = tbody.querySelectorAll('tr').length - 1; // Exclude the add row
+          
+          // Create new row with proper indices
+          const newRow = document.createElement('tr');
+          newRow.innerHTML = \`
+            <td><input type="text" name="data[\${currentRowCount}][0]" value="\${inputs[0].value}" size="10"></td>
+            <td><input type="text" name="data[\${currentRowCount}][1]" value="\${inputs[1].value}" size="5"></td>
+            <td><input type="text" name="data[\${currentRowCount}][2]" value="\${inputs[2].value}" size="5"></td>
+            <td style="text-align: right;"><input type="text" name="data[\${currentRowCount}][3]" value="\${inputs[3].value}" size="6" style="text-align: right;"></td>
+            <td><button type="button" onclick="deleteSourceRow(this)" class="btn-delete">delete</button></td>
+          \`;
+          
+          // Insert before the add row
+          tbody.insertBefore(newRow, row);
+          
+          // Clear the add row inputs and hide it
+          inputs.forEach(input => input.value = '');
+          document.getElementById('add-source-row').style.display = 'none';
+          document.getElementById('add-source-btn').style.display = 'inline-block';
+          
+          // Show success message
+          successMessage.style.display = 'inline';
+        }
+        
+        // Function to cancel adding a new source
+        function cancelNewSource() {
+          document.getElementById('add-source-row').style.display = 'none';
+          document.getElementById('add-source-btn').style.display = 'inline-block';
+          
+          // Clear any validation highlighting and message
+          const inputs = document.querySelectorAll('#add-source-row input[type="text"]');
+          inputs.forEach(input => {
+            input.value = '';
+            input.style.backgroundColor = '';
+          });
+          
+          // Hide messages
+          document.getElementById('validation-message').style.display = 'none';
+          document.getElementById('success-message').style.display = 'none';
+        }
+        
+        // Function to renumber all row indices after deletion
+        function renumberRows() {
+          const tbody = document.querySelector('#sources-table tbody');
+          const rows = tbody.querySelectorAll('tr:not(#add-source-row)');
+          
+          rows.forEach((row, index) => {
+            const inputs = row.querySelectorAll('input[type="text"]');
+            inputs.forEach((input, fieldIndex) => {
+              input.name = \`data[\${index}][\${fieldIndex}]\`;
+            });
+          });
+        }
+      </script>
     </div>
     <br>
     <a href="#" onclick="toggleHidden('create_qr'); return false;">Create QR Code</a>
+    <br>
+    ${showQRCodesLink ? '<a href="/qr-codes">View QR Codes</a>' : ''}
     <div id="create_qr" class="toggle_hide">
       <form id="qr-form">
-        ${config.URL}?src=<input type="text" name="code" style="border: 1px solid #888; background-color: #fff;" required> 
+        ${config.URL}?src=<input type="text" id="qr_src_input" name="code" required> 
         <input type="submit" value="create">
         <div id="qr-status" style="margin-top: 10px; color: #666; font-style: italic; display: none;">
-          QR downloaded to desktop and stored in "tracking/codes"
+          QR downloaded to desktop and stored in "tracking/codes."
         </div>
       </form>
       <script>
+        // Prevent spaces in QR code input
+        document.querySelector('input[name="code"]').addEventListener('keypress', function(e) {
+          if (e.key === ' ') {
+            e.preventDefault();
+          }
+        });
+        
         document.getElementById('qr-form').addEventListener('submit', function(e) {
           e.preventDefault(); // Prevent normal form submission
           

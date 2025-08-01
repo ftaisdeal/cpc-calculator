@@ -24,6 +24,9 @@ const UpdateSources = async function (req, res) {
     const sourcesPath = path.join(__dirname, 'sources.js');
     fs.writeFileSync(sourcesPath, content);
     
+    // Clear the require cache for sources.js to force reload
+    delete require.cache[require.resolve('./sources.js')];
+    
     // Redirect back to tracking page with cache-busting parameter to force full reload
     res.redirect(`/tracking?t=${Date.now()}`);
     

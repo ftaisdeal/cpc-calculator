@@ -16,7 +16,7 @@ const basicAuth = require('express-basic-auth');
 const Home = require('./pages/Home');
 const Tracking = require('./tracking/Tracking');
 const UpdateSources = require('./tracking/UpdateSources');
-const NotFound = require('./pages/404');
+const ViewQRCodes = require('./tracking/ViewQRCodes');
 const ipLocations = require('./tracking/ip-locations');
 
 // Basic auth configuration
@@ -64,6 +64,14 @@ app.post('/ip-locations',
   ipLocations
 );
 
+// Serve QR code files
+app.use('/qr-codes', basicAuth(basicAuthConfig), express.static(path.join(__dirname, 'tracking/codes')));
+
+// QR codes listing page
+app.get('/qr-codes', basicAuth(basicAuthConfig), (req, res) => {
+  ViewQRCodes(req, res);
+});
+
 // Error handler
 app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -72,8 +80,11 @@ app.use((err, req, res, next) => {
 
 // 404 handler
 app.use((req, res) => {
-    NotFound(req, res);
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
+
+// Serve all files in public/docs at /docs route
+app.use('/docs', express.static(path.join(__dirname, 'public/docs')));
 
 let server;
 
