@@ -1,16 +1,21 @@
 {
-  "name": "@firinn/cpc-calculator",
+  "name": "@ftaisdeal/cpc-calculator",
   "version": "1.0.1",
   "description": "CPC Calculator tracking application",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/firinn/cpc-calculator.git"
+    "url": "git+https://github.com/ftaisdeal/cpc-calculator.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
