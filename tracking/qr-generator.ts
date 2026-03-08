@@ -1,3 +1,5 @@
+export {};
+
 // Script: create-qrcode.js
 // Description: Exports a function that generates a QR code image for a given URL.
 // The output file is named "qr" + the value of the "src" param in the URL + ".png" and is saved

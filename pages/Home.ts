@@ -1,3 +1,5 @@
+export {};
+
 const mysql = require('mysql2/promise');
 const db_config = require('../admin/db_config');
 const pool = mysql.createPool(db_config);

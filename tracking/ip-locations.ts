@@ -1,3 +1,5 @@
+export {};
+
 const ipLocations = async (req, res) => {
   try {
     const mysql = require('mysql2/promise');

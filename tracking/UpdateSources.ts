@@ -1,3 +1,5 @@
+export {};
+
 const UpdateSources = async function (req, res) {
   const fs = require('fs');
   const path = require('path');
@@ -11,7 +13,7 @@ const UpdateSources = async function (req, res) {
     }
     
     // Convert the data object to the sources array format
-    const sourcesArray = Object.values(data);
+    const sourcesArray = Object.values(data) as Array<Array<string>>;
     
     // Create the module.exports content with compact formatting
     const formattedSources = sourcesArray.map(source => 

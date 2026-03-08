@@ -1,3 +1,5 @@
+export {};
+
 const ViewQRCodes = async function (req, res) {
    const config = require('../config/config');
   const fs = require('fs');

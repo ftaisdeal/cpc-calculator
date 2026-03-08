@@ -1,3 +1,5 @@
+export {};
+
 const db_config = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,

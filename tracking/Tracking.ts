@@ -1,3 +1,5 @@
+export {};
+
 const Tracking = async function (req, res) {
 
   // Load sources fresh each time to pick up any updates

@@ -18,7 +18,8 @@ A Node.js web application for tracking and calculating Cost Per Click (CPC) metr
 - **Authentication**: Basic HTTP Authentication
 - **QR Codes**: qrcode library
 - **Environment**: dotenv for configuration
-- **Development**: nodemon for auto-restart
+- **Language**: TypeScript
+- **Development**: nodemon + tsc for auto-restart/build
 
 ## Installation
 
@@ -65,18 +66,11 @@ CREATE TABLE referrers (
 ```bash
 npm run dev
 ```
-or
-```bash
-nodemon index.js
-```
 
 ### Production
 ```bash
+npm run build
 npm start
-```
-or
-```bash
-node index.js
 ```
 
 ## API Endpoints
@@ -98,7 +92,7 @@ https://yourdomain.com/?src=youtube
 https://yourdomain.com/?src=backstage
 ```
 
-Supported sources (configurable in `tracking/sources.js`):
+Supported sources (configurable in `tracking/sources.ts`):
 - `s1` - Source 1
 - `s2` - Source 2  
 - `s3` - Source 3
@@ -108,7 +102,7 @@ Supported sources (configurable in `tracking/sources.js`):
 
 ## Configuration
 
-Edit `config/config.js` to set the URL of your website and your administrative email address:
+Edit `config/config.ts` to set the URL of your website and your administrative email address:
 
 ```javascript
 module.exports = {
@@ -120,8 +114,8 @@ module.exports = {
 ### Sources Configuration
 
 You have two options for updating your sources:
-- **Manual editing:** Directly edit `tracking/sources.js` to add or modify tracking sources.
-- **User interface:** Use the 'Edit Sources' section in the web dashboard to update sources through the UI, which will automatically update `sources.js` for you.
+- **Manual editing:** Directly edit `tracking/sources.ts` to add or modify tracking sources.
+- **User interface:** Use the 'Edit Sources' section in the web dashboard to update sources through the UI, which will automatically update `sources.js` in the compiled output.
 
 Example manual configuration:
 ```javascript
@@ -133,27 +127,29 @@ module.exports = [
 ```
 
 ### Database Configuration
-Configure database connection in `admin/db_config.js` using environment variables.
+Configure database connection in `admin/db_config.ts` using environment variables.
 
 ## File Structure
 
 ```
-├── index.js                 # Main server file
+├── index.ts                 # Main server file (source)
+├── dist/                    # Compiled JavaScript output
+│   └── index.js             # Main server file (runtime)
 ├── package.json            # Dependencies and scripts
 ├── admin/
-│   └── db_config.js        # Database configuration
+│   └── db_config.ts        # Database configuration
 ├── pages/
-│   └── Home.js             # Home page handler
+│   └── Home.ts             # Home page handler
 ├── public/
 │   ├── styles.css          # Stylesheet
 │   ├── favicon.png         # Site icon
 │   └── OG-default.png      # Open Graph image
 └── tracking/
-    ├── Tracking.js         # Analytics dashboard
-    ├── UpdateSources.js    # Source management
-    ├── qr-generator.js     # QR code generation
-    ├── ip-locations.js     # Geolocation services
-    ├── sources.js          # Source configuration
+  ├── Tracking.ts         # Analytics dashboard
+  ├── UpdateSources.ts    # Source management
+  ├── qr-generator.ts     # QR code generation
+  ├── ip-locations.ts     # Geolocation services
+  ├── sources.ts          # Source configuration (source)
     └── codes/              # Generated QR codes directory
 ```
 
