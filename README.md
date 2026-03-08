@@ -76,7 +76,7 @@ npm start
 ## Publish To GitHub Packages
 
 Prerequisites:
-- Repository owner matches package scope in `package.json` (`@firinn/...`).
+- Repository owner matches package scope in `package.json` (`@ftaisdeal/...`).
 - You have push access to this repository.
 
 Manual publish:
