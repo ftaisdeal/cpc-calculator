@@ -73,6 +73,23 @@ npm run build
 npm start
 ```
 
+## Publish To GitHub Packages
+
+Prerequisites:
+- Repository owner matches package scope in `package.json` (`@firinn/...`).
+- You have push access to this repository.
+
+Manual publish:
+```bash
+npm version patch
+git push && git push --tags
+```
+
+Automated publish:
+- Workflow file: `.github/workflows/publish-github-package.yml`
+- Triggered by tags like `v1.0.1` (or manually via `workflow_dispatch`).
+- Publishes to `https://npm.pkg.github.com` using `GITHUB_TOKEN`.
+
 ## API Endpoints
 
 ### Public Routes
